@@ -1,0 +1,103 @@
+﻿@page
+@model TestModel
+@{
+}
+
+<div>
+    <a id="clickTest" onclick="clickHandle()">点击</a>
+    <a id="clickTest2" onclick="clickHandle2()">点击2</a>
+    <a id="clickTest3" onclick="clickHandle3()">点击3</a>
+    <a id="clickTest4" onclick="clickHandle4()">上传</a>
+    <input class="file" name="file" type="file" accept="image/png,image/gif,image/jpeg" onclick="update" />
+</div>
+
+<script>
+    function clickHandle() {
+        axios.get('api/ProductServiceController')
+            .then(function (response) {
+                console.log(response.data);
+                console.log(response.status);
+                console.log(response.statusText);
+                console.log(response.headers);
+                console.log(response.config);
+            })
+            .catch(function (error) {
+                console.log(response.data);
+                console.log(response.status);
+                console.log(response.statusText);
+                console.log(response.headers);
+                console.log(response.config);
+            });
+    }
+
+    function clickHandle2() {
+        axios.post('api/SMSController/Send_LX', {
+                PhoneNum: 'Fred',
+                Msg: 'Flintstone',
+                Id: 1,
+                cookie:''
+            })
+            .then(function (response) {
+                console.log(response.data);
+                console.log(response.status);
+                console.log(response.statusText);
+                console.log(response.headers);
+                console.log(response.config);
+            })
+            .catch(function (error) {
+                console.log(response.data);
+                console.log(response.status);
+                console.log(response.statusText);
+                console.log(response.headers);
+                console.log(response.config);
+            });
+    }
+
+    function clickHandle3() {
+        axios.post('api/SMSController/Send_MI', {
+                PhoneNum: 'Fred',
+                Msg: 'Flintstone',
+                Id:1,
+                cookie: ''
+            })
+            .then(function (response) {
+                console.log(response.data);
+                console.log(response.status);
+                console.log(response.statusText);
+                console.log(response.headers);
+                console.log(response.config);
+            })
+            .catch(function (error) {
+                console.log(response.data);
+                console.log(response.status);
+                console.log(response.statusText);
+                console.log(response.headers);
+                console.log(response.config);
+            });
+    }
+
+    function clickHandle4() {
+        axios.post('api/SMSController/UploadController', {
+                PhoneNum: 'Fred',
+                Msg: 'Flintstone',
+                Id: 1,
+                cookie: ''
+            }, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            })
+            .then(function (response) {
+                console.log(response.data);
+                console.log(response.status);
+                console.log(response.statusText);
+                console.log(response.headers);
+                console.log(response.config);
+            })
+            .catch(function (error) {
+                console.log(response.data);
+                console.log(response.status);
+                console.log(response.statusText);
+                console.log(response.headers);
+                console.log(response.config);
+            });
+    }
+</script>
