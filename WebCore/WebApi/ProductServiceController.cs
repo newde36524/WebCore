@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebCore.WebApi
 {
-    [Route("api/ProductServiceController")]
+    [Route("api/ProductService")]
+    [ApiController]
     public class ProductServiceController : Controller
     {
         static List<Product> products = new List<Product>();

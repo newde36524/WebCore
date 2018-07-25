@@ -7,97 +7,94 @@
     <a id="clickTest" onclick="clickHandle()">点击</a>
     <a id="clickTest2" onclick="clickHandle2()">点击2</a>
     <a id="clickTest3" onclick="clickHandle3()">点击3</a>
-    <a id="clickTest4" onclick="clickHandle4()">上传</a>
-    <input class="file" name="file" type="file" accept="image/png,image/gif,image/jpeg" onclick="update" />
+    <a id="clickTest4" onclick="uploadFile()">上传</a>
+    <input id="fileInput" name="file" type="file" multiple="multiple" accept="image/png,image/gif,image/jpeg" onchange="uploadFile()" />
+    <input id="fileInput2" name="file" type="file" multiple="multiple" accept="image/png,image/gif,image/jpeg" onchange="uploadFile2()" />
+    <a id="clickTest5" onclick="downloadFile()">下载</a>
 </div>
 
 <script>
     function clickHandle() {
-        axios.get('api/ProductServiceController')
+        axios.get('api/ProductService')
             .then(function (response) {
-                console.log(response.data);
-                console.log(response.status);
-                console.log(response.statusText);
-                console.log(response.headers);
-                console.log(response.config);
+                console.log(response);
             })
             .catch(function (error) {
-                console.log(response.data);
-                console.log(response.status);
-                console.log(response.statusText);
-                console.log(response.headers);
-                console.log(response.config);
+                console.log(response);
             });
     }
 
     function clickHandle2() {
-        axios.post('api/SMSController/Send_LX', {
-                PhoneNum: 'Fred',
-                Msg: 'Flintstone',
-                Id: 1,
-                cookie:''
-            })
+        axios.post('api/SMS/Send_LX', {
+            PhoneNum: 'Fred',
+            Msg: 'Flintstone',
+            Id: 1,
+            cookie: ''
+        })
             .then(function (response) {
-                console.log(response.data);
-                console.log(response.status);
-                console.log(response.statusText);
-                console.log(response.headers);
-                console.log(response.config);
+                console.log(response);
             })
             .catch(function (error) {
-                console.log(response.data);
-                console.log(response.status);
-                console.log(response.statusText);
-                console.log(response.headers);
-                console.log(response.config);
+                console.log(response);
             });
     }
 
     function clickHandle3() {
-        axios.post('api/SMSController/Send_MI', {
-                PhoneNum: 'Fred',
-                Msg: 'Flintstone',
-                Id:1,
-                cookie: ''
-            })
+        axios.post('api/SMS/Send_MI', {
+            PhoneNum: 'Fred',
+            Msg: 'Flintstone',
+            Id: 1,
+            cookie: ''
+        })
             .then(function (response) {
-                console.log(response.data);
-                console.log(response.status);
-                console.log(response.statusText);
-                console.log(response.headers);
-                console.log(response.config);
+                console.log(response);
             })
             .catch(function (error) {
-                console.log(response.data);
-                console.log(response.status);
-                console.log(response.statusText);
-                console.log(response.headers);
-                console.log(response.config);
+                console.log(response);
             });
     }
 
-    function clickHandle4() {
-        axios.post('api/SMSController/UploadController', {
-                PhoneNum: 'Fred',
-                Msg: 'Flintstone',
-                Id: 1,
-                cookie: ''
-            }, {
-                headers: { 'Content-Type': 'multipart/form-data' }
-            })
+    function uploadFile() {
+        let files = document.getElementById("fileInput").files;
+        let formdata1 = new FormData();// 创建form对象
+        formdata1.append('file001', files[0]);
+        formdata1.append('msg', "hello");
+        formdata1.append('file002', files[1]);
+        axios.post('api/Upload/UploadFile', formdata1, {
+            headers: { 'Content-Type': 'multipart/form-data' }
+        })
             .then(function (response) {
-                console.log(response.data);
-                console.log(response.status);
-                console.log(response.statusText);
-                console.log(response.headers);
-                console.log(response.config);
+                console.log(response);
             })
             .catch(function (error) {
-                console.log(response.data);
-                console.log(response.status);
-                console.log(response.statusText);
-                console.log(response.headers);
-                console.log(response.config);
+                alert(response);
+            });
+    }
+
+    function uploadFile2() {
+        let files = document.getElementById("fileInput2").files;
+        let formdata1 = new FormData();// 创建form对象
+        formdata1.append('file001', files[0]);
+        formdata1.append('msg', "hello");
+        formdata1.append('file002', files[1]);
+        axios.post('api/Upload/UploadFile2', formdata1, {
+            headers: { 'Content-Type': 'multipart/form-data' }
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                alert(response);
+            });
+    }
+
+    function downloadFile() {
+        axios.get('api/Download/DowloadFile')
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(response);
             });
     }
 </script>

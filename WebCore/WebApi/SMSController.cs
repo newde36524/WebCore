@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebCore.WebApi
 {
-    [Route("api/SMSController")]
+    [Route("api/SMS")]
+    [ApiController]
     public class SMSController : Controller
     {
         [HttpPost(nameof(Send_MI))]

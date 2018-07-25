@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebCore.WebApi
 {
-    [Route("api/EmailController")]
+    [Route("api/Email")]
+    [ApiController]
     public class EmailController : Controller
     {
         [HttpPost(nameof(Send_QQ))]
