@@ -23,8 +23,8 @@ namespace WebCore.WebApi
         public SendSMSRequest Send_LX([FromBody]SendSMSRequest model)
         {
             Console.WriteLine($"通过联想短信接口向{model.PhoneNum}发送短信{model.Msg}");
-            this.HttpContext.Response.Cookies.Append("测试coockie","helloworld");
             var cookie = this.HttpContext.Request.Cookies["测试coockie"];
+            this.HttpContext.Response.Cookies.Append("测试coockie","helloworld");
             model.Cookie = cookie;
             return model;
         }

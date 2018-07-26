@@ -17,11 +17,13 @@ namespace WebCore.WebApi
         {
             Console.WriteLine($"通过QQ邮件接口向{model.Email}发送邮件，标题{model.Title}，内容：{model.Body}");
         }
+
         [HttpPost(nameof(Send_163))]
         public void Send_163(SendEmailRequest model)
         {
             Console.WriteLine($"通过网易邮件接口向{model.Email}发送邮件，标题{model.Title}，内容：{model.Body}");
         }
+
         [HttpPost(nameof(Send_Sohu))]
         public void Send_Sohu(SendEmailRequest model)
         {

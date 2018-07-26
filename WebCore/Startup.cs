@@ -50,6 +50,12 @@ namespace WebCore
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                ServeUnknownFileTypes = true
+            });
+
+
 
             app.UseMvc();
         }

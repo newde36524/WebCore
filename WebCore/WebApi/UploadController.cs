@@ -38,6 +38,8 @@ namespace WebCore.WebApi
         {
             return "hehe";
         }
+
+
         //[HttpPost("Upload2")]
         //public void Upload([FromBody]Stream file)
         //{

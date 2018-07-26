@@ -10,7 +10,8 @@
     <a id="clickTest4" onclick="uploadFile()">上传</a>
     <input id="fileInput" name="file" type="file" multiple="multiple" accept="image/png,image/gif,image/jpeg" onchange="uploadFile()" />
     <input id="fileInput2" name="file" type="file" multiple="multiple" accept="image/png,image/gif,image/jpeg" onchange="uploadFile2()" />
-    <a id="clickTest5" onclick="downloadFile()">下载</a>
+    <a id="clickTest5" onclick="GetImg()">获取图片流</a>
+    <a id="clickTest5" onclick="downloadFile()">下载图片</a>
 </div>
 
 <script>
@@ -88,13 +89,17 @@
             });
     }
 
-    function downloadFile() {
-        axios.get('api/Download/DowloadFile')
+    function GetImg() {
+        axios.get('api/Download/GetImg')
             .then(function (response) {
                 console.log(response);
             })
             .catch(function (error) {
                 console.log(response);
             });
+    }
+
+    function downloadFile() {
+        this.location.href = `${this.location.origin}/api/Download/downloadFile`;
     }
 </script>
