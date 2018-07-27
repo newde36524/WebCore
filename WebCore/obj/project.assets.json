@@ -11501,23 +11501,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SG422\\.nuget\\packages\\": {},
+    "C:\\Users\\MR.Z\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SG422\\source\\repos\\WebCore\\WebCore\\WebCore.csproj",
+      "projectUniqueName": "C:\\Users\\MR.Z\\source\\repos\\WebCore\\WebCore\\WebCore.csproj",
       "projectName": "WebCore",
-      "projectPath": "C:\\Users\\SG422\\source\\repos\\WebCore\\WebCore\\WebCore.csproj",
-      "packagesPath": "C:\\Users\\SG422\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SG422\\source\\repos\\WebCore\\WebCore\\obj\\",
+      "projectPath": "C:\\Users\\MR.Z\\source\\repos\\WebCore\\WebCore\\WebCore.csproj",
+      "packagesPath": "C:\\Users\\MR.Z\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MR.Z\\source\\repos\\WebCore\\WebCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\SG422\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MR.Z\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
