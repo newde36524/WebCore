@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WebCore"
+    "\\WebCore",
+    "\\WebCore\\obj"
   ],
   "SelectedNode": "\\WebCore.sln",
   "PreviewInSolutionExplorer": false
