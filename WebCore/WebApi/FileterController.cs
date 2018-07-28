@@ -9,13 +9,12 @@ using WebCore.Fileters;
 
 namespace WebCore.WebApi
 {
-    [AddHeaderResultFilter]
-    [ActionFilter]
-    [MyExceptionFilter]
+    [MyResultFilter]
+    [MyActionFilter]
     [MyFormatFilter]
     [MyAuthorizationFilter]
     //[MyServiceFilter(typeof(FileterController))]//添加后无法访问了？？？
-    [MyTypeFilter(typeof(FileterController))]
+    //[MyTypeFilter(typeof(FileterController))]
     [Route("api/Fileter")]
     [ApiController]
     public class FileterController : Controller
@@ -30,8 +29,15 @@ namespace WebCore.WebApi
         [HttpGet(nameof(GetFileterExcutedMsg))]
         public IActionResult GetFileterExcutedMsg()
         {
-            //throw new Exception("测试异常");
             return Content("经过各种过滤器之后的返回信息，观察http网络请求");
         }
+
+        [MyExceptionFilter]
+        [HttpGet(nameof(TestExceptionFileter))]
+        public IActionResult TestExceptionFileter()
+        {
+            throw new Exception("throw Exception");
+        }
+
     }
 }
