@@ -11,7 +11,7 @@ namespace WebCore.Fileters
     {
         public void OnResourceExecuted(ResourceExecutedContext context)
         {
-            throw new NotImplementedException();
+           
         }
 
         public void OnResourceExecuting(ResourceExecutingContext context)

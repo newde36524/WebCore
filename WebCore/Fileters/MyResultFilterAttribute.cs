@@ -11,7 +11,7 @@ namespace WebCore.Fileters
         {
             base.OnResultExecuted(context);
             Console.WriteLine("返回请求结果后");
-            throw new Exception("测试异常过滤器在Fileter中是否也有效");//因为已经返回，所以请求已经成功，所以这里抛异常无效
+            throw new Exception("测试异常过滤器在Fileter中是否也有效");//因为已经返回，所以请求已经成功，如果不配置ResourceFilter这里抛异常无效,否则请求返回500
         }
 
         public override void OnResultExecuting(ResultExecutingContext context)

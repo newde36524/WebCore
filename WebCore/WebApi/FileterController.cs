@@ -19,6 +19,7 @@ namespace WebCore.WebApi
     [ApiController]
     public class FileterController : Controller
     {
+        //[MyResourceFilter]
         [ShortCircuitingResourceFilter]
         [HttpGet(nameof(ShortCircuitingResource))]
         public string ShortCircuitingResource()
