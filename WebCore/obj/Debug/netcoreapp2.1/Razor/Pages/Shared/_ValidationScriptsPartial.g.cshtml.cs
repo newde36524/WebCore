@@ -60,12 +60,12 @@ using WebCore;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             BeginContext(0, 221, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50d5ae9854c74429a6fd67565fc76542", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "636e9d11475d4f2186713c1270eb76d1", async() => {
                 BeginContext(35, 5, true);
                 WriteLiteral("\n    ");
                 EndContext();
                 BeginContext(40, 71, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f3f4f8e96c5f4b14bc5cfc0c7b700973", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c3f967afdbbe44eaa92647878936315b", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -83,7 +83,7 @@ using WebCore;
                 WriteLiteral("\n    ");
                 EndContext();
                 BeginContext(116, 90, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d646cfaec52b4c4fab19bb736a2149a9", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ecb5e2e65848422da27b0814fcde1584", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -118,12 +118,12 @@ using WebCore;
             WriteLiteral("\n");
             EndContext();
             BeginContext(222, 931, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ac689e95f334ebe91f37dd494b27851", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "77d878b058b24cdbb3c7290453f33b55", async() => {
                 BeginContext(257, 5, true);
                 WriteLiteral("\n    ");
                 EndContext();
                 BeginContext(262, 394, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "25bc0bd07af9492fa188338e2ec3a26a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "85d1aa6080a94c3d9aa0a9c419e42133", async() => {
                     BeginContext(642, 5, true);
                     WriteLiteral("\n    ");
                     EndContext();
@@ -151,7 +151,7 @@ using WebCore;
                 WriteLiteral("\n    ");
                 EndContext();
                 BeginContext(661, 477, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b83c8b5d97164083854dbd637645f3d3", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "af1241007a944c0cb369f17e380276d9", async() => {
                     BeginContext(1124, 5, true);
                     WriteLiteral("\n    ");
                     EndContext();

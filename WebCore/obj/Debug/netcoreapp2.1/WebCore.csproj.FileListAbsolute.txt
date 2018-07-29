@@ -130,3 +130,4 @@ C:\Users\MR.Z\Downloads\WebCore-0a85e6a53fd139343eb03902263103c5cee27ac5\WebCore
 C:\Users\MR.Z\Downloads\WebCore-0a85e6a53fd139343eb03902263103c5cee27ac5\WebCore-0a85e6a53fd139343eb03902263103c5cee27ac5\WebCore\bin\Debug\netcoreapp2.1\WebCore.Views.dll
 C:\Users\MR.Z\Downloads\WebCore-0a85e6a53fd139343eb03902263103c5cee27ac5\WebCore-0a85e6a53fd139343eb03902263103c5cee27ac5\WebCore\bin\Debug\netcoreapp2.1\WebCore.Views.pdb
 C:\Users\MR.Z\Downloads\WebCore-0a85e6a53fd139343eb03902263103c5cee27ac5\WebCore-0a85e6a53fd139343eb03902263103c5cee27ac5\WebCore\obj\Debug\netcoreapp2.1\WebCore.csproj.CopyComplete
+C:\Users\MR.Z\source\repos\WebCore\WebCore\obj\Debug\netcoreapp2.1\WebCore.csprojAssemblyReference.cache
