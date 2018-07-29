@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebCore.Fileters;
@@ -57,10 +58,11 @@ namespace WebCore
             app.UseCookiePolicy();
             app.UseStaticFiles(new StaticFileOptions()
             {
-                ServeUnknownFileTypes = true
+                ServeUnknownFileTypes = true,
+                ContentTypeProvider = new FileExtensionContentTypeProvider(new Dictionary<string, string>() {
+                    {".zip","application/zip" }
+                })
             });
-
-
 
             app.UseMvc();
         }

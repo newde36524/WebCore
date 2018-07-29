@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticFiles;
+using WebCore.Fileters;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -63,14 +64,14 @@ namespace WebCore.WebApi
         public IActionResult DownLoadFile()
         {
             var path = Path.Combine($"{_hostingEnvironment.ContentRootPath}", "StaticSource", "Images", "a.jpg");
-            var file = System.IO.File.ReadAllBytes(path);
-            return File(file, "application/octet-stream", "a.jpg");
+            return File(System.IO.File.OpenRead(path), "application/octet-stream", "a.jpg");
         }
 
         /// <summary>
         /// 获取IHostingEnvironment的注入实现类并返回
         /// </summary>
         /// <returns></returns>
+        [MyActionFilter]
         [HttpGet(nameof(GetHost))]
         public IHostingEnvironment GetHost()
         {

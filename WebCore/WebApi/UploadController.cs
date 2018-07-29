@@ -32,13 +32,11 @@ namespace WebCore.WebApi
             return $"文件1长度：{file1.Length}  文件2长度:{file2.Length}  msg:{msg}";
         }
 
-
         [HttpGet(nameof(Hehe))]
         public string Hehe()
         {
             return "hehe";
         }
-
 
         //[HttpPost("Upload2")]
         //public void Upload([FromBody]Stream file)
