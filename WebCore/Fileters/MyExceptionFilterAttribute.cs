@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Mvc.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace WebCore.Fileters
 {
@@ -12,12 +13,8 @@ namespace WebCore.Fileters
     {
         public override void OnException(ExceptionContext context)
         {
+            //context.HttpContext.Response.Headers.Add("error", context.Exception.Message);
             base.OnException(context);
-            context.ExceptionHandled = true;//表示异常已被处理
-            //context.Exception = null;//设置为null可以继续执行ResultFilter
-            context.HttpContext.Response.Headers.Add("error", context.Exception.Message);//请求头参数不支持中文
-            context.Result = new ContentResult { Content = "异常已处理" };
-            //ViewResult
         }
     }
 }

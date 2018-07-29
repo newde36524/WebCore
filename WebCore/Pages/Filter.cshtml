@@ -3,23 +3,22 @@
 @{
 }
 
-<input type="button" value="测试过滤器" onclick="TestFileter()" />
-<input type="button" value="测试资源拦截过滤器" onclick="TestShortCircuiting()" />
-<input type="button" value="测试异常过滤器" onclick="TestExceptionFileter()" />
+<input type="button" value="测试控制器" onclick="TestFileter()" />
+<input type="button" value="测试拦截控制器" onclick="TestShortCircuiting()"/>
 
 
 <script>
-    function TestFileter() {
+    function TestFileter() { 
         axios.get("api/Fileter/GetFileterExcutedMsg")
             .then(function (response) {
                 console.log(response);
-            })
+             })
             .catch(function (response) {
                 console.log(response);
-            });
+             });
     }
 
-    function TestShortCircuiting() {
+    function TestShortCircuiting() { 
         axios.get("api/Fileter/ShortCircuitingResource")
             .then(function (response) {
                 console.log(response);
@@ -29,16 +28,6 @@
             });
     }
 
-    function TestExceptionFileter() {
-        axios.get("api/Fileter/TestExceptionFileter")
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (response) {
-                console.log(response);
-            });
-    }
-   
 </script>
 
 

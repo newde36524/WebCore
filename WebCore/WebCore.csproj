@@ -9,10 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Startup.cs~RF11478fa.TMP" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Elasticsearch.Net" Version="6.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
