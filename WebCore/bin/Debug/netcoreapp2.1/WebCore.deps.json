@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "dc4ed72e46f0b543c183b9461e72cc781a42d303"
+    "signature": "c9b6824bcceadfc16706eda5a2cb167190b3d650"
   },
   "compilationOptions": {
     "defines": [
@@ -24,7 +24,7 @@
     ".NETCoreApp,Version=v2.1": {
       "WebCore/1.0.0": {
         "dependencies": {
-          "Elasticsearch.Net": "6.2.0",
+          "Microsoft.AspNet.Mvc": "5.2.6",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0",
           "Newtonsoft.Json": "11.0.2"
@@ -36,24 +36,60 @@
           "WebCore.dll": {}
         }
       },
-      "Elasticsearch.Net/6.2.0": {
+      "Microsoft.AspNet.Mvc/5.2.6": {
         "dependencies": {
-          "Microsoft.CSharp": "4.5.0",
-          "NETStandard.Library": "2.0.3",
-          "System.Collections.Specialized": "4.3.0",
-          "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Dynamic.Runtime": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Runtime.Serialization.Primitives": "4.3.0"
+          "Microsoft.AspNet.Razor": "3.2.6",
+          "Microsoft.AspNet.WebPages": "3.2.6"
         },
         "runtime": {
-          "lib/netstandard1.3/Elasticsearch.Net.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.2.0.0"
+          "lib/net45/System.Web.Mvc.dll": {
+            "assemblyVersion": "5.2.6.0",
+            "fileVersion": "5.2.60510.0"
           }
         },
         "compile": {
-          "lib/netstandard1.3/Elasticsearch.Net.dll": {}
+          "lib/net45/System.Web.Mvc.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Razor/3.2.6": {
+        "runtime": {
+          "lib/net45/System.Web.Razor.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.60510.0"
+          }
+        },
+        "compile": {
+          "lib/net45/System.Web.Razor.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebPages/3.2.6": {
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "3.2.6",
+          "Microsoft.Web.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Helpers.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.60510.0"
+          },
+          "lib/net45/System.Web.WebPages.Deployment.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.60510.0"
+          },
+          "lib/net45/System.Web.WebPages.Razor.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.60510.0"
+          },
+          "lib/net45/System.Web.WebPages.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.60510.0"
+          }
+        },
+        "compile": {
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
         }
       },
       "Microsoft.NETCore.App/2.1.0": {
@@ -222,40 +258,20 @@
       },
       "Microsoft.NETCore.Platforms/2.1.0": {},
       "Microsoft.NETCore.Targets/2.1.0": {},
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.20105.407"
+          }
+        },
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.0"
-        }
-      },
-      "System.ComponentModel/4.3.0": {
-        "dependencies": {
-          "System.Runtime": "4.3.0"
-        }
-      },
-      "System.ComponentModel.Primitives/4.3.0": {
-        "dependencies": {
-          "System.ComponentModel": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0"
-        }
-      },
-      "System.ComponentModel.TypeConverter/4.3.0": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Collections.NonGeneric": "4.3.0",
-          "System.Collections.Specialized": "4.3.0",
-          "System.ComponentModel": "4.3.0",
-          "System.ComponentModel.Primitives": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Reflection.Primitives": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Threading": "4.3.0"
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3209,12 +3225,26 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Elasticsearch.Net/6.2.0": {
+    "Microsoft.AspNet.Mvc/5.2.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-k1/8hLGpFo+AE5TLhIK8VNX7Y7piBkX8QeaAUjbedyaCifFlMI9cn0LvOqwQrgEvyG1xyLUdHujXkTOv8OIsxw==",
-      "path": "elasticsearch.net/6.2.0",
-      "hashPath": "elasticsearch.net.6.2.0.nupkg.sha512"
+      "sha512": "sha512-kBiyGUUBLE8JyQDTdmsBW0MyKg3VbB6FCrhu2pZiT9uOdS7uqADryIApWnUWmzDj4+4Q3/c/sgBM+Y+kDUFTyg==",
+      "path": "microsoft.aspnet.mvc/5.2.6",
+      "hashPath": "microsoft.aspnet.mvc.5.2.6.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Razor/3.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AmdtrCaQtafgIzjaJjWjntWCE28c9CZnwSOFBC7zqt9OWJ9+uaxDQYSF1CHlyQOgTCzU7U9kux45cEoXXrwGDw==",
+      "path": "microsoft.aspnet.razor/3.2.6",
+      "hashPath": "microsoft.aspnet.razor.3.2.6.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebPages/3.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Cr2MOsKLhxR0aM5LlrTKYPxbDZk8IIdEyxm7qcs8v1hn7VFgk9igvCM4R/sYqy6MN+9v3ry77D7aCsp542t1Dw==",
+      "path": "microsoft.aspnet.webpages/3.2.6",
+      "hashPath": "microsoft.aspnet.webpages.3.2.6.nupkg.sha512"
     },
     "Microsoft.NETCore.App/2.1.0": {
       "type": "package",
@@ -3258,33 +3288,19 @@
       "path": "microsoft.netcore.targets/2.1.0",
       "hashPath": "microsoft.netcore.targets.2.1.0.nupkg.sha512"
     },
+    "Microsoft.Web.Infrastructure/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FNmvLn5m2LTU/Rs2KWVo0SIIh9Ek+U0ojex7xeDaSHw/zgEP77A8vY5cVWgUtBGS8MJfDGNn8rpXJWEIQaPwTg==",
+      "path": "microsoft.web.infrastructure/1.0.0",
+      "hashPath": "microsoft.web.infrastructure.1.0.0.nupkg.sha512"
+    },
     "NETStandard.Library/2.0.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
-    },
-    "System.ComponentModel/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-TUYanO5lacBirm7veHVLRdqJi3nG+WiB/7SqjoMDLENshICwR6HQdhSSgA2wr0cpIZWtAPkj1aaIPqnAPXKTnA==",
-      "path": "system.componentmodel/4.3.0",
-      "hashPath": "system.componentmodel.4.3.0.nupkg.sha512"
-    },
-    "System.ComponentModel.Primitives/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-j8GUkCpM8V4d4vhLIIoBLGey2Z5bCkMVNjEZseyAlm4n5arcsJOeI3zkUP+zvZgzsbLTYh4lYeP/ZD/gdIAPrw==",
-      "path": "system.componentmodel.primitives/4.3.0",
-      "hashPath": "system.componentmodel.primitives.4.3.0.nupkg.sha512"
-    },
-    "System.ComponentModel.TypeConverter/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-16pQ6P+EdhcXzPiEK4kbA953Fu0MNG2ovxTZU81/qsCd1zPRsKc3uif5NgvllCY598k6bI0KUyKW8fanlfaDQg==",
-      "path": "system.componentmodel.typeconverter/4.3.0",
-      "hashPath": "system.componentmodel.typeconverter.4.3.0.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",

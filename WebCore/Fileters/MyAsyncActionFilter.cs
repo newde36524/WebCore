@@ -9,7 +9,7 @@ namespace WebCore.Fileters
     /// <summary>
     /// 当一个过滤器同时实现IAsyncActionFilter和IActionFilter接口时，优先执行IAsyncActionFilter
     /// </summary>
-    public class AsyncActionFilter : IAsyncActionFilter
+    public class MyAsyncActionFilter : IAsyncActionFilter
     {
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {

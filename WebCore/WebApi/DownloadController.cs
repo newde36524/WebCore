@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticFiles;
+using WebCore.Fileters;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -47,10 +48,9 @@ namespace WebCore.WebApi
                 {
                     { ".apk","application/vnd.android.package-archive"}
                 });//自动检测文件contenttype,也可以自定义添加文件映射类型
-            var file = System.IO.File.ReadAllBytes(path);
             if (fileExtensionContentTypeProvider.TryGetContentType(path, out string contentype))
             {
-                return this.File(file, contentype);
+                return this.File(System.IO.File.OpenRead(path), contentype);
             }
             return NotFound();
         }
@@ -63,14 +63,14 @@ namespace WebCore.WebApi
         public IActionResult DownLoadFile()
         {
             var path = Path.Combine($"{_hostingEnvironment.ContentRootPath}", "StaticSource", "Images", "a.jpg");
-            var file = System.IO.File.ReadAllBytes(path);
-            return File(file, "application/octet-stream", "a.jpg");
+            return File(System.IO.File.OpenRead(path), "application/octet-stream", "a.jpg");
         }
 
         /// <summary>
         /// 获取IHostingEnvironment的注入实现类并返回
         /// </summary>
         /// <returns></returns>
+        [MyActionFilter]
         [HttpGet(nameof(GetHost))]
         public IHostingEnvironment GetHost()
         {
