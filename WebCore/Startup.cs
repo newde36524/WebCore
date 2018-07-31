@@ -9,7 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using WebCore.Fileters;
+using WebCore.Middleware;
 
 namespace WebCore
 {
@@ -32,9 +34,14 @@ namespace WebCore
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddOptions();
+
+            var config = Configuration.GetSection("RootobjectSection").Get<Rootobject>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddMvc(options =>
             {
+                var o = options;
                 //options.Filters.Add(typeof(ActionFilterAttribute)); // 全局注册过滤器
             });
         }
@@ -52,17 +59,22 @@ namespace WebCore
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            app.UseCookiePolicy();
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                ServeUnknownFileTypes = true
-            });
-
-
-
-            app.UseMvc();
+            app.UseHttpsRedirection()
+                .UseStaticFiles()
+                .UseCookiePolicy()
+                .UseStaticFiles(new StaticFileOptions()
+                {
+                    ServeUnknownFileTypes = true
+                })
+                .UseMiddleware<SampleMiddleware>()//使用自定义中间件，框架内部提供多个默认中间件，也是通过这种方式添加的，也可以通过定义IApplicationBuilder的扩展方法简化注册
+                .UseMvc();
         }
     }
+
+    public class Rootobject
+    {
+        public string Param1 { get; set; }
+        public string Param2 { get; set; }
+    }
+
 }
