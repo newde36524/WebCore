@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Sockets;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,8 +37,7 @@ namespace WebCore.WebApi
         public IActionResult GetImg()
         {
             var path = Path.Combine($"{_hostingEnvironment.ContentRootPath}", "StaticSource", "Images", "a.jpg");
-            var file = System.IO.File.ReadAllBytes(path);
-            return new FileContentResult(file, "image/jpg");
+            return File(System.IO.File.OpenRead(path), "image/jpg");
         }
 
         [HttpGet(nameof(GetImg2))]
@@ -72,9 +72,20 @@ namespace WebCore.WebApi
         /// <returns></returns>
         [MyActionFilter]
         [HttpGet(nameof(GetHost))]
-        public IHostingEnvironment GetHost()
+        public IActionResult GetHost()
         {
-            return _hostingEnvironment;
+            Span<byte> span = new byte[100];
+            Span<int> span2 = new List<int>().ToArray();
+
+            RandomNumberGenerator.Fill(span);
+
+            using (HttpClient httpClient = new HttpClient(new SocketsHttpHandler()))
+            {
+
+            }
+
+
+            return this.Json(_hostingEnvironment);
         }
     }
 }

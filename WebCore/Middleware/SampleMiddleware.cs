@@ -20,7 +20,7 @@ namespace WebCore.Middleware
             context.Response.Headers.Add("SampleMiddlewareBefore", "SampleMiddlewareBefore");
             await base.Invoke(context);
             //after
-            //context.Response.Headers.Add("SampleMiddlewareAfter", "SampleMiddlewareAfter");
+            context.Response.Headers.Add("SampleMiddlewareAfter", "SampleMiddlewareAfter");
         }
     }
 }
