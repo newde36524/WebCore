@@ -68,9 +68,10 @@ namespace WebCore
             app.UseRouter(routeBuilder =>
             {
                 //routeBuilder.MapRoute(name: "default1", template: "test");
-                routeBuilder.MapGet("", context => { return Task.CompletedTask; });//MapGet MapPost MapPut MapDelete  和特性配置是一样的
+                //routeBuilder.MapGet("", context => Task.CompletedTask);//注意不要这样配置，会造成网站访问不符合预期，无法显示网页
+                //MapGet MapPost MapPut MapDelete  和特性配置是一样的  可以在这里做路由定制化
             })
-            
+
              .UseStatusCodePages()//配置状态码页面
              .UseHttpsRedirection()//http=>https 的重定向
              .UseDefaultFiles(new DefaultFilesOptions()
@@ -82,39 +83,40 @@ namespace WebCore
              //*********************************************
              .UseStaticFiles()//默认允许访问wwwroot文件夹
              .UseStaticFiles(new StaticFileOptions()//
-                {
-                    ServeUnknownFileTypes = true,//有安全风险  默认关闭 false
-                    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticSource", "Images")), //指定静态文件的目录位置
-                    RequestPath = new PathString("/StaticFiles"),//配置静态文件的访问路由 例：https://localhost:44320/staticfiles/a.jpg
-                    ContentTypeProvider = new FileExtensionContentTypeProvider(new Dictionary<string, string>()
+             {
+                 ServeUnknownFileTypes = true,//有安全风险  默认关闭 false
+                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticSource", "Images")), //指定静态文件的目录位置
+                 RequestPath = new PathString("/StaticFiles"),//配置静态文件的访问路由 例：https://localhost:44320/staticfiles/a.jpg
+                 ContentTypeProvider = new FileExtensionContentTypeProvider(new Dictionary<string, string>()
                     {
                         { ".xxx","application/xxx"}//配置扩展名映射
                     })
-                })
+             })
 
              .UseDirectoryBrowser(new DirectoryBrowserOptions()//只有目录访问功能，不能访问文件
-                {//默认禁用，开启目录访问功能
-                    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory())),//指定访问目录
-                    RequestPath = new PathString("/app")//指定访问路由 例：https://localhost:44320/app/
-                })
+             {//默认禁用，开启目录访问功能
+                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory())),//指定访问目录
+                 RequestPath = new PathString("/app")//指定访问路由 例：https://localhost:44320/app/
+             })
 
              .UseDirectoryBrowser(new DirectoryBrowserOptions()//只有目录访问功能，不能访问文件
-                 {//默认禁用，开启目录访问功能
-                     FileProvider = new PhysicalFileProvider(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)),//指定访问目录
-                     RequestPath = new PathString("/Desktop")//指定访问路由 例：https://localhost:44320/Desktop/
-                 })
+             {//默认禁用，开启目录访问功能
+                 FileProvider = new PhysicalFileProvider(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)),//指定访问目录
+                 RequestPath = new PathString("/Desktop")//指定访问路由 例：https://localhost:44320/Desktop/
+             })
 
              .UseFileServer()//启用静态文件和默认文件，但不允许直接访问目录
              .UseFileServer(new FileServerOptions()//有目录访问功能，也能访问文件
-                {
-                    EnableDirectoryBrowsing = true,//启用静态文件、默认文件和目录浏览功能
-                    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticSource", "Images")),
-                    RequestPath = new PathString("/downStaticFiles")//配置静态文件的访问路由 例：https://localhost:44320/staticfiles/a.jpg
-                })
+             {
+                 EnableDirectoryBrowsing = true,//启用静态文件、默认文件和目录浏览功能
+                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticSource", "Images")),
+                 RequestPath = new PathString("/downStaticFiles")//配置静态文件的访问路由 例：https://localhost:44320/staticfiles/a.jpg
+             })
 
              //*********************************************
 
              .UseMiddleware<SampleMiddleware>()//使用自定义中间件，框架内部提供多个默认中间件，也是通过这种方式添加的，也可以通过定义IApplicationBuilder的扩展方法美化注册
+             .UseMiddleware<WebSocketMiddleware>()//使用 WebSocket 中间件
              .UseMvc();
 
             app.Run(async context =>

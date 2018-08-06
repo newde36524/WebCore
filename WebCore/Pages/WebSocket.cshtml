@@ -1,0 +1,73 @@
+﻿@page
+@model WebSocketModel
+@{
+}
+
+
+
+<div id="msgContainer"></div>
+<a id="submit" onclick="SendMsg()">发送信息</a>
+
+<script>
+    alert(1);
+    var container = document.getElementById("msgContainer");//获取信息接收容器
+
+
+    var ws = new WebSocket(`ws://${window.location.host}`);
+    ws.onopen = () => {
+        console.log('open');
+    };
+
+    ws.onmessage = (event) => {
+        console.log('new message: ' + event.data);
+        container.innerHTML += `${event.data}\r\n`;
+    };
+
+    ws.onerror = () => {
+        console.log('error occurred!');
+    };
+
+    ws.onclose = (event) => {
+        console.log('close code=' + event.code);
+    };
+
+    function SendMsg() {
+        ws.send("测试信息");
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

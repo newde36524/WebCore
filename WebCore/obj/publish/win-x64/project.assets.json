@@ -16146,11 +16146,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SG422\\source\\repos\\WebCore\\WebCore\\WebCore.csproj",
+      "projectUniqueName": "C:\\Users\\SG422\\source\\repos\\WebCore3\\WebCore\\WebCore.csproj",
       "projectName": "WebCore",
-      "projectPath": "C:\\Users\\SG422\\source\\repos\\WebCore\\WebCore\\WebCore.csproj",
+      "projectPath": "C:\\Users\\SG422\\source\\repos\\WebCore3\\WebCore\\WebCore.csproj",
       "packagesPath": "C:\\Users\\SG422\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SG422\\source\\repos\\WebCore\\WebCore\\obj\\publish\\win-x64\\",
+      "outputPath": "C:\\Users\\SG422\\source\\repos\\WebCore3\\WebCore\\obj\\publish\\win-x64\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
