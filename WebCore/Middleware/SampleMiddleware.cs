@@ -17,7 +17,7 @@ namespace WebCore.Middleware
         {
             //befor
             LoggerFactory.AddConsole();
-            context.Response.Headers.Add("SampleMiddlewareBefore", "SampleMiddlewareBefore");
+            //context.Response.Headers.Add("SampleMiddlewareBefore", "SampleMiddlewareBefore");
             await base.Invoke(context);
             //after
             //context.Response.Headers.Add("SampleMiddlewareAfter", "SampleMiddlewareAfter");

@@ -92,7 +92,16 @@ namespace WebCore
                         { ".xxx","application/xxx"}//配置扩展名映射
                     })
              })
-
+             .UseStaticFiles(new StaticFileOptions()//
+             {
+                 ServeUnknownFileTypes = false,//有安全风险  默认关闭 false
+                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticSource", "Css")), //指定静态文件的目录位置
+                 RequestPath = new PathString("/Style"),//配置静态文件的访问路由 例：https://localhost:44320/Style/styleSheet.css
+                 ContentTypeProvider = new FileExtensionContentTypeProvider(new Dictionary<string, string>()
+                    {
+                        { ".css","text/css"}//配置扩展名映射
+                    })
+             })
              .UseDirectoryBrowser(new DirectoryBrowserOptions()//只有目录访问功能，不能访问文件
              {//默认禁用，开启目录访问功能
                  FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory())),//指定访问目录
@@ -115,9 +124,16 @@ namespace WebCore
 
              //*********************************************
 
-             .UseMiddleware<SampleMiddleware>()//使用自定义中间件，框架内部提供多个默认中间件，也是通过这种方式添加的，也可以通过定义IApplicationBuilder的扩展方法美化注册
              .UseMiddleware<WebSocketMiddleware>()//使用 WebSocket 中间件
+             .UseMiddleware<SampleMiddleware>()//使用自定义中间件，框架内部提供多个默认中间件，也是通过这种方式添加的，也可以通过定义IApplicationBuilder的扩展方法美化注册
              .UseMvc();
+
+            app.MapWhen(httpcontext => httpcontext.Request.Path != "/ws", application =>
+            {//只有程序启动时才会执行
+                
+            });
+
+
 
             app.Run(async context =>
             {

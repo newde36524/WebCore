@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Net.WebSockets;
 using System.Text;
 using System.Threading;
@@ -21,12 +22,13 @@ namespace WebCore.Middleware
             if (!context.WebSockets.IsWebSocketRequest)
             {
                 await base.Invoke(context);
-                return;
             }
-
-            var cancellationToken = context.RequestAborted;
-            var clientSocket = await context.WebSockets.AcceptWebSocketAsync();
-            await SocketHandle(clientSocket, cancellationToken);
+            else
+            {
+                var cancellationToken = context.RequestAborted;
+                var clientSocket = await context.WebSockets.AcceptWebSocketAsync();
+                await SocketHandle(clientSocket, cancellationToken);
+            }
         }
         /// <summary>
         /// websocket连接处理程序

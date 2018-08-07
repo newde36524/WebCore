@@ -4,9 +4,10 @@
 }
 
 <div>
-    <a id="clickTest" onclick="clickHandle()">点击</a>
-    <a id="clickTest2" onclick="clickHandle2()">点击2</a>
-    <a id="clickTest3" onclick="clickHandle3()">点击3</a>
+    <a id="clickTest" onclick="getList()">获取列表</a>
+    <a id="clickTest2" onclick="postObject()">提交对象</a>
+    <a id="clickTest3" onclick="postObject2()">提交对象2</a>
+    <a id="clickTest3" onclick="clickHandle4()">获取服务器表单数据</a>
     <a id="clickTest4" onclick="uploadFile()">上传</a>
     <input id="fileInput" name="file" type="file" multiple="multiple" accept="image/png,image/gif,image/jpeg" onchange="uploadFile()" />
     <input id="fileInput2" name="file" type="file" multiple="multiple" accept="image/png,image/gif,image/jpeg" onchange="uploadFile2()" />
@@ -17,8 +18,8 @@
 </div>
 
 <script>
-    function clickHandle() {
-        axios.get('api/ProductService')
+    function getList() {
+        axios.get('api/GetMsg/GetProductList')
             .then(function (response) {
                 console.log(response);
             })
@@ -27,8 +28,8 @@
             });
     }
 
-    function clickHandle2() {
-        axios.post('api/SMS/Send_LX', {
+    function postObject() {
+        axios.post('api/GetMsg/Send_LX', {
             PhoneNum: 'Fred',
             Msg: 'Flintstone',
             Id: 1,
@@ -42,13 +43,23 @@
             });
     }
 
-    function clickHandle3() {
-        axios.post('api/SMS/Send_MI', {
+    function postObject2() {
+        axios.post('api/GetMsg/Send_MI', {
             PhoneNum: 'Fred',
             Msg: 'Flintstone',
             Id: 1,
             cookie: ''
         })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(response);
+            });
+    }
+
+    function clickHandle4() {
+        axios.get('api/GetMsg/GetFormData')
             .then(function (response) {
                 console.log(response);
             })
