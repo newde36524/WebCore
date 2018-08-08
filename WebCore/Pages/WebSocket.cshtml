@@ -11,10 +11,21 @@
     var container = document.getElementById("msgContainer");//获取信息接收容器
     var ws;
     function OpenConncetion() {
-        ws = new WebSocket(`wss://${window.location.host}/ws`);
+        function checkProtocol(protocol) { 
+            switch (protocol) {
+                case "https:":
+                    return "wss";
+                case "http:":
+                    return "ws";
+                default:
+                    throw "protocol is undefined !!";
+            }
+        }
+  
+        ws = new WebSocket(`${checkProtocol(window.location.protocol)}://${window.location.host}`);
 
         ws.onopen = () => {
-            console.log('open');
+            console.log('webSocket is open');
         };
 
         ws.onmessage = (event) => {
@@ -31,7 +42,7 @@
         };
     }
     function SendMsg() {
-        ws.send("测试信息");
+        ws.send(`test  msg   ${(new Date()).toJSON()}`);
     }
 
 </script>

@@ -164,3 +164,4 @@ C:\Users\SG422\source\repos\WebCore3\WebCore\obj\Debug\netcoreapp2.1\WebCore.Vie
 C:\Users\SG422\source\repos\WebCore3\WebCore\obj\Debug\netcoreapp2.1\WebCore.dll
 C:\Users\SG422\source\repos\WebCore3\WebCore\obj\Debug\netcoreapp2.1\WebCore.pdb
 C:\Users\SG422\source\repos\WebCore3\WebCore\obj\Debug\netcoreapp2.1\WebCore.csproj.CopyComplete
+C:\Users\SG422\source\repos\WebCore3\WebCore\obj\Debug\netcoreapp2.1\WebCore.csprojAssemblyReference.cache

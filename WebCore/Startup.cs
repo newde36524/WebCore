@@ -123,7 +123,7 @@ namespace WebCore
              })
 
              //*********************************************
-
+             .UseWebSockets()
              .UseMiddleware<WebSocketMiddleware>()//使用 WebSocket 中间件
              .UseMiddleware<SampleMiddleware>()//使用自定义中间件，框架内部提供多个默认中间件，也是通过这种方式添加的，也可以通过定义IApplicationBuilder的扩展方法美化注册
              .UseMvc();
