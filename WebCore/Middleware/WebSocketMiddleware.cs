@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using WebCore.Extension;
+using WebCore.Internal;
 
 namespace WebCore.Middleware
 {
@@ -38,50 +40,14 @@ namespace WebCore.Middleware
         /// <returns></returns>
         private async Task SocketHandle(WebSocket webSocket, CancellationToken cancellationToken)
         {
+            ChatRoom.GetInstance().Add(Guid.NewGuid().ToString(),webSocket);//加入聊天室
             while (!cancellationToken.IsCancellationRequested)
             {
-                var recMsg = await ReceiveStringAsync(webSocket, cancellationToken);//获取接收文本
-                await SendStringAsync(webSocket, recMsg, cancellationToken);//回复接收文本
+                var recMsg = await webSocket.ReceiveStringAsync(cancellationToken);//获取接收文本
+                //await webSocket.SendStringAsync(recMsg, cancellationToken);//回复接收文本
+                ChatRoom.GetInstance().RaiseMsg(recMsg);//给每个连接发送信息
             }
         }
-        /// <summary>
-        /// 信息发送方法
-        /// </summary>
-        /// <param name="socket"></param>
-        /// <param name="msg"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        private async Task SendStringAsync(WebSocket socket, string msg, CancellationToken cancellationToken)
-        {
-            var buffer = Encoding.UTF8.GetBytes(msg);
-            var segment = new ArraySegment<byte>(buffer);
-            await socket.SendAsync(segment, WebSocketMessageType.Text, true, cancellationToken);
-        }
-        /// <summary>
-        /// 信息接收方法
-        /// </summary>
-        /// <param name="socket"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        private async Task<string> ReceiveStringAsync(WebSocket socket, CancellationToken cancellationToken)
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                var buffer = new ArraySegment<byte>(new byte[8192]);
-                WebSocketReceiveResult result;
-                do
-                {
-                    cancellationToken.ThrowIfCancellationRequested();
-                    result = await socket.ReceiveAsync(buffer, cancellationToken);
-                    await ms.WriteAsync(buffer.Array, buffer.Offset, result.Count);
-                }
-                while (!result.EndOfMessage);
-                if (result.MessageType != WebSocketMessageType.Text)
-                {
-                    return string.Empty;
-                }
-                return Encoding.UTF8.GetString(ms.ToArray());
-            }
-        }
+        
     }
 }
