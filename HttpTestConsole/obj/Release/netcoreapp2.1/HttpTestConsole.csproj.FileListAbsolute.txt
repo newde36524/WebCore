@@ -1,0 +1,13 @@
+C:\Users\MR.Z\source\repos\WebCore2\HttpTestConsole\obj\Release\netcoreapp2.1\HttpTestConsole.csproj.CoreCompileInputs.cache
+C:\Users\MR.Z\source\repos\WebCore2\HttpTestConsole\obj\Release\netcoreapp2.1\HttpTestConsole.AssemblyInfoInputs.cache
+C:\Users\MR.Z\source\repos\WebCore2\HttpTestConsole\obj\Release\netcoreapp2.1\HttpTestConsole.AssemblyInfo.cs
+C:\Users\MR.Z\source\repos\WebCore2\HttpTestConsole\bin\Release\netcoreapp2.1\HttpTestConsole.deps.json
+C:\Users\MR.Z\source\repos\WebCore2\HttpTestConsole\bin\Release\netcoreapp2.1\HttpTestConsole.runtimeconfig.json
+C:\Users\MR.Z\source\repos\WebCore2\HttpTestConsole\bin\Release\netcoreapp2.1\HttpTestConsole.runtimeconfig.dev.json
+C:\Users\MR.Z\source\repos\WebCore2\HttpTestConsole\bin\Release\netcoreapp2.1\HttpTestConsole.dll
+C:\Users\MR.Z\source\repos\WebCore2\HttpTestConsole\bin\Release\netcoreapp2.1\a.jpg
+C:\Users\MR.Z\source\repos\WebCore2\HttpTestConsole\bin\Release\netcoreapp2.1\b.jpg
+C:\Users\MR.Z\source\repos\WebCore2\HttpTestConsole\bin\Release\netcoreapp2.1\HttpTestConsole.pdb
+C:\Users\MR.Z\source\repos\WebCore2\HttpTestConsole\obj\Release\netcoreapp2.1\HttpTestConsole.csprojAssemblyReference.cache
+C:\Users\MR.Z\source\repos\WebCore2\HttpTestConsole\obj\Release\netcoreapp2.1\HttpTestConsole.dll
+C:\Users\MR.Z\source\repos\WebCore2\HttpTestConsole\obj\Release\netcoreapp2.1\HttpTestConsole.pdb

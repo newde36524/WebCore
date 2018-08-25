@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebCore", "WebCore\WebCore.csproj", "{50CE8476-D520-48D6-A82D-E94E8629C373}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpTestConsole", "HttpTestConsole\HttpTestConsole.csproj", "{9F5CD679-FADF-4651-B7AE-65CEE51782D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{50CE8476-D520-48D6-A82D-E94E8629C373}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50CE8476-D520-48D6-A82D-E94E8629C373}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50CE8476-D520-48D6-A82D-E94E8629C373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F5CD679-FADF-4651-B7AE-65CEE51782D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F5CD679-FADF-4651-B7AE-65CEE51782D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F5CD679-FADF-4651-B7AE-65CEE51782D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F5CD679-FADF-4651-B7AE-65CEE51782D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
