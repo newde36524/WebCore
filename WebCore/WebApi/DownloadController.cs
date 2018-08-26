@@ -22,7 +22,7 @@ namespace WebCore.WebApi
     [ApiController]
     public class DownloadController : Controller
     {
-        public IHostingEnvironment _hostingEnvironment { get; set; }
+        public static IHostingEnvironment _hostingEnvironment { get; set; }
 
         public DownloadController([FromServices]IHostingEnvironment hostingEnvironment)
         {
@@ -33,10 +33,15 @@ namespace WebCore.WebApi
         /// 获取图片流
         /// </summary>
         /// <returns></returns>
+        [MyActionFilter]
+        //[DoorChainFilter(@"https://localhost:44320/test", _hostingEnvironment)]
+        [TypeFilter(typeof(DoorChainFilterAttribute))]
         [HttpGet(nameof(GetImg))]
         public IActionResult GetImg()
         {
             var path = Path.Combine($"{_hostingEnvironment.ContentRootPath}", "StaticSource", "Images", "a.jpg");
+            var data = System.IO.File.ReadAllBytes(path);
+            //this.Response.Body.Write(data, 0, data.Length);//也可以直接指定body,但不能和File一起使用
             return File(System.IO.File.OpenRead(path), "image/jpg");
         }
 
@@ -53,6 +58,23 @@ namespace WebCore.WebApi
                 return this.File(System.IO.File.OpenRead(path), contentype);
             }
             return NotFound();
+        }
+
+        [HttpGet("GetImg/{fileName}")]
+        public IActionResult GetImg(string fileName)
+        {
+            var path = Path.Combine($"{_hostingEnvironment.ContentRootPath}", "StaticSource", "Images", fileName);
+            if (System.IO.File.Exists(path))
+            {
+                var data = System.IO.File.ReadAllBytes(path);
+                //this.Response.Body.Write(data, 0, data.Length);//也可以直接指定body,但不能和File一起使用
+                return File(System.IO.File.OpenRead(path), "image/jpg");
+            }
+            else
+            {
+                path = Path.Combine($"{_hostingEnvironment.ContentRootPath}", "StaticSource", "Images", "404.jpg");
+                return File(System.IO.File.OpenRead(path), "image/jpg");
+            }
         }
 
         /// <summary>

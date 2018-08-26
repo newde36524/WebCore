@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
@@ -49,6 +50,8 @@ namespace WebCore
             {
                 var o = options;
                 //options.Filters.Add(typeof(ActionFilterAttribute)); // 全局注册过滤器
+                options.Filters.Add(typeof(AjaxRequestFilterAttribute));
+                //options.Filters.Add(typeof(MyResultFilterAttribute));
             });
         }
 
@@ -114,29 +117,61 @@ namespace WebCore
                  RequestPath = new PathString("/Desktop")//指定访问路由 例：https://localhost:44320/Desktop/
              })
 
-             .UseFileServer()//启用静态文件和默认文件，但不允许直接访问目录
-             .UseFileServer(new FileServerOptions()//有目录访问功能，也能访问文件
-             {
-                 EnableDirectoryBrowsing = true,//启用静态文件、默认文件和目录浏览功能
-                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticSource", "Images")),
-                 RequestPath = new PathString("/downStaticFiles")//配置静态文件的访问路由 例：https://localhost:44320/staticfiles/a.jpg
-             })
-
              //*********************************************
              .UseWebSockets()
+             .UseMiddleware<AddEndpointMiddleware>("")//使用 DoorChain 中间件
              .UseMiddleware<WebSocketMiddleware>()//使用 WebSocket 中间件
              .UseMiddleware<SampleMiddleware>()//使用自定义中间件，框架内部提供多个默认中间件，也是通过这种方式添加的，也可以通过定义IApplicationBuilder的扩展方法美化注册
-             .UseMvc();
+             .UseMvc()
+             .UseMvc(routes =>
+             {//配置默认路由
+                 routes.MapRoute(
+                     name: "default",
+                     template: "{controller=home}/{action=index}/{id?}");
+                 routes.MapRoute(
+                    name: "test",
+                    template: "test");
+             });
+
+            var option = new FileServerOptions()//有目录访问功能，也能访问文件
+            {
+                EnableDirectoryBrowsing = true,//启用静态文件、默认文件和目录浏览功能
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticSource", "Images")),
+                RequestPath = new PathString("/downStaticFiles")//配置静态文件的访问路由 例：https://localhost:44320/staticfiles/a.jpg
+            };
+
+            app.UseFileServer()//启用静态文件和默认文件，但不允许直接访问目录
+             .UseFileServer(option);//配置静态文件的访问方式，静态文件的访问不走中间件过滤器，并且不走路由，因为他只识别路径，并不是路由到具体的Action
 
             app.MapWhen(httpcontext => httpcontext.Request.Path != "/ws", application =>
             {//只有程序启动时才会执行
-                
+
+            });
+            app.Map("/path", _app =>
+            {//通过指定路径分发管道
+                _app.Run(async context =>
+                {
+                    await context.Response.WriteAsync("当前路由不存在");
+                });
             });
 
 
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+
+            app.Use(async (context, next) =>
+            {
+                //通过Use  定义中间件
+                //下一个管道执行前
+                await next();//表示执行下一个管道
+                //下一个管道执行后
+            });
+
 
             app.Run(async context =>
-            {
+            {//定义抛异常中间件，并不执行之后的管道
                 if (context.Request.Query.ContainsKey("throw"))
                 {
                     await context.Response.WriteAsync("are you ok?");

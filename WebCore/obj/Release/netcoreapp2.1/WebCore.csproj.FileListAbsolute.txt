@@ -99,5 +99,4 @@ C:\Users\MR.Z\Source\Repos\WebCore2\WebCore\bin\Release\netcoreapp2.1\WebCore.dl
 C:\Users\MR.Z\Source\Repos\WebCore2\WebCore\bin\Release\netcoreapp2.1\WebCore.pdb
 C:\Users\MR.Z\Source\Repos\WebCore2\WebCore\bin\Release\netcoreapp2.1\WebCore.Views.dll
 C:\Users\MR.Z\Source\Repos\WebCore2\WebCore\bin\Release\netcoreapp2.1\WebCore.Views.pdb
-C:\Users\MR.Z\Source\Repos\WebCore2\WebCore\obj\Release\netcoreapp2.1\WebCore.csprojAssemblyReference.cache
 C:\Users\MR.Z\Source\Repos\WebCore2\WebCore\obj\Release\netcoreapp2.1\WebCore.csproj.CopyComplete
