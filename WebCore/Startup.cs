@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -17,6 +19,7 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Options;
 using WebCore.Fileters;
 using WebCore.Middleware;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace WebCore
 {
@@ -30,7 +33,7 @@ namespace WebCore
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -53,11 +56,44 @@ namespace WebCore
                 options.Filters.Add(typeof(AjaxRequestFilterAttribute));
                 //options.Filters.Add(typeof(MyResultFilterAttribute));
             });
+
+            #region 设置 Swagger API文档
+
+            services.AddSwaggerGen(option =>
+            {
+                option.SwaggerDoc("v1", new Info
+                {
+                    Version = "v1",
+                    Title = "Web Api 接口文档",
+                    Description = "Swagger WebApi调试应用",
+                    TermsOfService = "None"
+                });
+
+                //Set the comments path for the swagger json and ui.
+                //var basePath = System.AppContext.BaseDirectory;
+                //var xmlPath = Path.Combine(basePath, "DapperSwaggerAutofac.xml");
+                //c.IncludeXmlComments(xmlPath);
+
+                //c.OperationFilter<HttpHeaderOperation>(); // 添加httpHeader参数
+            });
+
+            #endregion
+
+            #region 默认容器替换Autofac
+
+            var containerBuilder = new ContainerBuilder();
+            containerBuilder.Populate(services);
+            return new AutofacServiceProvider(containerBuilder.Build());
+
+            #endregion
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            #region 开发环境错误页设置
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -68,70 +104,74 @@ namespace WebCore
                 app.UseHsts();
             }
 
+            #endregion
+
+            #region MVC 路由 https重定向 状态页码配置相关
+
             app.UseRouter(routeBuilder =>
             {
                 //routeBuilder.MapRoute(name: "default1", template: "test");
                 //routeBuilder.MapGet("", context => Task.CompletedTask);//注意不要这样配置，会造成网站访问不符合预期，无法显示网页
                 //MapGet MapPost MapPut MapDelete  和特性配置是一样的  可以在这里做路由定制化
             })
+            .UseStatusCodePages()//配置状态码页面
+            .UseHttpsRedirection()//http=>https 的重定向
+            .UseCookiePolicy()
+            .UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            })
+            .UseMvc()
+            .UseMvc(routes =>
+            {//配置默认路由
+                routes.MapRoute(
+                   name: "default",
+                   template: "{controller=home}/{action=index}/{id?}");
+                routes.MapRoute(
+                   name: "test",
+                   template: "test");
+            });
 
-             .UseStatusCodePages()//配置状态码页面
-             .UseHttpsRedirection()//http=>https 的重定向
-             .UseDefaultFiles(new DefaultFilesOptions()
-             {//UseDefaultFiles 必须在 UseStaticFiles 之前调用。UseDefaultFiles 只是重写了 URL，而不是真的提供了这样一个文件。你必须开启静态文件中间件（UseStaticFiles）来提供这个文件。
-                 DefaultFileNames = new List<string>() { "test" }
-             })
-             .UseCookiePolicy()
+            #endregion
 
-             //*********************************************
-             .UseStaticFiles()//默认允许访问wwwroot文件夹
-             .UseStaticFiles(new StaticFileOptions()//
-             {
-                 ServeUnknownFileTypes = true,//有安全风险  默认关闭 false
-                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticSource", "Images")), //指定静态文件的目录位置
-                 RequestPath = new PathString("/StaticFiles"),//配置静态文件的访问路由 例：https://localhost:44320/staticfiles/a.jpg
-                 ContentTypeProvider = new FileExtensionContentTypeProvider(new Dictionary<string, string>()
-                    {
+            #region 启用文件系统文件夹视图
+
+            app.UseStaticFiles()//默认允许访问wwwroot文件夹
+            .UseDefaultFiles(new DefaultFilesOptions()
+            {//UseDefaultFiles 必须在 UseStaticFiles 之前调用。UseDefaultFiles 只是重写了 URL，而不是真的提供了这样一个文件。你必须开启静态文件中间件（UseStaticFiles）来提供这个文件。
+                DefaultFileNames = new List<string>() { "test" }
+            })
+            .UseStaticFiles(new StaticFileOptions()//
+            {
+                ServeUnknownFileTypes = true,//有安全风险  默认关闭 false
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticSource", "Images")), //指定静态文件的目录位置
+                RequestPath = new PathString("/StaticFiles"),//配置静态文件的访问路由 例：https://localhost:44320/staticfiles/a.jpg
+                ContentTypeProvider = new FileExtensionContentTypeProvider(new Dictionary<string, string>()
+                   {
                         { ".xxx","application/xxx"}//配置扩展名映射
-                    })
-             })
-             .UseStaticFiles(new StaticFileOptions()//
-             {
-                 ServeUnknownFileTypes = false,//有安全风险  默认关闭 false
-                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticSource", "Css")), //指定静态文件的目录位置
-                 RequestPath = new PathString("/Style"),//配置静态文件的访问路由 例：https://localhost:44320/Style/styleSheet.css
-                 ContentTypeProvider = new FileExtensionContentTypeProvider(new Dictionary<string, string>()
-                    {
+                 })
+            })
+            .UseStaticFiles(new StaticFileOptions()//
+            {
+                ServeUnknownFileTypes = false,//有安全风险  默认关闭 false
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticSource", "Css")), //指定静态文件的目录位置
+                RequestPath = new PathString("/Style"),//配置静态文件的访问路由 例：https://localhost:44320/Style/styleSheet.css
+                ContentTypeProvider = new FileExtensionContentTypeProvider(new Dictionary<string, string>()
+                   {
                         { ".css","text/css"}//配置扩展名映射
-                    })
-             })
-             .UseDirectoryBrowser(new DirectoryBrowserOptions()//只有目录访问功能，不能访问文件
-             {//默认禁用，开启目录访问功能
-                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory())),//指定访问目录
-                 RequestPath = new PathString("/app")//指定访问路由 例：https://localhost:44320/app/
-             })
+                 })
+            })
+            .UseDirectoryBrowser(new DirectoryBrowserOptions()//只有目录访问功能，不能访问文件
+            {//默认禁用，开启目录访问功能
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory())),//指定访问目录
+                RequestPath = new PathString("/app")//指定访问路由 例：https://localhost:44320/app/
+            })
 
-             .UseDirectoryBrowser(new DirectoryBrowserOptions()//只有目录访问功能，不能访问文件
-             {//默认禁用，开启目录访问功能
-                 FileProvider = new PhysicalFileProvider(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)),//指定访问目录
-                 RequestPath = new PathString("/Desktop")//指定访问路由 例：https://localhost:44320/Desktop/
-             })
-
-             //*********************************************
-             .UseWebSockets()
-             .UseMiddleware<AddEndpointMiddleware>("")//使用 DoorChain 中间件
-             .UseMiddleware<WebSocketMiddleware>()//使用 WebSocket 中间件
-             .UseMiddleware<SampleMiddleware>()//使用自定义中间件，框架内部提供多个默认中间件，也是通过这种方式添加的，也可以通过定义IApplicationBuilder的扩展方法美化注册
-             .UseMvc()
-             .UseMvc(routes =>
-             {//配置默认路由
-                 routes.MapRoute(
-                     name: "default",
-                     template: "{controller=home}/{action=index}/{id?}");
-                 routes.MapRoute(
-                    name: "test",
-                    template: "test");
-             });
+            .UseDirectoryBrowser(new DirectoryBrowserOptions()//只有目录访问功能，不能访问文件
+            {//默认禁用，开启目录访问功能
+                FileProvider = new PhysicalFileProvider(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)),//指定访问目录
+                RequestPath = new PathString("/Desktop")//指定访问路由 例：https://localhost:44320/Desktop/
+            });
 
             var option = new FileServerOptions()//有目录访问功能，也能访问文件
             {
@@ -143,6 +183,35 @@ namespace WebCore
             app.UseFileServer()//启用静态文件和默认文件，但不允许直接访问目录
              .UseFileServer(option);//配置静态文件的访问方式，静态文件的访问不走中间件过滤器，并且不走路由，因为他只识别路径，并不是路由到具体的Action
 
+            #endregion
+
+            #region 启用Swagger中间件
+
+            app
+            .UseSwagger()//注意 不管有没有配置SwaggerOptions参数，这一步都是必须的
+            //.UseSwagger(options =>
+            //{
+            //    options.RouteTemplate = "/swagger/v1/swagger.json";
+            //    options.PreSerializeFilters.Add((swaggerDoc, httpReq) => swaggerDoc.Host = httpReq.Host.Value);
+            //})
+            .UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger 接口 V1.0");
+            });
+
+            #endregion
+
+            #region 设置自定义中间件
+
+            app.UseWebSockets()
+            .UseMiddleware<AddEndpointMiddleware>("")
+            .UseMiddleware<WebSocketMiddleware>()//使用 WebSocket 中间件
+            .UseMiddleware<SampleMiddleware>();//使用自定义中间件，框架内部提供多个默认中间件，也是通过这种方式添加的，也可以通过定义IApplicationBuilder的扩展方法美化注册
+
+            #endregion
+
+            #region Map Use Run
+
             app.MapWhen(httpcontext => httpcontext.Request.Path != "/ws", application =>
             {//只有程序启动时才会执行
 
@@ -153,12 +222,6 @@ namespace WebCore
                 {
                     await context.Response.WriteAsync("当前路由不存在");
                 });
-            });
-
-
-            app.UseForwardedHeaders(new ForwardedHeadersOptions
-            {
-                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
             });
 
             app.Use(async (context, next) =>
@@ -177,6 +240,8 @@ namespace WebCore
                     await context.Response.WriteAsync("are you ok?");
                 }
             });
+
+            #endregion
         }
     }
 
