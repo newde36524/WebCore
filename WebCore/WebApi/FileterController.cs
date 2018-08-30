@@ -37,7 +37,6 @@ namespace WebCore.WebApi
 
         [MyExceptionFilter]
         [HttpGet(nameof(TestExceptionFileter))]
-        [TypeFilter(typeof(RetryAttribute), Arguments = new[] { 1 })]
         public IActionResult TestExceptionFileter()
         {
             throw new Exception("throw Exception");
