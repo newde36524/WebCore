@@ -9,6 +9,9 @@
     <a id="clickTest3" onclick="postObject2()">提交对象2</a>
     <a id="clickTest3" onclick="clickHandle4()">获取服务器表单数据</a>
     <a id="clickTest4" onclick="uploadFile()">上传</a>
+    <a id="clickTest5" onclick="clickHandle5()">获取对象restful</a>
+    <a id="clickTest6" onclick="clickHandle6()">获取对象fromQuery</a>
+    <a id="clickTest6" onclick="clickHandle7()">获取对象fromHeader</a>
     <input id="fileInput" name="file" type="file" multiple="multiple" accept="image/png,image/gif,image/jpeg" onchange="uploadFile()" />
     <input id="fileInput2" name="file" type="file" multiple="multiple" accept="image/png,image/gif,image/jpeg" onchange="uploadFile2()" />
     <a id="clickTest5" onclick="GetImg()">获取图片流</a>
@@ -61,6 +64,33 @@
 
     function clickHandle4() {
         axios.get('api/GetMsg/GetFormData')
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(response);
+            });
+    }
+    function clickHandle5() {
+        axios.get('api/GetMsg/GetModel/1/jom/12/jom的商品')
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(response);
+            });
+    }
+    function clickHandle6() {
+        axios.get('api/GetMsg/GetModel?id=1&name=jom2&price=13&description=jom2的商品')
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(response);
+            });
+    }
+    function clickHandle7() {
+        axios.get('api/GetMsg/GetModel2?id=1&name=jom2&price=13&description=jom2的商品')
             .then(function (response) {
                 console.log(response);
             })

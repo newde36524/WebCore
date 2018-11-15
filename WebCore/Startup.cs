@@ -53,7 +53,7 @@ namespace WebCore
             {
                 var o = options;
                 //options.Filters.Add(typeof(ActionFilterAttribute)); // È«¾Ö×¢²á¹ýÂËÆ÷
-                options.Filters.Add(typeof(AjaxRequestFilterAttribute));
+                //options.Filters.Add(typeof(AjaxRequestFilterAttribute));
                 //options.Filters.Add(typeof(MyResultFilterAttribute));
             });
 

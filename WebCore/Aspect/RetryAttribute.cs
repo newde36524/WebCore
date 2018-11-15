@@ -22,7 +22,11 @@ namespace WebCore.Aspect
 
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
-            await Policy.Handle<Exception>().Retry(RetryCount).ExecuteAsync(() => next());
+            await next();
+            //await Policy
+            //    .Handle<Exception>()
+            //    .Retry(RetryCount)
+            //    .ExecuteAsync(async () => await next());
         }
     }
 }

@@ -1,0 +1,27 @@
+﻿@page
+@model WebCore.Pages.PollyModel
+@{
+    ViewData["Title"] = "Polly";
+}
+
+<h2>Polly</h2>
+
+<button onclick="Throw()">测试熔断</button>
+
+
+<script>
+    function Throw() {
+        axios.post("TestPolly/TestRetry")
+            .then(function (res) {
+                console.log(res);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+
+</script>
+
+
+

@@ -26,6 +26,23 @@ namespace WebCore.WebApi
                 new Product { Id = 3, Name = "天梭手表", Price = 9888, Description = "瑞士经典款，可好了" }
             };
         }
+        [HttpGet("GetModel/{id:int}/{name}/{price:int}/{description}")]
+        public Product GetModel([FromRoute]int id, [FromRoute]string name, [FromRoute]int price, [FromRoute]string description)
+        {
+            return new Product { Id = id, Name = name, Price = price, Description = description };
+        }
+        [HttpGet("GetModel")]
+        public Product GetModel([FromQuery] Product product)
+        {
+            return product;
+        }
+
+        [HttpGet("GetModel2")]
+        public Product GetModel2([FromHeader] Product product)
+        {
+            return product;
+        }
+
 
         [HttpPost(nameof(Send_MI))]
         public SendSMSRequest Send_MI([FromBody]SendSMSRequest model) => model;
