@@ -32,6 +32,11 @@ namespace WebCore.WebApi
             return $"文件1长度：{file1.Length}  文件2长度:{file2.Length}  msg:{msg}";
         }
 
+        [HttpPost(nameof(UploadFile3))]
+        public string UploadFile3([FromForm]IFormFile file001, [FromForm]IFormFile file002, [FromForm]string msg)
+        {
+            return $"文件1长度：{file001?.Length}  文件2长度:{file002?.Length}  msg:{msg}  222";
+        }
 
         [HttpGet(nameof(Hehe))]
         public string Hehe()

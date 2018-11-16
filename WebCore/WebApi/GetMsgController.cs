@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -41,6 +43,11 @@ namespace WebCore.WebApi
         public Product GetModel2([FromHeader] Product product)
         {
             return product;
+        }
+        [HttpGet("GetModel3")]
+        public Product GetModel3([FromQuery]JObject product)
+        {
+            return JsonConvert.DeserializeObject<Product>(product.ToString()) ;
         }
 
 

@@ -41,14 +41,16 @@ namespace WebCore.WebApi
             return new [] { model };
         }
 
-        [HttpPost(nameof(UploadFile))]
-        public string UploadFile([FromForm]IFormCollection form)
-        {
-            var file1 = form.Files["file001"];
-            var file2 = form.Files["file002"];
-            string msg = form["msg"];
-            return $"文件1长度：{file1.Length}  文件2长度:{file2.Length}  msg:{msg}";
-        }
+        //[HttpPost(nameof(UploadFile))]
+        //public string UploadFile([FromForm]IFormCollection form)
+        //{
+        //    var file1 = form.Files["file001"];
+        //    var file2 = form.Files["file002"];
+        //    string msg = form["msg"];
+        //    return $"文件1长度：{file1.Length}  文件2长度:{file2.Length}  msg:{msg} 111";
+        //}
+
+        
     }
 
     public class MyClass

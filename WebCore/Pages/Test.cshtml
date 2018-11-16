@@ -11,9 +11,11 @@
     <a id="clickTest4" onclick="uploadFile()">上传</a>
     <a id="clickTest5" onclick="clickHandle5()">获取对象restful</a>
     <a id="clickTest6" onclick="clickHandle6()">获取对象fromQuery</a>
-    <a id="clickTest6" onclick="clickHandle7()">获取对象fromHeader</a>
+    <a id="clickTest7" onclick="clickHandle7()">获取对象fromHeader</a>
+    <a id="clickTest8" onclick="clickHandle8()">获取对象(直接上传JSON字符串)</a>
     <input id="fileInput" name="file" type="file" multiple="multiple" accept="image/png,image/gif,image/jpeg" onchange="uploadFile()" />
     <input id="fileInput2" name="file" type="file" multiple="multiple" accept="image/png,image/gif,image/jpeg" onchange="uploadFile2()" />
+    <input id="fileInput3" name="file" type="file" multiple="multiple" accept="image/png,image/gif,image/jpeg" onchange="uploadFile3()" />
     <a id="clickTest5" onclick="GetImg()">获取图片流</a>
     <a id="clickTest5" onclick="downloadFile()">下载图片</a>
     <img src="api/Download/GetImg" alt="Alternate Text" />
@@ -98,6 +100,24 @@
                 console.log(response);
             });
     }
+    function clickHandle8() {
+        axios.get('api/GetMsg/GetModel3', {
+            params: {
+                "product": JSON.stringify({
+                    id: 1,
+                    name: "jom2",
+                    price: 13,
+                    description:"jom2的商品"
+                })
+            }
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(response);
+            });
+    }
 
     function uploadFile() {
         let files = document.getElementById("fileInput").files;
@@ -123,6 +143,23 @@
         formdata1.append('msg', "hello");
         formdata1.append('file002', files[1]);
         axios.post('api/Upload/UploadFile2', formdata1, {
+            headers: { 'Content-Type': 'multipart/form-data' }
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                alert(response);
+            });
+    }
+
+    function uploadFile3() {
+        let files = document.getElementById("fileInput3").files;
+        let formdata1 = new FormData();// 创建form对象
+        formdata1.append('file001', files[0]);
+        formdata1.append('msg', "hello");
+        formdata1.append('file002', files[1]);
+        axios.post('api/Upload/UploadFile3', formdata1, {
             headers: { 'Content-Type': 'multipart/form-data' }
         })
             .then(function (response) {
