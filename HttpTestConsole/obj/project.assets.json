@@ -175,7 +175,7 @@
           "Microsoft.NETCore.DotNetAppHost": "2.1.0"
         }
       },
-      "Microsoft.NETCore.Platforms/2.1.1": {
+      "Microsoft.NETCore.Platforms/3.0.0-preview.18571.3": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -524,16 +524,17 @@
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.Platforms/2.1.1": {
-      "sha512": "iXcQc19h5oECLVokgt6hvLOOPP/d9kYQh9miF9zbcxGVZenuTN9IMB+f+gP26/+Rc5r2KLES5Of45Qdqo0NJeA==",
+    "Microsoft.NETCore.Platforms/3.0.0-preview.18571.3": {
+      "sha512": "4HusYLmBT+3cIaHb7Nx+RL2CHGWIG15oFwrHW7hszMzvQNJU4zHoeonn50pRcaqv+SYt8SnQl0+vyUSkwBcmRA==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/2.1.1",
+      "path": "microsoft.netcore.platforms/3.0.0-preview.18571.3",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.2.1.1.nupkg.sha512",
+        "microsoft.netcore.platforms.3.0.0-preview.18571.3.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
@@ -715,7 +716,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Microsoft.NETCore.App >= 2.1.0",
-      "Microsoft.NETCore.Platforms >= 2.1.1",
+      "Microsoft.NETCore.Platforms >= 3.0.0-preview.18571.3",
       "Newtonsoft.Json >= 11.0.2"
     ]
   },
@@ -726,11 +727,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MR.Z\\source\\repos\\WebCore2\\HttpTestConsole\\HttpTestConsole.csproj",
+      "projectUniqueName": "C:\\Users\\MR.Z\\OneDrive\\repos\\项目\\GitHub项目\\WebCore\\HttpTestConsole\\HttpTestConsole.csproj",
       "projectName": "HttpTestConsole",
-      "projectPath": "C:\\Users\\MR.Z\\source\\repos\\WebCore2\\HttpTestConsole\\HttpTestConsole.csproj",
+      "projectPath": "C:\\Users\\MR.Z\\OneDrive\\repos\\项目\\GitHub项目\\WebCore\\HttpTestConsole\\HttpTestConsole.csproj",
       "packagesPath": "C:\\Users\\MR.Z\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MR.Z\\source\\repos\\WebCore2\\HttpTestConsole\\obj\\",
+      "outputPath": "C:\\Users\\MR.Z\\OneDrive\\repos\\项目\\GitHub项目\\WebCore\\HttpTestConsole\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -767,7 +768,7 @@
           },
           "Microsoft.NETCore.Platforms": {
             "target": "Package",
-            "version": "[2.1.1, )"
+            "version": "[3.0.0-preview.18571.3, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",

@@ -21,6 +21,8 @@
     <img src="api/Download/GetImg" alt="Alternate Text" />
     <img src="api/Download/GetImg/a.jpg" alt="Alternate Text" />
     <img src="staticfiles/a.jpg" alt="Alternate Text" />
+    <a id="clickTest9" onclick="clickHandle9()">测试重定向Action</a>
+
 </div>
 
 <script>
@@ -111,6 +113,16 @@
                 })
             }
         })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(response);
+            });
+    }
+
+    function clickHandle9() {
+        axios.get('/api/redirect/redirectAction?url=https://www.baidu.com')
             .then(function (response) {
                 console.log(response);
             })

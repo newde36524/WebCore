@@ -33,6 +33,7 @@ namespace WebCore.Middleware
     {
         public static IApplicationBuilder UseHttpWebApiHelperMiddleware(this IApplicationBuilder builder, IEnumerable<Controller> controllerList)
         {
+           
             // 使用当前中间件，就定一个路由规则，
             // 给传进来的控制器列表反射成Api列表 
             // 包含请求方式 请求模板 请求路径 请求参数

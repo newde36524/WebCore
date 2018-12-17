@@ -10,10 +10,10 @@ using WebCore.Extension;
 
 namespace WebCore.Internal
 {
-    internal class ChatRoom: IChatRoom
+    internal class ChatRoom : IChatRoom
     {
-        private ChatRoom() {}
-      
+        private ChatRoom() { }
+
         private static ChatRoom _chatRoom { get; set; } = new ChatRoom();
 
         public static ChatRoom GetInstance() => _chatRoom;
@@ -24,7 +24,7 @@ namespace WebCore.Internal
         {
             if (!_dic.ContainsKey(key))
             {
-                _dic.Add(key,webSocket);
+                _dic.Add(key, webSocket);
             }
         }
 
@@ -37,10 +37,10 @@ namespace WebCore.Internal
         {
             foreach (var client in _dic)
             {
-               await client.Value.SendStringAsync(msg,CancellationToken.None);
+                await client.Value.SendStringAsync(msg, CancellationToken.None);
             }
         }
-        
+
     }
 
     public interface IChatRoom

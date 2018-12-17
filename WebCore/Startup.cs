@@ -90,7 +90,7 @@ namespace WebCore
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime applicationLifetime)
         {
             #region 开发环境错误页设置
 
@@ -242,7 +242,23 @@ namespace WebCore
             });
 
             #endregion
+
+            #region 设置Application声明周期
+
+            applicationLifetime.ApplicationStarted.Register(() => {
+                Console.WriteLine("网站启动");
+            });
+            applicationLifetime.ApplicationStopping.Register(() => {
+                Console.WriteLine("网站正在停止");
+            });
+            applicationLifetime.ApplicationStopped.Register(() => {
+                Console.WriteLine("网站已停止");
+            });
+
+            #endregion
+
         }
+
     }
 
     public class Rootobject

@@ -1,0 +1,74 @@
+﻿
+#普通Get请求
+GET http://localhost:51582/TestController/GetResult
+###
+
+#Get带参数
+
+GET http://localhost:51582/TestController/GetReultWithParam?msg=测试&msg2=测试2
+###
+
+#普通Post请求
+POST http://localhost:51582/TestController/PostResult
+
+###
+
+#Post带参数
+
+POST http://localhost:51582/TestController/PostResultWithParam HTTP/1.1
+content-type: application/json
+
+{
+    "msg": "123",
+    "msg2": "456"
+}
+
+###
+
+#带参数Post提交 body，服务端直接匹配model
+POST http://localhost:51582/TestController/PostResultWithModel
+Content-Type: application/json
+
+{
+    "Id" : 123, 
+    "Name" : "名字" 
+}
+###
+
+#Post提交模拟Http文件上传,文件和普通参数同时提交
+
+POST http://localhost:51582/TestController/UploadFile
+
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; msg="hello"
+
+file001
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file001"; filename="a.jpg"
+Content-Type: image/jpg
+
+file002
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file002"; filename="b.jpg"
+Content-Type: image/jpg
+
+< ./a.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+< ./b.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+###
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,9 +1,12 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace HttpTestConsole
 {
@@ -11,6 +14,33 @@ namespace HttpTestConsole
     {
         static void Main(string[] args)
         {
+            {
+                int i = 32;
+                ref int f = ref i;
+                f++;
+                Console.WriteLine(i);
+            }
+            {
+                string input = "sss,ddd";
+                ReadOnlySpan<char> inputSpan = input.AsSpan();
+                int commaPos = input.IndexOf(',');
+                int first = int.Parse(inputSpan.Slice(0, commaPos));
+                int second = int.Parse(inputSpan.Slice(commaPos + 1));
+            }
+            {
+                string input = "sss,ddd";
+                foreach (char c in input.AsSpan().Slice(2, 3))
+                {
+                    c = null;
+                };
+                //System.Buffers.Text.Base64
+                //System.Buffers.Text.Utf8Parser
+                //System.Buffers.Text.Utf8Formatter
+                //System.Security.Cryptography.Rfc2898DeriveBytes
+                //Span<byte> bytes = stackalloc byte[3];
+            }
+
+
             #region 普通Get请求
 
             using (HttpClient httpClient = new HttpClient())
@@ -31,7 +61,8 @@ namespace HttpTestConsole
 
             using (HttpClient httpClient = new HttpClient())
             {
-                string url = "http://localhost:51582/TestController/GetReultWithParam";
+                string url = "http://localhost:51582/TestController/GetReultWithParam?msg=测试&msg2=测试2";
+
                 httpClient.GetAsync(url).ContinueWith(x =>
                 {
                     x.Result.Content.ReadAsStringAsync().ContinueWith(r =>
