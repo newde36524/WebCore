@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using WebCore.CustomerActionResult;
 
 namespace WebCore.Fileters
 {
@@ -23,4 +26,22 @@ namespace WebCore.Fileters
             //throw new Exception("测试异常过滤器在Fileter中是否也有效");//正常返回500
         }
     }
+
+    public class CustomerResultFilterAttribute : ResultFilterAttribute
+    {
+        public override void OnResultExecuting(ResultExecutingContext context)
+        {
+            base.OnResultExecuting(context);
+            var result = context.Result;
+            context.Result = new MyContentResult
+            {
+                Content = new
+                {
+                    code = 0,
+                    result
+                }
+            };
+        }
+    }
+
 }

@@ -17,7 +17,7 @@ namespace WebCore.WebApi
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        [HttpGet("redirectAction")]
+        [HttpGet("[action]")]
         public IActionResult RedirectAction(string url)
         {
             return Redirect(url);

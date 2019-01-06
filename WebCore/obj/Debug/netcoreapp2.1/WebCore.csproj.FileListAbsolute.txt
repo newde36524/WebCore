@@ -234,5 +234,7 @@ C:\Users\MR.Z\OneDrive\repos\项目\GitHub项目\WebCore\WebCore\bin\Debug\netco
 C:\Users\MR.Z\OneDrive\repos\项目\GitHub项目\WebCore\WebCore\bin\Debug\netcoreapp2.1\WebCore.pdb
 C:\Users\MR.Z\OneDrive\repos\项目\GitHub项目\WebCore\WebCore\bin\Debug\netcoreapp2.1\WebCore.Views.dll
 C:\Users\MR.Z\OneDrive\repos\项目\GitHub项目\WebCore\WebCore\bin\Debug\netcoreapp2.1\WebCore.Views.pdb
-C:\Users\MR.Z\OneDrive\repos\项目\GitHub项目\WebCore\WebCore\obj\Debug\netcoreapp2.1\WebCore.csprojAssemblyReference.cache
 C:\Users\MR.Z\OneDrive\repos\项目\GitHub项目\WebCore\WebCore\obj\Debug\netcoreapp2.1\WebCore.csproj.CopyComplete
+C:\Users\MR.Z\OneDrive\repos\项目\GitHub项目\WebCore\WebCore\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\MR.Z\OneDrive\repos\项目\GitHub项目\WebCore\WebCore\obj\Debug\netcoreapp2.1\Razor\Pages\TestSession.g.cshtml.cs
+C:\Users\MR.Z\OneDrive\repos\项目\GitHub项目\WebCore\WebCore\obj\Debug\netcoreapp2.1\WebCore.csprojAssemblyReference.cache

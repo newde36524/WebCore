@@ -34,7 +34,7 @@ namespace WebCore.Extension
         {
             using (MemoryStream ms = new MemoryStream())
             {
-                var buffer = new ArraySegment<byte>(new byte[8192]);
+                ArraySegment<byte> buffer = new byte[8192];
                 WebSocketReceiveResult result;
                 do
                 {

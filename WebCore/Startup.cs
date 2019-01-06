@@ -20,6 +20,9 @@ using Microsoft.Extensions.Options;
 using WebCore.Fileters;
 using WebCore.Middleware;
 using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using WebCore.CustomerActionResult;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace WebCore
 {
@@ -44,9 +47,9 @@ namespace WebCore
 
             services.AddOptions();
             services.AddDirectoryBrowser();
-
+            services.AddSession();//开启session
             var config = Configuration.GetSection("RootobjectSection").Get<Rootobject>();
-
+            
             services.AddRouting();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddMvc(options =>
@@ -56,6 +59,13 @@ namespace WebCore
                 //options.Filters.Add(typeof(AjaxRequestFilterAttribute));
                 //options.Filters.Add(typeof(MyResultFilterAttribute));
             });
+
+            #region 设置自定义ActionResult
+
+            services.TryAddSingleton<IActionResultExecutor<MyContentResult>, MyContentResultExecutor>();
+            services.TryAddSingleton<IActionResultExecutor<MyJsonResult>, MyJsonResultExecutor>();
+
+            #endregion
 
             #region 设置 Swagger API文档
 
@@ -94,16 +104,24 @@ namespace WebCore
         {
             #region 开发环境错误页设置
 
-            if (env.IsDevelopment())
+            if (env.IsDevelopment())//判断是否是开发环境
             {
+                //app.UseBrowserLink();
+                app.UseStatusCodePages(async context =>
+                {
+                    context.HttpContext.Response.ContentType = "text/plain";
+                    await context.HttpContext.Response.WriteAsync(
+                        "Status code page, status code: " +
+                        context.HttpContext.Response.StatusCode);
+                });
                 app.UseDeveloperExceptionPage();
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+                app.UseExceptionHandler("/Error");//如果不是就跳转到错误页
                 app.UseHsts();
             }
-
+            app.UseSession();//开启Session
             #endregion
 
             #region MVC 路由 https重定向 状态页码配置相关
@@ -243,7 +261,7 @@ namespace WebCore
 
             #endregion
 
-            #region 设置Application声明周期
+            #region 设置Application生命周期钩子
 
             applicationLifetime.ApplicationStarted.Register(() => {
                 Console.WriteLine("网站启动");

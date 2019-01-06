@@ -1,0 +1,40 @@
+﻿@page
+@model TestSessionModel
+@{
+    var a = new TestSessionModel();
+    Console.WriteLine(a);
+}
+
+<a onclick="testintosession(`name`,`Jom`)">添加Session</a>
+<a onclick="testgetsessionvalue(`name`)">获取Session</a>
+
+<script>
+    function testintosession(key,value) {
+        let formdata1 = new FormData();// 创建form对象
+        formdata1.append('key', key);
+        formdata1.append('value', value);
+        axios.post('api/session/TestIntoSession', formdata1, {
+            headers: { 'Content-Type': 'multipart/form-data' }
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    function testgetsessionvalue(key) {
+        axios.get(`api/session/TestGetSessionValue/${key}`)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+
+
+
+</script>
