@@ -23,6 +23,10 @@ using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using WebCore.CustomerActionResult;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Logging;
+using NLog.Extensions.Logging;
+using NLog.Web;
+using System.Text;
 
 namespace WebCore
 {
@@ -49,7 +53,7 @@ namespace WebCore
             services.AddDirectoryBrowser();
             services.AddSession();//开启session
             var config = Configuration.GetSection("RootobjectSection").Get<Rootobject>();
-            
+
             services.AddRouting();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddMvc(options =>
@@ -100,7 +104,7 @@ namespace WebCore
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime applicationLifetime)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime applicationLifetime, ILoggerFactory loggerFactory)
         {
             #region 开发环境错误页设置
 
@@ -263,20 +267,26 @@ namespace WebCore
 
             #region 设置Application生命周期钩子
 
-            applicationLifetime.ApplicationStarted.Register(() => {
+            var logger = loggerFactory.CreateLogger<Startup>();
+            applicationLifetime.ApplicationStarted.Register(() =>
+            {
                 Console.WriteLine("网站启动");
+                logger.LogInformation("网站启动");
             });
-            applicationLifetime.ApplicationStopping.Register(() => {
+            applicationLifetime.ApplicationStopping.Register(() =>
+            {
                 Console.WriteLine("网站正在停止");
+                logger.LogInformation("网站正在停止");
             });
-            applicationLifetime.ApplicationStopped.Register(() => {
+            applicationLifetime.ApplicationStopped.Register(() =>
+            {
                 Console.WriteLine("网站已停止");
+                logger.LogInformation("网站已停止");
             });
 
             #endregion
 
         }
-
     }
 
     public class Rootobject
