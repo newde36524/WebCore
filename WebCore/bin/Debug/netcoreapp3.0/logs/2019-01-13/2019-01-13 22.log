@@ -1,0 +1,8 @@
+[2019-01-13 22:37:16.9931] [WebCore.Startup+<>c__DisplayClass5_0.<Configure>b__9] [Info]: [网站启动] [] [CancellationTokenSource.ExecuteCallbackHandlers => ExecutionContext.RunInternal => <>c__DisplayClass5_0.<Configure>b__9] []
+[2019-01-13 22:47:21.9092] [WebCore.Startup+<>c__DisplayClass5_0.<Configure>b__9] [Info]: [网站启动] [] [CancellationTokenSource.ExecuteCallbackHandlers => ExecutionContext.RunInternal => <>c__DisplayClass5_0.<Configure>b__9] []
+[2019-01-13 22:53:24.2495] [WebCore.Startup+<>c__DisplayClass5_0.<Configure>b__9] [Info]: [网站启动] [] [CancellationTokenSource.ExecuteCallbackHandlers => ExecutionContext.RunInternal => <>c__DisplayClass5_0.<Configure>b__9] []
+[2019-01-13 22:54:07.0471] [WebCore.WebApi.TestNlogController.Log] [Info]: [aa] [] [ObjectMethodExecutor.Execute => <no type>.lambda_method => TestNlogController.Log] []
+[2019-01-13 22:54:15.4128] [WebCore.WebApi.TestNlogController.Log] [Info]: [aa] [] [ObjectMethodExecutor.Execute => <no type>.lambda_method => TestNlogController.Log] []
+[2019-01-13 22:54:16.9137] [WebCore.WebApi.TestNlogController.Log] [Info]: [aa] [] [ObjectMethodExecutor.Execute => <no type>.lambda_method => TestNlogController.Log] []
+[2019-01-13 22:54:23.0515] [WebCore.WebApi.TestNlogController.Log] [Info]: [aa] [] [ObjectMethodExecutor.Execute => <no type>.lambda_method => TestNlogController.Log] []
+[2019-01-13 22:54:24.5867] [WebCore.WebApi.TestNlogController.Log] [Info]: [aa] [] [ObjectMethodExecutor.Execute => <no type>.lambda_method => TestNlogController.Log] []

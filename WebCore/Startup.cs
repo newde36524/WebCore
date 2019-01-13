@@ -24,8 +24,6 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using WebCore.CustomerActionResult;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
-using NLog.Extensions.Logging;
-using NLog.Web;
 using System.Text;
 
 namespace WebCore

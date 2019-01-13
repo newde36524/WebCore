@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Formatters.Json.Internal;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
-using Microsoft.AspNetCore.Mvc.Internal;
 using Microsoft.Extensions.Options;
 using Microsoft.Net.Http.Headers;
 using Newtonsoft.Json;
@@ -39,7 +38,7 @@ namespace WebCore.CustomerActionResult
             {
                 throw new ArgumentNullException(nameof(charPool));
             }
-
+            
             _writerFactory = writerFactory;
             _options = options.Value;
             _charPool = new JsonArrayPool<char>(charPool);
@@ -59,18 +58,19 @@ namespace WebCore.CustomerActionResult
 
             var response = context.HttpContext.Response;
 
-            ResponseContentTypeHelper.ResolveContentTypeAndEncoding(
-                null,
-                response.ContentType,
-                DefaultContentType,
-                out var resolvedContentType,
-                out var resolvedContentTypeEncoding);
+            //ResponseContentTypeHelper.ResolveContentTypeAndEncoding(
+            //    null,
+            //    response.ContentType,
+            //    DefaultContentType,
+            //    out var resolvedContentType,
+            //    out var resolvedContentTypeEncoding);
 
-            response.ContentType = resolvedContentType;
+            response.ContentType = response.ContentType ?? DefaultContentType;
+            var defaultContentTypeEncoding = MediaType.GetEncoding(response.ContentType);
 
             var serializerSettings = _options.SerializerSettings;
 
-            using (var writer = _writerFactory.CreateWriter(response.Body, resolvedContentTypeEncoding))
+            using (var writer = _writerFactory.CreateWriter(response.Body, defaultContentTypeEncoding))
             {
                 using (var jsonWriter = new JsonTextWriter(writer))
                 {

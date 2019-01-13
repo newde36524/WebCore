@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
-using Microsoft.AspNetCore.Mvc.Internal;
 using Newtonsoft.Json;
 using System;
 using System.Reflection;
@@ -31,19 +30,21 @@ namespace WebCore.CustomerActionResult
                 throw new ArgumentNullException(nameof(result));
             }
             var response = context.HttpContext.Response;
-            ResponseContentTypeHelper.ResolveContentTypeAndEncoding(
-                null,
-                response.ContentType,
-                DefaultContentType,
-                out var resolvedContentType,
-                out var resolvedContentTypeEncoding);
-            response.ContentType = resolvedContentType;
+          
+            //ResponseContentTypeHelper.ResolveContentTypeAndEncoding(
+            //    null,
+            //    response.ContentType,
+            //    DefaultContentType,
+            //    out var resolvedContentType,
+            //    out var resolvedContentTypeEncoding);
+
+            response.ContentType = response.ContentType ?? DefaultContentType;
             var defaultContentTypeEncoding = MediaType.GetEncoding(response.ContentType);
             if (result.Content != null)
             {
                 string content = JsonConvert.SerializeObject(result.Content);
-                response.ContentLength = resolvedContentTypeEncoding.GetByteCount(content);
-                using (var textWriter = _httpResponseStreamWriterFactory.CreateWriter(response.Body, resolvedContentTypeEncoding))
+                response.ContentLength = defaultContentTypeEncoding.GetByteCount(content);
+                using (var textWriter = _httpResponseStreamWriterFactory.CreateWriter(response.Body, defaultContentTypeEncoding))
                 {
                     await textWriter.WriteAsync(content);
                     await textWriter.FlushAsync();
