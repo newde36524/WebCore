@@ -22,8 +22,9 @@
     <img src="api/Download/GetImg/a.jpg" alt="Alternate Text" />
     <img src="staticfiles/a.jpg" alt="Alternate Text" />
     <a id="clickTest9" onclick="clickHandle9()">测试重定向Action</a>
+    <a id="clickTest9" onclick="clickHandle10()">测试重定向Action1</a>
+    <a id="clickTest9" onclick="clickHandle11()">测试重定向Action2</a>
     <a id="clickTest9" onclick="testMyContentResult()">测试MyContentResult</a>
-
 </div>
 
 <script>
@@ -124,6 +125,26 @@
 
     function clickHandle9() {
         axios.get('/api/redirect/redirectAction?url=https://www.baidu.com')
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    function clickHandle10() {
+        axios.get('/api/redirect/redirectAction1?url=https://www.baidu.com')
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    function clickHandle11() {
+        axios.get('/api/redirect/redirectAction2?url=https://www.baidu.com')
             .then(function (response) {
                 console.log(response);
             })

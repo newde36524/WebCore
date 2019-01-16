@@ -25461,3 +25461,2665 @@ Parameter name: name
 2019-01-16 09:44:23.6785 Info Logger has been shut down.
 2019-01-16 09:44:24.8761 Trace LogFactory.Flush(00:00:15)
 2019-01-16 09:44:24.8761 Trace LogFactory.Flush(00:00:15)
+2019-01-16 10:33:57.9235 Info Message Template Auto Format enabled
+2019-01-16 10:33:57.9336 Info Loading assembly: NLog.Web.AspNetCore
+2019-01-16 10:33:57.9336 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2019-01-16 10:33:57.9504 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:57.9504 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:33:57.9611 Debug Setting 'UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2019-01-16 10:33:57.9925 Trace Wrapping LevelLayoutRenderer with UppercaseLayoutRendererWrapper
+2019-01-16 10:33:57.9925 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:57.9925 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:33:57.9925 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:57.9925 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2019-01-16 10:33:57.9925 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:33:57.9925 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2019-01-16 10:33:57.9925 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2019-01-16 10:33:57.9925 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:33:57.9925 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:33:57.9925 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:57.9925 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-01-16 10:33:57.9925 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:57.9925 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:33:58.0228 Debug Setting 'FileTarget.name' to 't1'
+2019-01-16 10:33:58.0228 Debug Setting 'FileTarget.fileName' to '${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log'
+2019-01-16 10:33:58.0228 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0228 Trace Scanning BaseDirLayoutRenderer 'Layout Renderer: ${basedir}'
+2019-01-16 10:33:58.0483 Debug Setting 'DateLayoutRenderer.format' to 'yyyy-MM-dd'
+2019-01-16 10:33:58.0483 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0483 Trace Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:33:58.0483 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:33:58.0483 Debug Setting 'DateLayoutRenderer.format' to 'yyyy-MM-dd HH'
+2019-01-16 10:33:58.0483 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0483 Trace Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:33:58.0483 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:33:58.0538 Debug Setting 'FileTarget.layout' to '[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]'
+2019-01-16 10:33:58.0538 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0538 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:33:58.0538 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0538 Trace Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:33:58.0538 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0538 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:33:58.0538 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0538 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:33:58.0538 Debug Setting 'EventContextLayoutRenderer.item' to 'exception'
+2019-01-16 10:33:58.0538 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0538 Trace Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:33:58.0538 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0538 Trace Scanning StackTraceLayoutRenderer 'Layout Renderer: ${stacktrace}'
+2019-01-16 10:33:58.0538 Debug Setting 'EventContextLayoutRenderer.item' to 'stacktrace'
+2019-01-16 10:33:58.0538 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0538 Trace Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:33:58.0538 Info Adding target File Target[t1]
+2019-01-16 10:33:58.0538 Debug Registered target t1: NLog.Targets.FileTarget
+2019-01-16 10:33:58.0538 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0538 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:33:58.0538 Debug Setting 'UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2019-01-16 10:33:58.0538 Trace Wrapping LevelLayoutRenderer with UppercaseLayoutRendererWrapper
+2019-01-16 10:33:58.0538 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0538 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:33:58.0538 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0538 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2019-01-16 10:33:58.0538 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:33:58.0538 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2019-01-16 10:33:58.0691 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2019-01-16 10:33:58.0691 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:33:58.0691 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:33:58.0691 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0691 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-01-16 10:33:58.0691 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0691 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:33:58.0691 Debug Setting 'ConsoleTarget.name' to 't2'
+2019-01-16 10:33:58.0691 Debug Setting 'ConsoleTarget.layout' to '${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}'
+2019-01-16 10:33:58.0691 Debug Setting 'DateLayoutRenderer.format' to 'yyyyMMddHHmmss'
+2019-01-16 10:33:58.0691 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0691 Trace Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:33:58.0691 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:33:58.0691 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0691 Trace Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:33:58.0691 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0691 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:33:58.0691 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:33:58.0877 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:33:58.0877 Info Adding target Console Target[t2]
+2019-01-16 10:33:58.0877 Debug Registered target t2: NLog.Targets.ConsoleTarget
+2019-01-16 10:33:58.0877 Trace ParseRulesElement
+2019-01-16 10:33:58.0877 Info Configured from an XML element in C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\NLog.config...
+2019-01-16 10:33:58.0877 Debug Unused target checking is started... Rule Count: 4, Target Count: 2
+2019-01-16 10:33:58.1051 Debug Unused target checking is completed. Total Rule Count: 4, Total Target Count: 2, Unused Target Count: 0
+2019-01-16 10:33:58.1051 Debug --- NLog configuration dump ---
+2019-01-16 10:33:58.1051 Debug Targets:
+2019-01-16 10:33:58.1051 Debug File Target[t1]
+2019-01-16 10:33:58.1051 Debug Console Target[t2]
+2019-01-16 10:33:58.1051 Debug Rules:
+2019-01-16 10:33:58.1051 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error ] appendTo: [ t1 ]
+2019-01-16 10:33:58.1051 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error ] appendTo: [ t2 ]
+2019-01-16 10:33:58.1051 Debug logNamePattern: (Microsoft.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ ]
+2019-01-16 10:33:58.1051 Debug logNamePattern: (System.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ ]
+2019-01-16 10:33:58.1051 Debug --- End of NLog configuration dump ---
+2019-01-16 10:33:58.1051 Trace FindReachableObject<System.Object>:
+2019-01-16 10:33:58.1051 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error ] appendTo: [ t1 ]'
+2019-01-16 10:33:58.1051 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-01-16 10:33:58.1051 Trace  Scanning FileTarget 'File Target[t1]'
+2019-01-16 10:33:58.1051 Trace   Scanning Property FileName ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log'' NLog.Layouts
+2019-01-16 10:33:58.1051 Trace   Scanning SimpleLayout ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log''
+2019-01-16 10:33:58.1161 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:33:58.1161 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1161 Trace    Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:33:58.1161 Trace     Scanning Property Culture '' System.Globalization
+2019-01-16 10:33:58.1161 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1161 Trace    Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:33:58.1161 Trace     Scanning Property Culture '' System.Globalization
+2019-01-16 10:33:58.1161 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1161 Trace   Scanning Property Layout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]'' NLog.Layouts
+2019-01-16 10:33:58.1161 Trace   Scanning SimpleLayout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]''
+2019-01-16 10:33:58.1161 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:33:58.1161 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1161 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:33:58.1161 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1161 Trace    Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:33:58.1161 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1161 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:33:58.1161 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1161 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:33:58.1161 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1161 Trace    Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:33:58.1161 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1161 Trace    Scanning StackTraceLayoutRenderer 'Layout Renderer: ${stacktrace}'
+2019-01-16 10:33:58.1161 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1161 Trace    Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:33:58.1161 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1161 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2019-01-16 10:33:58.1161 Trace   Scanning Property Encoding 'System.Text.UTF8Encoding+UTF8EncodingSealed' System.Text
+2019-01-16 10:33:58.1161 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-01-16 10:33:58.1161 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-01-16 10:33:58.1161 Trace  Scanning Property Levels 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LogLevel]' System.Collections.ObjectModel
+2019-01-16 10:33:58.1161 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error ] appendTo: [ t2 ]'
+2019-01-16 10:33:58.1161 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-01-16 10:33:58.1161 Trace  Scanning ConsoleTarget 'Console Target[t2]'
+2019-01-16 10:33:58.1161 Trace   Scanning Property Layout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}'' NLog.Layouts
+2019-01-16 10:33:58.1161 Trace   Scanning SimpleLayout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}''
+2019-01-16 10:33:58.1161 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:33:58.1161 Trace    Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:33:58.1161 Trace     Scanning Property Culture '' System.Globalization
+2019-01-16 10:33:58.1161 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1161 Trace    Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:33:58.1161 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1161 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:33:58.1161 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1321 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:33:58.1321 Trace   Scanning Property Encoding 'System.Text.OSEncoding' System.Text
+2019-01-16 10:33:58.1321 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-01-16 10:33:58.1321 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-01-16 10:33:58.1321 Trace  Scanning Property Levels 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LogLevel]' System.Collections.ObjectModel
+2019-01-16 10:33:58.1321 Trace Scanning LoggingRule 'logNamePattern: (Microsoft.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ ]'
+2019-01-16 10:33:58.1321 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-01-16 10:33:58.1321 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-01-16 10:33:58.1321 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-01-16 10:33:58.1321 Trace  Scanning Property Levels 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LogLevel]' System.Collections.ObjectModel
+2019-01-16 10:33:58.1321 Trace Scanning LoggingRule 'logNamePattern: (System.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ ]'
+2019-01-16 10:33:58.1321 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-01-16 10:33:58.1321 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-01-16 10:33:58.1321 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-01-16 10:33:58.1321 Trace  Scanning Property Levels 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LogLevel]' System.Collections.ObjectModel
+2019-01-16 10:33:58.1321 Info Found 36 configuration items
+2019-01-16 10:33:58.1321 Trace Initializing Layout Renderer: ${message}
+2019-01-16 10:33:58.1321 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:33:58.1321 Trace Initializing Layout Renderer: ${level}
+2019-01-16 10:33:58.1321 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:33:58.1321 Trace Initializing Layout Renderer: ${callsite}
+2019-01-16 10:33:58.1321 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:33:58.1321 Trace Initializing Layout Renderer: ${date}
+2019-01-16 10:33:58.1321 Trace Initializing '${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}'
+2019-01-16 10:33:58.1321 Trace FindReachableObject<System.Object>:
+2019-01-16 10:33:58.1321 Trace Scanning SimpleLayout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}''
+2019-01-16 10:33:58.1321 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:33:58.1321 Trace  Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:33:58.1321 Trace   Scanning Property Culture '' System.Globalization
+2019-01-16 10:33:58.1470 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1470 Trace  Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:33:58.1470 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1470 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:33:58.1470 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1470 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:33:58.1470 Trace Initializing Console Target[t2]
+2019-01-16 10:33:58.1470 Trace FindReachableObject<NLog.Layouts.Layout>:
+2019-01-16 10:33:58.1470 Trace Scanning ConsoleTarget 'Console Target[t2]'
+2019-01-16 10:33:58.1470 Trace  Scanning Property Layout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}'' NLog.Layouts
+2019-01-16 10:33:58.1470 Trace  Scanning SimpleLayout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}''
+2019-01-16 10:33:58.1470 Trace  Scanning Property Encoding 'System.Text.OSEncoding' System.Text
+2019-01-16 10:33:58.1470 Trace Console Target[t2] has 1 layouts
+2019-01-16 10:33:58.1470 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:33:58.1470 Trace Initializing Layout Renderer: ${event-context}
+2019-01-16 10:33:58.1470 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:33:58.1470 Trace Initializing Layout Renderer: ${stacktrace}
+2019-01-16 10:33:58.1470 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:33:58.1470 Trace Initializing Layout Renderer: ${event-context}
+2019-01-16 10:33:58.1470 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:33:58.1470 Trace Initializing Layout Renderer: ${message}
+2019-01-16 10:33:58.1470 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:33:58.1470 Trace Initializing Layout Renderer: ${level}
+2019-01-16 10:33:58.1470 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:33:58.1470 Trace Initializing Layout Renderer: ${callsite}
+2019-01-16 10:33:58.1470 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:33:58.1470 Trace Initializing Layout Renderer: ${longdate}
+2019-01-16 10:33:58.1470 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:33:58.1470 Trace Initializing '[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]'
+2019-01-16 10:33:58.1470 Trace FindReachableObject<System.Object>:
+2019-01-16 10:33:58.1470 Trace Scanning SimpleLayout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]''
+2019-01-16 10:33:58.1470 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:33:58.1470 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1631 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:33:58.1631 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1631 Trace  Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:33:58.1631 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1631 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:33:58.1631 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1631 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:33:58.1631 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1631 Trace  Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:33:58.1631 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1631 Trace  Scanning StackTraceLayoutRenderer 'Layout Renderer: ${stacktrace}'
+2019-01-16 10:33:58.1631 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1631 Trace  Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:33:58.1631 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1631 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:33:58.1631 Trace Initializing Layout Renderer: ${date}
+2019-01-16 10:33:58.1631 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:33:58.1631 Trace Initializing Layout Renderer: ${date}
+2019-01-16 10:33:58.1631 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:33:58.1631 Trace Initializing '${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log'
+2019-01-16 10:33:58.1631 Trace FindReachableObject<System.Object>:
+2019-01-16 10:33:58.1631 Trace Scanning SimpleLayout ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log''
+2019-01-16 10:33:58.1631 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:33:58.1631 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1631 Trace  Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:33:58.1631 Trace   Scanning Property Culture '' System.Globalization
+2019-01-16 10:33:58.1631 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1631 Trace  Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:33:58.1631 Trace   Scanning Property Culture '' System.Globalization
+2019-01-16 10:33:58.1631 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:33:58.1631 Trace Initializing File Target[t1]
+2019-01-16 10:33:58.1631 Trace FindReachableObject<NLog.Layouts.Layout>:
+2019-01-16 10:33:58.1631 Trace Scanning FileTarget 'File Target[t1]'
+2019-01-16 10:33:58.1631 Trace  Scanning Property FileName ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log'' NLog.Layouts
+2019-01-16 10:33:58.1631 Trace  Scanning SimpleLayout ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log''
+2019-01-16 10:33:58.1631 Trace  Scanning Property Layout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]'' NLog.Layouts
+2019-01-16 10:33:58.1631 Trace  Scanning SimpleLayout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]''
+2019-01-16 10:33:58.1631 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2019-01-16 10:33:58.1631 Trace  Scanning Property Encoding 'System.Text.UTF8Encoding+UTF8EncodingSealed' System.Text
+2019-01-16 10:33:58.1631 Trace File Target[t1] has 2 layouts
+2019-01-16 10:33:58.1631 Trace FileTarget(Name=t1): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2019-01-16 10:33:58.1856 Debug Watching path 'C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1' filter 'NLog.config' for changes.
+2019-01-16 10:33:58.1856 Info Configuration initialized.
+2019-01-16 10:33:58.1985 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.10.8381. Product version: 4.5.10.
+2019-01-16 10:33:58.1985 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.WebHost by level:
+2019-01-16 10:33:58.1985 Debug Trace =>
+2019-01-16 10:33:58.1985 Debug Debug => t1 t2
+2019-01-16 10:33:58.1985 Debug Info => t1 t2
+2019-01-16 10:33:58.1985 Debug Warn => t1 t2
+2019-01-16 10:33:58.1985 Debug Error => t1 t2
+2019-01-16 10:33:58.1985 Debug Fatal =>
+2019-01-16 10:34:02.1785 Debug Hide assemblies for callsite
+2019-01-16 10:34:02.1988 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.ApplicationLifetime by level:
+2019-01-16 10:34:02.1988 Debug Trace =>
+2019-01-16 10:34:02.1988 Debug Debug => t1 t2
+2019-01-16 10:34:02.1988 Debug Info => t1 t2
+2019-01-16 10:34:02.1988 Debug Warn => t1 t2
+2019-01-16 10:34:02.1988 Debug Error => t1 t2
+2019-01-16 10:34:02.1988 Debug Fatal =>
+2019-01-16 10:34:02.1988 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets by level:
+2019-01-16 10:34:02.1988 Debug Trace =>
+2019-01-16 10:34:02.1988 Debug Debug => t1 t2
+2019-01-16 10:34:02.1988 Debug Info => t1 t2
+2019-01-16 10:34:02.1988 Debug Warn => t1 t2
+2019-01-16 10:34:02.1988 Debug Error => t1 t2
+2019-01-16 10:34:02.1988 Debug Fatal =>
+2019-01-16 10:34:02.2193 Debug Targets for Microsoft.AspNetCore.Server.Kestrel by level:
+2019-01-16 10:34:02.2193 Debug Trace =>
+2019-01-16 10:34:02.2193 Debug Debug => t1 t2
+2019-01-16 10:34:02.2193 Debug Info => t1 t2
+2019-01-16 10:34:02.2193 Debug Warn => t1 t2
+2019-01-16 10:34:02.2193 Debug Error => t1 t2
+2019-01-16 10:34:02.2193 Debug Fatal =>
+2019-01-16 10:34:02.2599 Debug Targets for Microsoft.AspNetCore.DataProtection.TypeForwardingActivator by level:
+2019-01-16 10:34:02.2599 Debug Trace =>
+2019-01-16 10:34:02.2599 Debug Debug => t1 t2
+2019-01-16 10:34:02.2599 Debug Info => t1 t2
+2019-01-16 10:34:02.2599 Debug Warn => t1 t2
+2019-01-16 10:34:02.2599 Debug Error => t1 t2
+2019-01-16 10:34:02.2599 Debug Fatal =>
+2019-01-16 10:34:02.2737 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager by level:
+2019-01-16 10:34:02.2737 Debug Trace =>
+2019-01-16 10:34:02.2737 Debug Debug => t1 t2
+2019-01-16 10:34:02.2737 Debug Info => t1 t2
+2019-01-16 10:34:02.2737 Debug Warn => t1 t2
+2019-01-16 10:34:02.2737 Debug Error => t1 t2
+2019-01-16 10:34:02.2737 Debug Fatal =>
+2019-01-16 10:34:02.2737 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory by level:
+2019-01-16 10:34:02.2737 Debug Trace =>
+2019-01-16 10:34:02.2737 Debug Debug => t1 t2
+2019-01-16 10:34:02.2737 Debug Info => t1 t2
+2019-01-16 10:34:02.2737 Debug Warn => t1 t2
+2019-01-16 10:34:02.2737 Debug Error => t1 t2
+2019-01-16 10:34:02.2737 Debug Fatal =>
+2019-01-16 10:34:02.2737 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory by level:
+2019-01-16 10:34:02.2737 Debug Trace =>
+2019-01-16 10:34:02.2737 Debug Debug => t1 t2
+2019-01-16 10:34:02.2737 Debug Info => t1 t2
+2019-01-16 10:34:02.2737 Debug Warn => t1 t2
+2019-01-16 10:34:02.2737 Debug Error => t1 t2
+2019-01-16 10:34:02.2737 Debug Fatal =>
+2019-01-16 10:34:02.2737 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory by level:
+2019-01-16 10:34:02.2737 Debug Trace =>
+2019-01-16 10:34:02.2737 Debug Debug => t1 t2
+2019-01-16 10:34:02.2737 Debug Info => t1 t2
+2019-01-16 10:34:02.2737 Debug Warn => t1 t2
+2019-01-16 10:34:02.2737 Debug Error => t1 t2
+2019-01-16 10:34:02.2737 Debug Fatal =>
+2019-01-16 10:34:02.2927 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor by level:
+2019-01-16 10:34:02.2927 Debug Trace =>
+2019-01-16 10:34:02.2927 Debug Debug => t1 t2
+2019-01-16 10:34:02.2927 Debug Info => t1 t2
+2019-01-16 10:34:02.2927 Debug Warn => t1 t2
+2019-01-16 10:34:02.2927 Debug Error => t1 t2
+2019-01-16 10:34:02.2927 Debug Fatal =>
+2019-01-16 10:34:02.2927 Debug Targets for Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository by level:
+2019-01-16 10:34:02.2927 Debug Trace =>
+2019-01-16 10:34:02.2927 Debug Debug => t1 t2
+2019-01-16 10:34:02.2927 Debug Info => t1 t2
+2019-01-16 10:34:02.2927 Debug Warn => t1 t2
+2019-01-16 10:34:02.2927 Debug Error => t1 t2
+2019-01-16 10:34:02.2927 Debug Fatal =>
+2019-01-16 10:34:02.4435 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver by level:
+2019-01-16 10:34:02.4439 Debug Trace =>
+2019-01-16 10:34:02.4439 Debug Debug => t1 t2
+2019-01-16 10:34:02.4439 Debug Info => t1 t2
+2019-01-16 10:34:02.4439 Debug Warn => t1 t2
+2019-01-16 10:34:02.4439 Debug Error => t1 t2
+2019-01-16 10:34:02.4439 Debug Fatal =>
+2019-01-16 10:34:02.4439 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider by level:
+2019-01-16 10:34:02.4439 Debug Trace =>
+2019-01-16 10:34:02.4439 Debug Debug => t1 t2
+2019-01-16 10:34:02.4439 Debug Info => t1 t2
+2019-01-16 10:34:02.4439 Debug Warn => t1 t2
+2019-01-16 10:34:02.4439 Debug Error => t1 t2
+2019-01-16 10:34:02.4439 Debug Fatal =>
+2019-01-16 10:34:02.4439 Debug Targets for Microsoft.AspNetCore.DataProtection.Internal.DataProtectionStartupFilter by level:
+2019-01-16 10:34:02.4439 Debug Trace =>
+2019-01-16 10:34:02.4439 Debug Debug => t1 t2
+2019-01-16 10:34:02.4439 Debug Info => t1 t2
+2019-01-16 10:34:02.4439 Debug Warn => t1 t2
+2019-01-16 10:34:02.4439 Debug Error => t1 t2
+2019-01-16 10:34:02.4439 Debug Fatal =>
+2019-01-16 10:34:02.5072 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor by level:
+2019-01-16 10:34:02.5072 Debug Trace =>
+2019-01-16 10:34:02.5072 Debug Debug => t1 t2
+2019-01-16 10:34:02.5072 Debug Info => t1 t2
+2019-01-16 10:34:02.5072 Debug Warn => t1 t2
+2019-01-16 10:34:02.5072 Debug Error => t1 t2
+2019-01-16 10:34:02.5072 Debug Fatal =>
+2019-01-16 10:34:03.8686 Debug Targets for Microsoft.AspNetCore.Mvc.MvcJsonOptions by level:
+2019-01-16 10:34:03.8686 Debug Trace =>
+2019-01-16 10:34:03.8686 Debug Debug => t1 t2
+2019-01-16 10:34:03.8686 Debug Info => t1 t2
+2019-01-16 10:34:03.8686 Debug Warn => t1 t2
+2019-01-16 10:34:03.8686 Debug Error => t1 t2
+2019-01-16 10:34:03.8686 Debug Fatal =>
+2019-01-16 10:34:03.8686 Debug Targets for Microsoft.AspNetCore.Mvc.MvcOptions by level:
+2019-01-16 10:34:03.8686 Debug Trace =>
+2019-01-16 10:34:03.8686 Debug Debug => t1 t2
+2019-01-16 10:34:03.8686 Debug Info => t1 t2
+2019-01-16 10:34:03.8686 Debug Warn => t1 t2
+2019-01-16 10:34:03.8686 Debug Error => t1 t2
+2019-01-16 10:34:03.8686 Debug Fatal =>
+2019-01-16 10:34:04.0277 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.JsonPatchInputFormatter by level:
+2019-01-16 10:34:04.0277 Debug Trace =>
+2019-01-16 10:34:04.0277 Debug Debug => t1 t2
+2019-01-16 10:34:04.0277 Debug Info => t1 t2
+2019-01-16 10:34:04.0277 Debug Warn => t1 t2
+2019-01-16 10:34:04.0277 Debug Error => t1 t2
+2019-01-16 10:34:04.0277 Debug Fatal =>
+2019-01-16 10:34:04.0277 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.JsonInputFormatter by level:
+2019-01-16 10:34:04.0277 Debug Trace =>
+2019-01-16 10:34:04.0277 Debug Debug => t1 t2
+2019-01-16 10:34:04.0277 Debug Info => t1 t2
+2019-01-16 10:34:04.0277 Debug Warn => t1 t2
+2019-01-16 10:34:04.0277 Debug Error => t1 t2
+2019-01-16 10:34:04.0277 Debug Fatal =>
+2019-01-16 10:34:04.0277 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider by level:
+2019-01-16 10:34:04.0376 Debug Trace =>
+2019-01-16 10:34:04.0376 Debug Debug => t1 t2
+2019-01-16 10:34:04.0376 Debug Info => t1 t2
+2019-01-16 10:34:04.0376 Debug Warn => t1 t2
+2019-01-16 10:34:04.0376 Debug Error => t1 t2
+2019-01-16 10:34:04.0376 Debug Fatal =>
+2019-01-16 10:34:04.0376 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter by level:
+2019-01-16 10:34:04.0376 Debug Trace =>
+2019-01-16 10:34:04.0376 Debug Debug => t1 t2
+2019-01-16 10:34:04.0376 Debug Info => t1 t2
+2019-01-16 10:34:04.0376 Debug Warn => t1 t2
+2019-01-16 10:34:04.0376 Debug Error => t1 t2
+2019-01-16 10:34:04.0376 Debug Fatal =>
+2019-01-16 10:34:04.0376 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions by level:
+2019-01-16 10:34:04.0376 Debug Trace =>
+2019-01-16 10:34:04.0376 Debug Debug => t1 t2
+2019-01-16 10:34:04.0376 Debug Info => t1 t2
+2019-01-16 10:34:04.0376 Debug Warn => t1 t2
+2019-01-16 10:34:04.0376 Debug Error => t1 t2
+2019-01-16 10:34:04.0376 Debug Fatal =>
+2019-01-16 10:34:04.3385 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler by level:
+2019-01-16 10:34:04.3385 Debug Trace =>
+2019-01-16 10:34:04.3385 Debug Debug => t1 t2
+2019-01-16 10:34:04.3385 Debug Info => t1 t2
+2019-01-16 10:34:04.3385 Debug Warn => t1 t2
+2019-01-16 10:34:04.3385 Debug Error => t1 t2
+2019-01-16 10:34:04.3385 Debug Fatal =>
+2019-01-16 10:34:04.3385 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine by level:
+2019-01-16 10:34:04.3385 Debug Trace =>
+2019-01-16 10:34:04.3385 Debug Debug => t1 t2
+2019-01-16 10:34:04.3385 Debug Info => t1 t2
+2019-01-16 10:34:04.3385 Debug Warn => t1 t2
+2019-01-16 10:34:04.3385 Debug Error => t1 t2
+2019-01-16 10:34:04.3385 Debug Fatal =>
+2019-01-16 10:34:04.3529 Debug Targets for Microsoft.AspNetCore.Mvc.MvcViewOptions by level:
+2019-01-16 10:34:04.3529 Debug Trace =>
+2019-01-16 10:34:04.3529 Debug Debug => t1 t2
+2019-01-16 10:34:04.3529 Debug Info => t1 t2
+2019-01-16 10:34:04.3529 Debug Warn => t1 t2
+2019-01-16 10:34:04.3529 Debug Error => t1 t2
+2019-01-16 10:34:04.3529 Debug Fatal =>
+2019-01-16 10:34:04.3529 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.RazorProjectPageRouteModelProvider by level:
+2019-01-16 10:34:04.3529 Debug Trace =>
+2019-01-16 10:34:04.3529 Debug Debug => t1 t2
+2019-01-16 10:34:04.3529 Debug Info => t1 t2
+2019-01-16 10:34:04.3529 Debug Warn => t1 t2
+2019-01-16 10:34:04.3529 Debug Error => t1 t2
+2019-01-16 10:34:04.3529 Debug Fatal =>
+2019-01-16 10:34:04.3529 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.CompiledPageRouteModelProvider by level:
+2019-01-16 10:34:04.3529 Debug Trace =>
+2019-01-16 10:34:04.3529 Debug Debug => t1 t2
+2019-01-16 10:34:04.3529 Debug Info => t1 t2
+2019-01-16 10:34:04.3529 Debug Warn => t1 t2
+2019-01-16 10:34:04.3529 Debug Error => t1 t2
+2019-01-16 10:34:04.3529 Debug Fatal =>
+2019-01-16 10:34:04.3848 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory by level:
+2019-01-16 10:34:04.3848 Debug Trace =>
+2019-01-16 10:34:04.3848 Debug Debug => t1 t2
+2019-01-16 10:34:04.3848 Debug Info => t1 t2
+2019-01-16 10:34:04.3848 Debug Warn => t1 t2
+2019-01-16 10:34:04.3848 Debug Error => t1 t2
+2019-01-16 10:34:04.3848 Debug Fatal =>
+2019-01-16 10:34:04.4134 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder by level:
+2019-01-16 10:34:04.4134 Debug Trace =>
+2019-01-16 10:34:04.4134 Debug Debug => t1 t2
+2019-01-16 10:34:04.4134 Debug Info => t1 t2
+2019-01-16 10:34:04.4134 Debug Warn => t1 t2
+2019-01-16 10:34:04.4134 Debug Error => t1 t2
+2019-01-16 10:34:04.4134 Debug Fatal =>
+2019-01-16 10:34:04.4134 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker by level:
+2019-01-16 10:34:04.4134 Debug Trace =>
+2019-01-16 10:34:04.4134 Debug Debug => t1 t2
+2019-01-16 10:34:04.4134 Debug Info => t1 t2
+2019-01-16 10:34:04.4134 Debug Warn => t1 t2
+2019-01-16 10:34:04.4134 Debug Error => t1 t2
+2019-01-16 10:34:04.4394 Debug Fatal =>
+2019-01-16 10:34:04.4511 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector by level:
+2019-01-16 10:34:04.4511 Debug Trace =>
+2019-01-16 10:34:04.4511 Debug Debug => t1 t2
+2019-01-16 10:34:04.4511 Debug Info => t1 t2
+2019-01-16 10:34:04.4511 Debug Warn => t1 t2
+2019-01-16 10:34:04.4511 Debug Error => t1 t2
+2019-01-16 10:34:04.4511 Debug Fatal =>
+2019-01-16 10:34:04.4606 Debug Targets for Microsoft.AspNetCore.Mvc.ViewFeatures.CookieTempDataProvider by level:
+2019-01-16 10:34:04.4606 Debug Trace =>
+2019-01-16 10:34:04.4606 Debug Debug => t1 t2
+2019-01-16 10:34:04.4606 Debug Info => t1 t2
+2019-01-16 10:34:04.4606 Debug Warn => t1 t2
+2019-01-16 10:34:04.4606 Debug Error => t1 t2
+2019-01-16 10:34:04.4606 Debug Fatal =>
+2019-01-16 10:34:04.4878 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker by level:
+2019-01-16 10:34:04.4878 Debug Trace =>
+2019-01-16 10:34:04.4878 Debug Debug => t1 t2
+2019-01-16 10:34:04.4878 Debug Info => t1 t2
+2019-01-16 10:34:04.4878 Debug Warn => t1 t2
+2019-01-16 10:34:04.4878 Debug Error => t1 t2
+2019-01-16 10:34:04.4878 Debug Fatal =>
+2019-01-16 10:34:04.4948 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.ActionSelector by level:
+2019-01-16 10:34:04.4948 Debug Trace =>
+2019-01-16 10:34:04.4948 Debug Debug => t1 t2
+2019-01-16 10:34:04.4948 Debug Info => t1 t2
+2019-01-16 10:34:04.4948 Debug Warn => t1 t2
+2019-01-16 10:34:04.4948 Debug Error => t1 t2
+2019-01-16 10:34:04.4948 Debug Fatal =>
+2019-01-16 10:34:04.4948 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.MvcRouteHandler by level:
+2019-01-16 10:34:04.4948 Debug Trace =>
+2019-01-16 10:34:04.4948 Debug Debug => t1 t2
+2019-01-16 10:34:04.4948 Debug Info => t1 t2
+2019-01-16 10:34:04.4948 Debug Warn => t1 t2
+2019-01-16 10:34:04.4948 Debug Error => t1 t2
+2019-01-16 10:34:04.4948 Debug Fatal =>
+2019-01-16 10:34:04.5914 Debug Targets for WebCore.Startup by level:
+2019-01-16 10:34:04.5914 Debug Trace =>
+2019-01-16 10:34:04.5914 Debug Debug => t1 t2
+2019-01-16 10:34:04.5914 Debug Info => t1 t2
+2019-01-16 10:34:04.5914 Debug Warn => t1 t2
+2019-01-16 10:34:04.5914 Debug Error => t1 t2
+2019-01-16 10:34:04.5914 Debug Fatal =>
+2019-01-16 10:34:04.5914 Debug Targets for Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware by level:
+2019-01-16 10:34:04.5914 Debug Trace =>
+2019-01-16 10:34:04.5914 Debug Debug => t1 t2
+2019-01-16 10:34:04.5999 Debug Info => t1 t2
+2019-01-16 10:34:04.5999 Debug Warn => t1 t2
+2019-01-16 10:34:04.5999 Debug Error => t1 t2
+2019-01-16 10:34:04.5999 Debug Fatal =>
+2019-01-16 10:34:04.6346 Debug Targets for Microsoft.AspNetCore.Builder.RouterMiddleware by level:
+2019-01-16 10:34:04.6346 Debug Trace =>
+2019-01-16 10:34:04.6346 Debug Debug => t1 t2
+2019-01-16 10:34:04.6346 Debug Info => t1 t2
+2019-01-16 10:34:04.6346 Debug Warn => t1 t2
+2019-01-16 10:34:04.6346 Debug Error => t1 t2
+2019-01-16 10:34:04.6346 Debug Fatal =>
+2019-01-16 10:34:04.6346 Debug Targets for Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware by level:
+2019-01-16 10:34:04.6346 Debug Trace =>
+2019-01-16 10:34:04.6346 Debug Debug => t1 t2
+2019-01-16 10:34:04.6346 Debug Info => t1 t2
+2019-01-16 10:34:04.6346 Debug Warn => t1 t2
+2019-01-16 10:34:04.6346 Debug Error => t1 t2
+2019-01-16 10:34:04.6346 Debug Fatal =>
+2019-01-16 10:34:04.6346 Debug Targets for Microsoft.AspNetCore.CookiePolicy.CookiePolicyMiddleware by level:
+2019-01-16 10:34:04.6346 Debug Trace =>
+2019-01-16 10:34:04.6346 Debug Debug => t1 t2
+2019-01-16 10:34:04.6346 Debug Info => t1 t2
+2019-01-16 10:34:04.6346 Debug Warn => t1 t2
+2019-01-16 10:34:04.6346 Debug Error => t1 t2
+2019-01-16 10:34:04.6346 Debug Fatal =>
+2019-01-16 10:34:04.6346 Debug Targets for Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware by level:
+2019-01-16 10:34:04.6346 Debug Trace =>
+2019-01-16 10:34:04.6346 Debug Debug => t1 t2
+2019-01-16 10:34:04.6346 Debug Info => t1 t2
+2019-01-16 10:34:04.6467 Debug Warn => t1 t2
+2019-01-16 10:34:04.6467 Debug Error => t1 t2
+2019-01-16 10:34:04.6467 Debug Fatal =>
+2019-01-16 10:34:04.6663 Debug Targets for Microsoft.AspNetCore.Session.SessionMiddleware by level:
+2019-01-16 10:34:04.6663 Debug Trace =>
+2019-01-16 10:34:04.6663 Debug Debug => t1 t2
+2019-01-16 10:34:04.6663 Debug Info => t1 t2
+2019-01-16 10:34:04.6663 Debug Warn => t1 t2
+2019-01-16 10:34:04.6663 Debug Error => t1 t2
+2019-01-16 10:34:04.6663 Debug Fatal =>
+2019-01-16 10:34:04.6663 Debug Targets for Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware by level:
+2019-01-16 10:34:04.6663 Debug Trace =>
+2019-01-16 10:34:04.6663 Debug Debug => t1 t2
+2019-01-16 10:34:04.6663 Debug Info => t1 t2
+2019-01-16 10:34:04.6663 Debug Warn => t1 t2
+2019-01-16 10:34:04.6663 Debug Error => t1 t2
+2019-01-16 10:34:04.6663 Debug Fatal =>
+2019-01-16 10:34:04.6663 Debug Targets for Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware by level:
+2019-01-16 10:34:04.6663 Debug Trace =>
+2019-01-16 10:34:04.6663 Debug Debug => t1 t2
+2019-01-16 10:34:04.6663 Debug Info => t1 t2
+2019-01-16 10:34:04.6663 Debug Warn => t1 t2
+2019-01-16 10:34:04.6663 Debug Error => t1 t2
+2019-01-16 10:34:04.6663 Debug Fatal =>
+2019-01-16 10:34:04.6787 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor by level:
+2019-01-16 10:34:04.6787 Debug Trace =>
+2019-01-16 10:34:04.6787 Debug Debug => t1 t2
+2019-01-16 10:34:04.6787 Debug Info => t1 t2
+2019-01-16 10:34:04.6787 Debug Warn => t1 t2
+2019-01-16 10:34:04.6787 Debug Error => t1 t2
+2019-01-16 10:34:04.6787 Debug Fatal =>
+2019-01-16 10:34:04.6787 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer by level:
+2019-01-16 10:34:04.6787 Debug Trace =>
+2019-01-16 10:34:04.6787 Debug Debug => t1 t2
+2019-01-16 10:34:04.6787 Debug Info => t1 t2
+2019-01-16 10:34:04.6787 Debug Warn => t1 t2
+2019-01-16 10:34:04.6787 Debug Error => t1 t2
+2019-01-16 10:34:04.6787 Debug Fatal =>
+2019-01-16 10:34:04.7577 Debug Targets for HttpsConnectionAdapter by level:
+2019-01-16 10:34:04.7577 Debug Trace =>
+2019-01-16 10:34:04.7577 Debug Debug => t1 t2
+2019-01-16 10:34:04.7577 Debug Info => t1 t2
+2019-01-16 10:34:04.7577 Debug Warn => t1 t2
+2019-01-16 10:34:04.7577 Debug Error => t1 t2
+2019-01-16 10:34:04.7577 Debug Fatal =>
+2019-01-16 10:34:04.9055 Debug FileTarget(Name=t1): Process file 'C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log' on startup
+2019-01-16 10:34:04.9140 Debug Creating file appender: C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log
+2019-01-16 10:34:04.9140 Trace Opening C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log with allowFileSharedWriting=False
+2019-01-16 10:34:07.2184 Trace Opening C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log with allowFileSharedWriting=False
+2019-01-16 10:34:07.2358 Trace Opening C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log with allowFileSharedWriting=False
+2019-01-16 10:34:07.3672 Debug Targets for Microsoft.AspNetCore.Session.DistributedSession by level:
+2019-01-16 10:34:07.3672 Debug Trace =>
+2019-01-16 10:34:07.3672 Debug Debug => t1 t2
+2019-01-16 10:34:07.3672 Debug Info => t1 t2
+2019-01-16 10:34:07.3672 Debug Warn => t1 t2
+2019-01-16 10:34:07.3672 Debug Error => t1 t2
+2019-01-16 10:34:07.3672 Debug Fatal =>
+2019-01-16 10:34:07.5519 Debug Targets for Microsoft.AspNetCore.Routing.Tree.TreeRouter by level:
+2019-01-16 10:34:07.5519 Debug Trace =>
+2019-01-16 10:34:07.5519 Debug Debug => t1 t2
+2019-01-16 10:34:07.5519 Debug Info => t1 t2
+2019-01-16 10:34:07.5519 Debug Warn => t1 t2
+2019-01-16 10:34:07.5540 Debug Error => t1 t2
+2019-01-16 10:34:07.5540 Debug Fatal =>
+2019-01-16 10:34:07.5540 Debug Targets for Microsoft.AspNetCore.Routing.RouteConstraintMatcher by level:
+2019-01-16 10:34:07.5540 Debug Trace =>
+2019-01-16 10:34:07.5540 Debug Debug => t1 t2
+2019-01-16 10:34:07.5540 Debug Info => t1 t2
+2019-01-16 10:34:07.5540 Debug Warn => t1 t2
+2019-01-16 10:34:07.5540 Debug Error => t1 t2
+2019-01-16 10:34:07.5540 Debug Fatal =>
+2019-01-16 10:34:07.5540 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.MvcAttributeRouteHandler by level:
+2019-01-16 10:34:07.5540 Debug Trace =>
+2019-01-16 10:34:07.5540 Debug Debug => t1 t2
+2019-01-16 10:34:07.5540 Debug Info => t1 t2
+2019-01-16 10:34:07.5540 Debug Warn => t1 t2
+2019-01-16 10:34:07.5540 Debug Error => t1 t2
+2019-01-16 10:34:07.5540 Debug Fatal =>
+2019-01-16 10:34:07.9271 Debug Targets for Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgery by level:
+2019-01-16 10:34:07.9285 Debug Trace =>
+2019-01-16 10:34:07.9285 Debug Debug => t1 t2
+2019-01-16 10:34:07.9285 Debug Info => t1 t2
+2019-01-16 10:34:07.9285 Debug Warn => t1 t2
+2019-01-16 10:34:07.9285 Debug Error => t1 t2
+2019-01-16 10:34:07.9285 Debug Fatal =>
+2019-01-16 10:34:07.9285 Debug Targets for Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.AutoValidateAntiforgeryTokenAuthorizationFilter by level:
+2019-01-16 10:34:07.9285 Debug Trace =>
+2019-01-16 10:34:07.9285 Debug Debug => t1 t2
+2019-01-16 10:34:07.9285 Debug Info => t1 t2
+2019-01-16 10:34:07.9285 Debug Warn => t1 t2
+2019-01-16 10:34:07.9285 Debug Error => t1 t2
+2019-01-16 10:34:07.9285 Debug Fatal =>
+2019-01-16 10:34:07.9976 Debug Targets for Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker by level:
+2019-01-16 10:34:07.9976 Debug Trace =>
+2019-01-16 10:34:07.9976 Debug Debug => t1 t2
+2019-01-16 10:34:07.9976 Debug Info => t1 t2
+2019-01-16 10:34:07.9976 Debug Warn => t1 t2
+2019-01-16 10:34:07.9976 Debug Error => t1 t2
+2019-01-16 10:34:07.9976 Debug Fatal =>
+2019-01-16 10:34:08.0566 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.TagHelpers.HeadTagHelper by level:
+2019-01-16 10:34:08.0566 Debug Trace =>
+2019-01-16 10:34:08.0566 Debug Debug => t1 t2
+2019-01-16 10:34:08.0566 Debug Info => t1 t2
+2019-01-16 10:34:08.0566 Debug Warn => t1 t2
+2019-01-16 10:34:08.0566 Debug Error => t1 t2
+2019-01-16 10:34:08.0566 Debug Fatal =>
+2019-01-16 10:34:08.0800 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.TagHelpers.BodyTagHelper by level:
+2019-01-16 10:34:08.0800 Debug Trace =>
+2019-01-16 10:34:08.0800 Debug Debug => t1 t2
+2019-01-16 10:34:08.0800 Debug Info => t1 t2
+2019-01-16 10:34:08.0800 Debug Warn => t1 t2
+2019-01-16 10:34:08.0800 Debug Error => t1 t2
+2019-01-16 10:34:08.0800 Debug Fatal =>
+2019-01-16 10:34:21.7162 Debug Targets for Microsoft.AspNetCore.Routing.RouteBase by level:
+2019-01-16 10:34:21.7162 Debug Trace =>
+2019-01-16 10:34:21.7162 Debug Debug => t1 t2
+2019-01-16 10:34:21.7162 Debug Info => t1 t2
+2019-01-16 10:34:21.7162 Debug Warn => t1 t2
+2019-01-16 10:34:21.7162 Debug Error => t1 t2
+2019-01-16 10:34:21.7162 Debug Fatal =>
+2019-01-16 10:34:21.7162 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder by level:
+2019-01-16 10:34:21.7162 Debug Trace =>
+2019-01-16 10:34:21.7162 Debug Debug => t1 t2
+2019-01-16 10:34:21.7328 Debug Info => t1 t2
+2019-01-16 10:34:21.7328 Debug Warn => t1 t2
+2019-01-16 10:34:21.7328 Debug Error => t1 t2
+2019-01-16 10:34:21.7328 Debug Fatal =>
+2019-01-16 10:34:21.7407 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.FileStreamResultExecutor by level:
+2019-01-16 10:34:21.7407 Debug Trace =>
+2019-01-16 10:34:21.7407 Debug Debug => t1 t2
+2019-01-16 10:34:21.7407 Debug Info => t1 t2
+2019-01-16 10:34:21.7407 Debug Warn => t1 t2
+2019-01-16 10:34:21.7407 Debug Error => t1 t2
+2019-01-16 10:34:21.7407 Debug Fatal =>
+2019-01-16 10:34:35.8129 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor by level:
+2019-01-16 10:34:35.8129 Debug Trace =>
+2019-01-16 10:34:35.8129 Debug Debug => t1 t2
+2019-01-16 10:34:35.8129 Debug Info => t1 t2
+2019-01-16 10:34:35.8129 Debug Warn => t1 t2
+2019-01-16 10:34:35.8129 Debug Error => t1 t2
+2019-01-16 10:34:35.8129 Debug Fatal =>
+2019-01-16 10:46:51.1586 Info Message Template Auto Format enabled
+2019-01-16 10:46:51.1770 Info Loading assembly: NLog.Web.AspNetCore
+2019-01-16 10:46:51.1770 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2019-01-16 10:46:51.1919 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.1958 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:46:51.1958 Debug Setting 'UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2019-01-16 10:46:51.2341 Trace Wrapping LevelLayoutRenderer with UppercaseLayoutRendererWrapper
+2019-01-16 10:46:51.2341 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.2341 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:46:51.2341 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.2341 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2019-01-16 10:46:51.2341 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:46:51.2341 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2019-01-16 10:46:51.2341 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2019-01-16 10:46:51.2414 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:46:51.2414 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:46:51.2414 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.2414 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-01-16 10:46:51.2414 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.2414 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:46:51.2612 Debug Setting 'FileTarget.name' to 't1'
+2019-01-16 10:46:51.2612 Debug Setting 'FileTarget.fileName' to '${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log'
+2019-01-16 10:46:51.2612 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.2612 Trace Scanning BaseDirLayoutRenderer 'Layout Renderer: ${basedir}'
+2019-01-16 10:46:51.2839 Debug Setting 'DateLayoutRenderer.format' to 'yyyy-MM-dd'
+2019-01-16 10:46:51.2839 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.2839 Trace Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:46:51.2839 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:46:51.2839 Debug Setting 'DateLayoutRenderer.format' to 'yyyy-MM-dd HH'
+2019-01-16 10:46:51.2839 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.2839 Trace Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:46:51.2839 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:46:51.2915 Debug Setting 'FileTarget.layout' to '[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]'
+2019-01-16 10:46:51.2915 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.2915 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:46:51.2915 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.2915 Trace Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:46:51.2915 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.2915 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:46:51.2915 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.2915 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:46:51.2915 Debug Setting 'EventContextLayoutRenderer.item' to 'exception'
+2019-01-16 10:46:51.2915 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.2915 Trace Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:46:51.2915 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.2915 Trace Scanning StackTraceLayoutRenderer 'Layout Renderer: ${stacktrace}'
+2019-01-16 10:46:51.2915 Debug Setting 'EventContextLayoutRenderer.item' to 'stacktrace'
+2019-01-16 10:46:51.2915 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.2915 Trace Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:46:51.2915 Info Adding target File Target[t1]
+2019-01-16 10:46:51.2915 Debug Registered target t1: NLog.Targets.FileTarget
+2019-01-16 10:46:51.2915 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.3039 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:46:51.3039 Debug Setting 'UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2019-01-16 10:46:51.3039 Trace Wrapping LevelLayoutRenderer with UppercaseLayoutRendererWrapper
+2019-01-16 10:46:51.3039 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.3039 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:46:51.3039 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.3039 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2019-01-16 10:46:51.3039 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:46:51.3039 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2019-01-16 10:46:51.3039 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2019-01-16 10:46:51.3039 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:46:51.3039 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:46:51.3039 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.3039 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-01-16 10:46:51.3039 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.3039 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:46:51.3039 Debug Setting 'ConsoleTarget.name' to 't2'
+2019-01-16 10:46:51.3039 Debug Setting 'ConsoleTarget.layout' to '${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}'
+2019-01-16 10:46:51.3039 Debug Setting 'DateLayoutRenderer.format' to 'yyyyMMddHHmmss'
+2019-01-16 10:46:51.3039 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.3039 Trace Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:46:51.3039 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:46:51.3039 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.3039 Trace Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:46:51.3039 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.3039 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:46:51.3039 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:46:51.3039 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:46:51.3039 Info Adding target Console Target[t2]
+2019-01-16 10:46:51.3039 Debug Registered target t2: NLog.Targets.ConsoleTarget
+2019-01-16 10:46:51.3189 Trace ParseRulesElement
+2019-01-16 10:46:51.3189 Info Configured from an XML element in C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\NLog.config...
+2019-01-16 10:46:51.3189 Debug Unused target checking is started... Rule Count: 4, Target Count: 2
+2019-01-16 10:46:51.3380 Debug Unused target checking is completed. Total Rule Count: 4, Total Target Count: 2, Unused Target Count: 0
+2019-01-16 10:46:51.3380 Debug --- NLog configuration dump ---
+2019-01-16 10:46:51.3380 Debug Targets:
+2019-01-16 10:46:51.3380 Debug File Target[t1]
+2019-01-16 10:46:51.3380 Debug Console Target[t2]
+2019-01-16 10:46:51.3380 Debug Rules:
+2019-01-16 10:46:51.3380 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error ] appendTo: [ t1 ]
+2019-01-16 10:46:51.3380 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error ] appendTo: [ t2 ]
+2019-01-16 10:46:51.3380 Debug logNamePattern: (Microsoft.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ ]
+2019-01-16 10:46:51.3380 Debug logNamePattern: (System.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ ]
+2019-01-16 10:46:51.3380 Debug --- End of NLog configuration dump ---
+2019-01-16 10:46:51.3380 Trace FindReachableObject<System.Object>:
+2019-01-16 10:46:51.3380 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error ] appendTo: [ t1 ]'
+2019-01-16 10:46:51.3380 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-01-16 10:46:51.3380 Trace  Scanning FileTarget 'File Target[t1]'
+2019-01-16 10:46:51.3380 Trace   Scanning Property FileName ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log'' NLog.Layouts
+2019-01-16 10:46:51.3380 Trace   Scanning SimpleLayout ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log''
+2019-01-16 10:46:51.3380 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:46:51.3380 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3380 Trace    Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:46:51.3380 Trace     Scanning Property Culture '' System.Globalization
+2019-01-16 10:46:51.3380 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3380 Trace    Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:46:51.3380 Trace     Scanning Property Culture '' System.Globalization
+2019-01-16 10:46:51.3507 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3507 Trace   Scanning Property Layout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]'' NLog.Layouts
+2019-01-16 10:46:51.3507 Trace   Scanning SimpleLayout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]''
+2019-01-16 10:46:51.3507 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:46:51.3507 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3507 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:46:51.3507 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3507 Trace    Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:46:51.3507 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3507 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:46:51.3507 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3507 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:46:51.3507 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3507 Trace    Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:46:51.3507 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3507 Trace    Scanning StackTraceLayoutRenderer 'Layout Renderer: ${stacktrace}'
+2019-01-16 10:46:51.3507 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3507 Trace    Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:46:51.3507 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3507 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2019-01-16 10:46:51.3507 Trace   Scanning Property Encoding 'System.Text.UTF8Encoding+UTF8EncodingSealed' System.Text
+2019-01-16 10:46:51.3507 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-01-16 10:46:51.3507 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-01-16 10:46:51.3507 Trace  Scanning Property Levels 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LogLevel]' System.Collections.ObjectModel
+2019-01-16 10:46:51.3507 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error ] appendTo: [ t2 ]'
+2019-01-16 10:46:51.3507 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-01-16 10:46:51.3507 Trace  Scanning ConsoleTarget 'Console Target[t2]'
+2019-01-16 10:46:51.3507 Trace   Scanning Property Layout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}'' NLog.Layouts
+2019-01-16 10:46:51.3507 Trace   Scanning SimpleLayout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}''
+2019-01-16 10:46:51.3507 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:46:51.3507 Trace    Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:46:51.3507 Trace     Scanning Property Culture '' System.Globalization
+2019-01-16 10:46:51.3507 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3507 Trace    Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:46:51.3507 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3507 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:46:51.3507 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3507 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:46:51.3669 Trace   Scanning Property Encoding 'System.Text.OSEncoding' System.Text
+2019-01-16 10:46:51.3669 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-01-16 10:46:51.3669 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-01-16 10:46:51.3669 Trace  Scanning Property Levels 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LogLevel]' System.Collections.ObjectModel
+2019-01-16 10:46:51.3669 Trace Scanning LoggingRule 'logNamePattern: (Microsoft.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ ]'
+2019-01-16 10:46:51.3669 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-01-16 10:46:51.3669 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-01-16 10:46:51.3669 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-01-16 10:46:51.3669 Trace  Scanning Property Levels 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LogLevel]' System.Collections.ObjectModel
+2019-01-16 10:46:51.3669 Trace Scanning LoggingRule 'logNamePattern: (System.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ ]'
+2019-01-16 10:46:51.3669 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-01-16 10:46:51.3669 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-01-16 10:46:51.3669 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-01-16 10:46:51.3669 Trace  Scanning Property Levels 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LogLevel]' System.Collections.ObjectModel
+2019-01-16 10:46:51.3669 Info Found 36 configuration items
+2019-01-16 10:46:51.3669 Trace Initializing Layout Renderer: ${message}
+2019-01-16 10:46:51.3669 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:46:51.3669 Trace Initializing Layout Renderer: ${level}
+2019-01-16 10:46:51.3669 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:46:51.3669 Trace Initializing Layout Renderer: ${callsite}
+2019-01-16 10:46:51.3669 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:46:51.3669 Trace Initializing Layout Renderer: ${date}
+2019-01-16 10:46:51.3669 Trace Initializing '${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}'
+2019-01-16 10:46:51.3669 Trace FindReachableObject<System.Object>:
+2019-01-16 10:46:51.3669 Trace Scanning SimpleLayout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}''
+2019-01-16 10:46:51.3669 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:46:51.3669 Trace  Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:46:51.3669 Trace   Scanning Property Culture '' System.Globalization
+2019-01-16 10:46:51.3669 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3669 Trace  Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:46:51.3669 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3669 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:46:51.3669 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3669 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:46:51.3836 Trace Initializing Console Target[t2]
+2019-01-16 10:46:51.3836 Trace FindReachableObject<NLog.Layouts.Layout>:
+2019-01-16 10:46:51.3836 Trace Scanning ConsoleTarget 'Console Target[t2]'
+2019-01-16 10:46:51.3836 Trace  Scanning Property Layout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}'' NLog.Layouts
+2019-01-16 10:46:51.3836 Trace  Scanning SimpleLayout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}''
+2019-01-16 10:46:51.3836 Trace  Scanning Property Encoding 'System.Text.OSEncoding' System.Text
+2019-01-16 10:46:51.3836 Trace Console Target[t2] has 1 layouts
+2019-01-16 10:46:51.3836 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:46:51.3836 Trace Initializing Layout Renderer: ${event-context}
+2019-01-16 10:46:51.3836 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:46:51.3836 Trace Initializing Layout Renderer: ${stacktrace}
+2019-01-16 10:46:51.3836 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:46:51.3836 Trace Initializing Layout Renderer: ${event-context}
+2019-01-16 10:46:51.3836 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:46:51.3836 Trace Initializing Layout Renderer: ${message}
+2019-01-16 10:46:51.3836 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:46:51.3836 Trace Initializing Layout Renderer: ${level}
+2019-01-16 10:46:51.3836 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:46:51.3836 Trace Initializing Layout Renderer: ${callsite}
+2019-01-16 10:46:51.3836 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:46:51.3836 Trace Initializing Layout Renderer: ${longdate}
+2019-01-16 10:46:51.3836 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:46:51.3836 Trace Initializing '[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]'
+2019-01-16 10:46:51.3836 Trace FindReachableObject<System.Object>:
+2019-01-16 10:46:51.3836 Trace Scanning SimpleLayout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]''
+2019-01-16 10:46:51.3836 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:46:51.3836 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3836 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:46:51.3836 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3836 Trace  Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:46:51.3836 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3836 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:46:51.3978 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3978 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:46:51.3978 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3978 Trace  Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:46:51.3978 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3978 Trace  Scanning StackTraceLayoutRenderer 'Layout Renderer: ${stacktrace}'
+2019-01-16 10:46:51.3978 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3978 Trace  Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:46:51.3978 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3978 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:46:51.3978 Trace Initializing Layout Renderer: ${date}
+2019-01-16 10:46:51.3978 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:46:51.3978 Trace Initializing Layout Renderer: ${date}
+2019-01-16 10:46:51.3978 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:46:51.3978 Trace Initializing '${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log'
+2019-01-16 10:46:51.3978 Trace FindReachableObject<System.Object>:
+2019-01-16 10:46:51.3978 Trace Scanning SimpleLayout ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log''
+2019-01-16 10:46:51.3978 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:46:51.3978 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3978 Trace  Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:46:51.3978 Trace   Scanning Property Culture '' System.Globalization
+2019-01-16 10:46:51.3978 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3978 Trace  Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:46:51.3978 Trace   Scanning Property Culture '' System.Globalization
+2019-01-16 10:46:51.3978 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:46:51.3978 Trace Initializing File Target[t1]
+2019-01-16 10:46:51.3978 Trace FindReachableObject<NLog.Layouts.Layout>:
+2019-01-16 10:46:51.3978 Trace Scanning FileTarget 'File Target[t1]'
+2019-01-16 10:46:51.3978 Trace  Scanning Property FileName ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log'' NLog.Layouts
+2019-01-16 10:46:51.3978 Trace  Scanning SimpleLayout ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log''
+2019-01-16 10:46:51.3978 Trace  Scanning Property Layout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]'' NLog.Layouts
+2019-01-16 10:46:51.3978 Trace  Scanning SimpleLayout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]''
+2019-01-16 10:46:51.3978 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2019-01-16 10:46:51.3978 Trace  Scanning Property Encoding 'System.Text.UTF8Encoding+UTF8EncodingSealed' System.Text
+2019-01-16 10:46:51.3978 Trace File Target[t1] has 2 layouts
+2019-01-16 10:46:51.3978 Trace FileTarget(Name=t1): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2019-01-16 10:46:51.4191 Debug Watching path 'C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1' filter 'NLog.config' for changes.
+2019-01-16 10:46:51.4191 Info Configuration initialized.
+2019-01-16 10:46:51.4349 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.10.8381. Product version: 4.5.10.
+2019-01-16 10:46:51.4349 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.WebHost by level:
+2019-01-16 10:46:51.4349 Debug Trace =>
+2019-01-16 10:46:51.4349 Debug Debug => t1 t2
+2019-01-16 10:46:51.4349 Debug Info => t1 t2
+2019-01-16 10:46:51.4349 Debug Warn => t1 t2
+2019-01-16 10:46:51.4349 Debug Error => t1 t2
+2019-01-16 10:46:51.4349 Debug Fatal =>
+2019-01-16 10:46:54.7068 Debug Hide assemblies for callsite
+2019-01-16 10:46:54.7321 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.ApplicationLifetime by level:
+2019-01-16 10:46:54.7321 Debug Trace =>
+2019-01-16 10:46:54.7321 Debug Debug => t1 t2
+2019-01-16 10:46:54.7321 Debug Info => t1 t2
+2019-01-16 10:46:54.7321 Debug Warn => t1 t2
+2019-01-16 10:46:54.7321 Debug Error => t1 t2
+2019-01-16 10:46:54.7321 Debug Fatal =>
+2019-01-16 10:46:54.7321 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets by level:
+2019-01-16 10:46:54.7321 Debug Trace =>
+2019-01-16 10:46:54.7321 Debug Debug => t1 t2
+2019-01-16 10:46:54.7321 Debug Info => t1 t2
+2019-01-16 10:46:54.7321 Debug Warn => t1 t2
+2019-01-16 10:46:54.7321 Debug Error => t1 t2
+2019-01-16 10:46:54.7321 Debug Fatal =>
+2019-01-16 10:46:54.7514 Debug Targets for Microsoft.AspNetCore.Server.Kestrel by level:
+2019-01-16 10:46:54.7514 Debug Trace =>
+2019-01-16 10:46:54.7514 Debug Debug => t1 t2
+2019-01-16 10:46:54.7514 Debug Info => t1 t2
+2019-01-16 10:46:54.7514 Debug Warn => t1 t2
+2019-01-16 10:46:54.7514 Debug Error => t1 t2
+2019-01-16 10:46:54.7514 Debug Fatal =>
+2019-01-16 10:46:54.7848 Debug Targets for Microsoft.AspNetCore.DataProtection.TypeForwardingActivator by level:
+2019-01-16 10:46:54.7848 Debug Trace =>
+2019-01-16 10:46:54.7848 Debug Debug => t1 t2
+2019-01-16 10:46:54.7848 Debug Info => t1 t2
+2019-01-16 10:46:54.7848 Debug Warn => t1 t2
+2019-01-16 10:46:54.7848 Debug Error => t1 t2
+2019-01-16 10:46:54.7848 Debug Fatal =>
+2019-01-16 10:46:54.8009 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager by level:
+2019-01-16 10:46:54.8009 Debug Trace =>
+2019-01-16 10:46:54.8009 Debug Debug => t1 t2
+2019-01-16 10:46:54.8009 Debug Info => t1 t2
+2019-01-16 10:46:54.8009 Debug Warn => t1 t2
+2019-01-16 10:46:54.8009 Debug Error => t1 t2
+2019-01-16 10:46:54.8009 Debug Fatal =>
+2019-01-16 10:46:54.8050 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory by level:
+2019-01-16 10:46:54.8050 Debug Trace =>
+2019-01-16 10:46:54.8050 Debug Debug => t1 t2
+2019-01-16 10:46:54.8050 Debug Info => t1 t2
+2019-01-16 10:46:54.8050 Debug Warn => t1 t2
+2019-01-16 10:46:54.8050 Debug Error => t1 t2
+2019-01-16 10:46:54.8050 Debug Fatal =>
+2019-01-16 10:46:54.8050 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory by level:
+2019-01-16 10:46:54.8050 Debug Trace =>
+2019-01-16 10:46:54.8050 Debug Debug => t1 t2
+2019-01-16 10:46:54.8050 Debug Info => t1 t2
+2019-01-16 10:46:54.8050 Debug Warn => t1 t2
+2019-01-16 10:46:54.8050 Debug Error => t1 t2
+2019-01-16 10:46:54.8050 Debug Fatal =>
+2019-01-16 10:46:54.8050 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory by level:
+2019-01-16 10:46:54.8050 Debug Trace =>
+2019-01-16 10:46:54.8050 Debug Debug => t1 t2
+2019-01-16 10:46:54.8050 Debug Info => t1 t2
+2019-01-16 10:46:54.8050 Debug Warn => t1 t2
+2019-01-16 10:46:54.8050 Debug Error => t1 t2
+2019-01-16 10:46:54.8050 Debug Fatal =>
+2019-01-16 10:46:54.8195 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor by level:
+2019-01-16 10:46:54.8195 Debug Trace =>
+2019-01-16 10:46:54.8195 Debug Debug => t1 t2
+2019-01-16 10:46:54.8195 Debug Info => t1 t2
+2019-01-16 10:46:54.8195 Debug Warn => t1 t2
+2019-01-16 10:46:54.8195 Debug Error => t1 t2
+2019-01-16 10:46:54.8195 Debug Fatal =>
+2019-01-16 10:46:54.8195 Debug Targets for Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository by level:
+2019-01-16 10:46:54.8195 Debug Trace =>
+2019-01-16 10:46:54.8195 Debug Debug => t1 t2
+2019-01-16 10:46:54.8195 Debug Info => t1 t2
+2019-01-16 10:46:54.8195 Debug Warn => t1 t2
+2019-01-16 10:46:54.8195 Debug Error => t1 t2
+2019-01-16 10:46:54.8195 Debug Fatal =>
+2019-01-16 10:46:54.9507 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver by level:
+2019-01-16 10:46:54.9507 Debug Trace =>
+2019-01-16 10:46:54.9507 Debug Debug => t1 t2
+2019-01-16 10:46:54.9507 Debug Info => t1 t2
+2019-01-16 10:46:54.9507 Debug Warn => t1 t2
+2019-01-16 10:46:54.9507 Debug Error => t1 t2
+2019-01-16 10:46:54.9507 Debug Fatal =>
+2019-01-16 10:46:54.9507 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider by level:
+2019-01-16 10:46:54.9507 Debug Trace =>
+2019-01-16 10:46:54.9507 Debug Debug => t1 t2
+2019-01-16 10:46:54.9507 Debug Info => t1 t2
+2019-01-16 10:46:54.9507 Debug Warn => t1 t2
+2019-01-16 10:46:54.9507 Debug Error => t1 t2
+2019-01-16 10:46:54.9507 Debug Fatal =>
+2019-01-16 10:46:54.9507 Debug Targets for Microsoft.AspNetCore.DataProtection.Internal.DataProtectionStartupFilter by level:
+2019-01-16 10:46:54.9507 Debug Trace =>
+2019-01-16 10:46:54.9507 Debug Debug => t1 t2
+2019-01-16 10:46:54.9507 Debug Info => t1 t2
+2019-01-16 10:46:54.9507 Debug Warn => t1 t2
+2019-01-16 10:46:54.9507 Debug Error => t1 t2
+2019-01-16 10:46:54.9507 Debug Fatal =>
+2019-01-16 10:46:55.0094 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor by level:
+2019-01-16 10:46:55.0094 Debug Trace =>
+2019-01-16 10:46:55.0094 Debug Debug => t1 t2
+2019-01-16 10:46:55.0094 Debug Info => t1 t2
+2019-01-16 10:46:55.0094 Debug Warn => t1 t2
+2019-01-16 10:46:55.0094 Debug Error => t1 t2
+2019-01-16 10:46:55.0094 Debug Fatal =>
+2019-01-16 10:46:56.3717 Debug Targets for Microsoft.AspNetCore.Mvc.MvcJsonOptions by level:
+2019-01-16 10:46:56.3717 Debug Trace =>
+2019-01-16 10:46:56.3717 Debug Debug => t1 t2
+2019-01-16 10:46:56.3717 Debug Info => t1 t2
+2019-01-16 10:46:56.3717 Debug Warn => t1 t2
+2019-01-16 10:46:56.3717 Debug Error => t1 t2
+2019-01-16 10:46:56.3717 Debug Fatal =>
+2019-01-16 10:46:56.3717 Debug Targets for Microsoft.AspNetCore.Mvc.MvcOptions by level:
+2019-01-16 10:46:56.3717 Debug Trace =>
+2019-01-16 10:46:56.3717 Debug Debug => t1 t2
+2019-01-16 10:46:56.3717 Debug Info => t1 t2
+2019-01-16 10:46:56.3717 Debug Warn => t1 t2
+2019-01-16 10:46:56.3717 Debug Error => t1 t2
+2019-01-16 10:46:56.3717 Debug Fatal =>
+2019-01-16 10:46:56.5237 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.JsonPatchInputFormatter by level:
+2019-01-16 10:46:56.5237 Debug Trace =>
+2019-01-16 10:46:56.5237 Debug Debug => t1 t2
+2019-01-16 10:46:56.5237 Debug Info => t1 t2
+2019-01-16 10:46:56.5237 Debug Warn => t1 t2
+2019-01-16 10:46:56.5237 Debug Error => t1 t2
+2019-01-16 10:46:56.5237 Debug Fatal =>
+2019-01-16 10:46:56.5237 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.JsonInputFormatter by level:
+2019-01-16 10:46:56.5237 Debug Trace =>
+2019-01-16 10:46:56.5237 Debug Debug => t1 t2
+2019-01-16 10:46:56.5237 Debug Info => t1 t2
+2019-01-16 10:46:56.5237 Debug Warn => t1 t2
+2019-01-16 10:46:56.5237 Debug Error => t1 t2
+2019-01-16 10:46:56.5237 Debug Fatal =>
+2019-01-16 10:46:56.5237 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider by level:
+2019-01-16 10:46:56.5237 Debug Trace =>
+2019-01-16 10:46:56.5237 Debug Debug => t1 t2
+2019-01-16 10:46:56.5237 Debug Info => t1 t2
+2019-01-16 10:46:56.5237 Debug Warn => t1 t2
+2019-01-16 10:46:56.5237 Debug Error => t1 t2
+2019-01-16 10:46:56.5237 Debug Fatal =>
+2019-01-16 10:46:56.5237 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter by level:
+2019-01-16 10:46:56.5237 Debug Trace =>
+2019-01-16 10:46:56.5237 Debug Debug => t1 t2
+2019-01-16 10:46:56.5237 Debug Info => t1 t2
+2019-01-16 10:46:56.5237 Debug Warn => t1 t2
+2019-01-16 10:46:56.5237 Debug Error => t1 t2
+2019-01-16 10:46:56.5237 Debug Fatal =>
+2019-01-16 10:46:56.5414 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions by level:
+2019-01-16 10:46:56.5414 Debug Trace =>
+2019-01-16 10:46:56.5414 Debug Debug => t1 t2
+2019-01-16 10:46:56.5414 Debug Info => t1 t2
+2019-01-16 10:46:56.5414 Debug Warn => t1 t2
+2019-01-16 10:46:56.5414 Debug Error => t1 t2
+2019-01-16 10:46:56.5414 Debug Fatal =>
+2019-01-16 10:46:56.8326 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler by level:
+2019-01-16 10:46:56.8326 Debug Trace =>
+2019-01-16 10:46:56.8326 Debug Debug => t1 t2
+2019-01-16 10:46:56.8326 Debug Info => t1 t2
+2019-01-16 10:46:56.8326 Debug Warn => t1 t2
+2019-01-16 10:46:56.8326 Debug Error => t1 t2
+2019-01-16 10:46:56.8326 Debug Fatal =>
+2019-01-16 10:46:56.8417 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine by level:
+2019-01-16 10:46:56.8417 Debug Trace =>
+2019-01-16 10:46:56.8417 Debug Debug => t1 t2
+2019-01-16 10:46:56.8417 Debug Info => t1 t2
+2019-01-16 10:46:56.8417 Debug Warn => t1 t2
+2019-01-16 10:46:56.8417 Debug Error => t1 t2
+2019-01-16 10:46:56.8417 Debug Fatal =>
+2019-01-16 10:46:56.8417 Debug Targets for Microsoft.AspNetCore.Mvc.MvcViewOptions by level:
+2019-01-16 10:46:56.8417 Debug Trace =>
+2019-01-16 10:46:56.8417 Debug Debug => t1 t2
+2019-01-16 10:46:56.8417 Debug Info => t1 t2
+2019-01-16 10:46:56.8417 Debug Warn => t1 t2
+2019-01-16 10:46:56.8417 Debug Error => t1 t2
+2019-01-16 10:46:56.8417 Debug Fatal =>
+2019-01-16 10:46:56.8417 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.RazorProjectPageRouteModelProvider by level:
+2019-01-16 10:46:56.8501 Debug Trace =>
+2019-01-16 10:46:56.8501 Debug Debug => t1 t2
+2019-01-16 10:46:56.8501 Debug Info => t1 t2
+2019-01-16 10:46:56.8501 Debug Warn => t1 t2
+2019-01-16 10:46:56.8501 Debug Error => t1 t2
+2019-01-16 10:46:56.8501 Debug Fatal =>
+2019-01-16 10:46:56.8501 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.CompiledPageRouteModelProvider by level:
+2019-01-16 10:46:56.8501 Debug Trace =>
+2019-01-16 10:46:56.8501 Debug Debug => t1 t2
+2019-01-16 10:46:56.8501 Debug Info => t1 t2
+2019-01-16 10:46:56.8501 Debug Warn => t1 t2
+2019-01-16 10:46:56.8501 Debug Error => t1 t2
+2019-01-16 10:46:56.8501 Debug Fatal =>
+2019-01-16 10:46:56.8783 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory by level:
+2019-01-16 10:46:56.8783 Debug Trace =>
+2019-01-16 10:46:56.8783 Debug Debug => t1 t2
+2019-01-16 10:46:56.8783 Debug Info => t1 t2
+2019-01-16 10:46:56.8895 Debug Warn => t1 t2
+2019-01-16 10:46:56.8977 Debug Error => t1 t2
+2019-01-16 10:46:56.8977 Debug Fatal =>
+2019-01-16 10:46:56.9190 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder by level:
+2019-01-16 10:46:56.9190 Debug Trace =>
+2019-01-16 10:46:56.9190 Debug Debug => t1 t2
+2019-01-16 10:46:56.9190 Debug Info => t1 t2
+2019-01-16 10:46:56.9190 Debug Warn => t1 t2
+2019-01-16 10:46:56.9190 Debug Error => t1 t2
+2019-01-16 10:46:56.9190 Debug Fatal =>
+2019-01-16 10:46:56.9190 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker by level:
+2019-01-16 10:46:56.9284 Debug Trace =>
+2019-01-16 10:46:56.9284 Debug Debug => t1 t2
+2019-01-16 10:46:56.9284 Debug Info => t1 t2
+2019-01-16 10:46:56.9284 Debug Warn => t1 t2
+2019-01-16 10:46:56.9284 Debug Error => t1 t2
+2019-01-16 10:46:56.9284 Debug Fatal =>
+2019-01-16 10:46:56.9284 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector by level:
+2019-01-16 10:46:56.9284 Debug Trace =>
+2019-01-16 10:46:56.9284 Debug Debug => t1 t2
+2019-01-16 10:46:56.9284 Debug Info => t1 t2
+2019-01-16 10:46:56.9284 Debug Warn => t1 t2
+2019-01-16 10:46:56.9284 Debug Error => t1 t2
+2019-01-16 10:46:56.9284 Debug Fatal =>
+2019-01-16 10:46:56.9284 Debug Targets for Microsoft.AspNetCore.Mvc.ViewFeatures.CookieTempDataProvider by level:
+2019-01-16 10:46:56.9440 Debug Trace =>
+2019-01-16 10:46:56.9440 Debug Debug => t1 t2
+2019-01-16 10:46:56.9440 Debug Info => t1 t2
+2019-01-16 10:46:56.9440 Debug Warn => t1 t2
+2019-01-16 10:46:56.9440 Debug Error => t1 t2
+2019-01-16 10:46:56.9440 Debug Fatal =>
+2019-01-16 10:46:56.9652 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker by level:
+2019-01-16 10:46:56.9652 Debug Trace =>
+2019-01-16 10:46:56.9652 Debug Debug => t1 t2
+2019-01-16 10:46:56.9652 Debug Info => t1 t2
+2019-01-16 10:46:56.9652 Debug Warn => t1 t2
+2019-01-16 10:46:56.9652 Debug Error => t1 t2
+2019-01-16 10:46:56.9652 Debug Fatal =>
+2019-01-16 10:46:56.9652 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.ActionSelector by level:
+2019-01-16 10:46:56.9652 Debug Trace =>
+2019-01-16 10:46:56.9652 Debug Debug => t1 t2
+2019-01-16 10:46:56.9652 Debug Info => t1 t2
+2019-01-16 10:46:56.9652 Debug Warn => t1 t2
+2019-01-16 10:46:56.9652 Debug Error => t1 t2
+2019-01-16 10:46:56.9652 Debug Fatal =>
+2019-01-16 10:46:56.9756 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.MvcRouteHandler by level:
+2019-01-16 10:46:56.9756 Debug Trace =>
+2019-01-16 10:46:56.9756 Debug Debug => t1 t2
+2019-01-16 10:46:56.9756 Debug Info => t1 t2
+2019-01-16 10:46:56.9756 Debug Warn => t1 t2
+2019-01-16 10:46:56.9756 Debug Error => t1 t2
+2019-01-16 10:46:56.9756 Debug Fatal =>
+2019-01-16 10:46:57.0565 Debug Targets for WebCore.Startup by level:
+2019-01-16 10:46:57.0565 Debug Trace =>
+2019-01-16 10:46:57.0565 Debug Debug => t1 t2
+2019-01-16 10:46:57.0565 Debug Info => t1 t2
+2019-01-16 10:46:57.0565 Debug Warn => t1 t2
+2019-01-16 10:46:57.0565 Debug Error => t1 t2
+2019-01-16 10:46:57.0565 Debug Fatal =>
+2019-01-16 10:46:57.0565 Debug Targets for Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware by level:
+2019-01-16 10:46:57.0565 Debug Trace =>
+2019-01-16 10:46:57.0565 Debug Debug => t1 t2
+2019-01-16 10:46:57.0565 Debug Info => t1 t2
+2019-01-16 10:46:57.0565 Debug Warn => t1 t2
+2019-01-16 10:46:57.0565 Debug Error => t1 t2
+2019-01-16 10:46:57.0565 Debug Fatal =>
+2019-01-16 10:46:57.1044 Debug Targets for Microsoft.AspNetCore.Builder.RouterMiddleware by level:
+2019-01-16 10:46:57.1044 Debug Trace =>
+2019-01-16 10:46:57.1044 Debug Debug => t1 t2
+2019-01-16 10:46:57.1044 Debug Info => t1 t2
+2019-01-16 10:46:57.1044 Debug Warn => t1 t2
+2019-01-16 10:46:57.1044 Debug Error => t1 t2
+2019-01-16 10:46:57.1044 Debug Fatal =>
+2019-01-16 10:46:57.1044 Debug Targets for Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware by level:
+2019-01-16 10:46:57.1044 Debug Trace =>
+2019-01-16 10:46:57.1044 Debug Debug => t1 t2
+2019-01-16 10:46:57.1044 Debug Info => t1 t2
+2019-01-16 10:46:57.1044 Debug Warn => t1 t2
+2019-01-16 10:46:57.1044 Debug Error => t1 t2
+2019-01-16 10:46:57.1044 Debug Fatal =>
+2019-01-16 10:46:57.1156 Debug Targets for Microsoft.AspNetCore.CookiePolicy.CookiePolicyMiddleware by level:
+2019-01-16 10:46:57.1156 Debug Trace =>
+2019-01-16 10:46:57.1156 Debug Debug => t1 t2
+2019-01-16 10:46:57.1156 Debug Info => t1 t2
+2019-01-16 10:46:57.1156 Debug Warn => t1 t2
+2019-01-16 10:46:57.1156 Debug Error => t1 t2
+2019-01-16 10:46:57.1156 Debug Fatal =>
+2019-01-16 10:46:57.1156 Debug Targets for Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware by level:
+2019-01-16 10:46:57.1156 Debug Trace =>
+2019-01-16 10:46:57.1156 Debug Debug => t1 t2
+2019-01-16 10:46:57.1156 Debug Info => t1 t2
+2019-01-16 10:46:57.1156 Debug Warn => t1 t2
+2019-01-16 10:46:57.1156 Debug Error => t1 t2
+2019-01-16 10:46:57.1156 Debug Fatal =>
+2019-01-16 10:46:57.1156 Debug Targets for Microsoft.AspNetCore.Session.SessionMiddleware by level:
+2019-01-16 10:46:57.1156 Debug Trace =>
+2019-01-16 10:46:57.1156 Debug Debug => t1 t2
+2019-01-16 10:46:57.1156 Debug Info => t1 t2
+2019-01-16 10:46:57.1156 Debug Warn => t1 t2
+2019-01-16 10:46:57.1156 Debug Error => t1 t2
+2019-01-16 10:46:57.1156 Debug Fatal =>
+2019-01-16 10:46:57.1337 Debug Targets for Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware by level:
+2019-01-16 10:46:57.1337 Debug Trace =>
+2019-01-16 10:46:57.1337 Debug Debug => t1 t2
+2019-01-16 10:46:57.1337 Debug Info => t1 t2
+2019-01-16 10:46:57.1337 Debug Warn => t1 t2
+2019-01-16 10:46:57.1337 Debug Error => t1 t2
+2019-01-16 10:46:57.1337 Debug Fatal =>
+2019-01-16 10:46:57.1337 Debug Targets for Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware by level:
+2019-01-16 10:46:57.1337 Debug Trace =>
+2019-01-16 10:46:57.1337 Debug Debug => t1 t2
+2019-01-16 10:46:57.1337 Debug Info => t1 t2
+2019-01-16 10:46:57.1337 Debug Warn => t1 t2
+2019-01-16 10:46:57.1337 Debug Error => t1 t2
+2019-01-16 10:46:57.1337 Debug Fatal =>
+2019-01-16 10:46:57.1337 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor by level:
+2019-01-16 10:46:57.1337 Debug Trace =>
+2019-01-16 10:46:57.1337 Debug Debug => t1 t2
+2019-01-16 10:46:57.1337 Debug Info => t1 t2
+2019-01-16 10:46:57.1337 Debug Warn => t1 t2
+2019-01-16 10:46:57.1337 Debug Error => t1 t2
+2019-01-16 10:46:57.1337 Debug Fatal =>
+2019-01-16 10:46:57.1537 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer by level:
+2019-01-16 10:46:57.1537 Debug Trace =>
+2019-01-16 10:46:57.1537 Debug Debug => t1 t2
+2019-01-16 10:46:57.1537 Debug Info => t1 t2
+2019-01-16 10:46:57.1537 Debug Warn => t1 t2
+2019-01-16 10:46:57.1537 Debug Error => t1 t2
+2019-01-16 10:46:57.1537 Debug Fatal =>
+2019-01-16 10:46:57.2238 Debug Targets for HttpsConnectionAdapter by level:
+2019-01-16 10:46:57.2238 Debug Trace =>
+2019-01-16 10:46:57.2238 Debug Debug => t1 t2
+2019-01-16 10:46:57.2238 Debug Info => t1 t2
+2019-01-16 10:46:57.2238 Debug Warn => t1 t2
+2019-01-16 10:46:57.2254 Debug Error => t1 t2
+2019-01-16 10:46:57.2254 Debug Fatal =>
+2019-01-16 10:46:58.3578 Debug FileTarget(Name=t1): Process file 'C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log' on startup
+2019-01-16 10:46:58.4019 Debug Creating file appender: C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log
+2019-01-16 10:46:58.4019 Trace Opening C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log with allowFileSharedWriting=False
+2019-01-16 10:46:58.4261 Trace Opening C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log with allowFileSharedWriting=False
+2019-01-16 10:46:58.4261 Trace Opening C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log with allowFileSharedWriting=False
+2019-01-16 10:47:00.2226 Debug Targets for Microsoft.AspNetCore.Session.DistributedSession by level:
+2019-01-16 10:47:00.2226 Debug Trace =>
+2019-01-16 10:47:00.2226 Debug Debug => t1 t2
+2019-01-16 10:47:00.2226 Debug Info => t1 t2
+2019-01-16 10:47:00.2226 Debug Warn => t1 t2
+2019-01-16 10:47:00.2226 Debug Error => t1 t2
+2019-01-16 10:47:00.2226 Debug Fatal =>
+2019-01-16 10:47:00.4153 Debug Targets for Microsoft.AspNetCore.Routing.Tree.TreeRouter by level:
+2019-01-16 10:47:00.4153 Debug Trace =>
+2019-01-16 10:47:00.4153 Debug Debug => t1 t2
+2019-01-16 10:47:00.4153 Debug Info => t1 t2
+2019-01-16 10:47:00.4153 Debug Warn => t1 t2
+2019-01-16 10:47:00.4153 Debug Error => t1 t2
+2019-01-16 10:47:00.4153 Debug Fatal =>
+2019-01-16 10:47:00.4153 Debug Targets for Microsoft.AspNetCore.Routing.RouteConstraintMatcher by level:
+2019-01-16 10:47:00.4153 Debug Trace =>
+2019-01-16 10:47:00.4153 Debug Debug => t1 t2
+2019-01-16 10:47:00.4153 Debug Info => t1 t2
+2019-01-16 10:47:00.4153 Debug Warn => t1 t2
+2019-01-16 10:47:00.4153 Debug Error => t1 t2
+2019-01-16 10:47:00.4153 Debug Fatal =>
+2019-01-16 10:47:00.4153 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.MvcAttributeRouteHandler by level:
+2019-01-16 10:47:00.4153 Debug Trace =>
+2019-01-16 10:47:00.4153 Debug Debug => t1 t2
+2019-01-16 10:47:00.4153 Debug Info => t1 t2
+2019-01-16 10:47:00.4153 Debug Warn => t1 t2
+2019-01-16 10:47:00.4153 Debug Error => t1 t2
+2019-01-16 10:47:00.4153 Debug Fatal =>
+2019-01-16 10:47:00.4840 Debug Targets for Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgery by level:
+2019-01-16 10:47:00.4840 Debug Trace =>
+2019-01-16 10:47:00.4840 Debug Debug => t1 t2
+2019-01-16 10:47:00.4840 Debug Info => t1 t2
+2019-01-16 10:47:00.4840 Debug Warn => t1 t2
+2019-01-16 10:47:00.4840 Debug Error => t1 t2
+2019-01-16 10:47:00.4840 Debug Fatal =>
+2019-01-16 10:47:00.4840 Debug Targets for Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.AutoValidateAntiforgeryTokenAuthorizationFilter by level:
+2019-01-16 10:47:00.4840 Debug Trace =>
+2019-01-16 10:47:00.4840 Debug Debug => t1 t2
+2019-01-16 10:47:00.5142 Debug Info => t1 t2
+2019-01-16 10:47:00.5142 Debug Warn => t1 t2
+2019-01-16 10:47:00.5142 Debug Error => t1 t2
+2019-01-16 10:47:00.5142 Debug Fatal =>
+2019-01-16 10:47:00.5499 Debug Targets for Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker by level:
+2019-01-16 10:47:00.5499 Debug Trace =>
+2019-01-16 10:47:00.5499 Debug Debug => t1 t2
+2019-01-16 10:47:00.5499 Debug Info => t1 t2
+2019-01-16 10:47:00.5499 Debug Warn => t1 t2
+2019-01-16 10:47:00.5499 Debug Error => t1 t2
+2019-01-16 10:47:00.5499 Debug Fatal =>
+2019-01-16 10:47:00.5946 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.TagHelpers.HeadTagHelper by level:
+2019-01-16 10:47:00.5946 Debug Trace =>
+2019-01-16 10:47:00.5946 Debug Debug => t1 t2
+2019-01-16 10:47:00.5946 Debug Info => t1 t2
+2019-01-16 10:47:00.5946 Debug Warn => t1 t2
+2019-01-16 10:47:00.5946 Debug Error => t1 t2
+2019-01-16 10:47:00.5946 Debug Fatal =>
+2019-01-16 10:47:00.6064 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.TagHelpers.BodyTagHelper by level:
+2019-01-16 10:47:00.6064 Debug Trace =>
+2019-01-16 10:47:00.6064 Debug Debug => t1 t2
+2019-01-16 10:47:00.6064 Debug Info => t1 t2
+2019-01-16 10:47:00.6064 Debug Warn => t1 t2
+2019-01-16 10:47:00.6064 Debug Error => t1 t2
+2019-01-16 10:47:00.6064 Debug Fatal =>
+2019-01-16 10:48:29.1100 Info Message Template Auto Format enabled
+2019-01-16 10:48:29.1196 Info Loading assembly: NLog.Web.AspNetCore
+2019-01-16 10:48:29.1196 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2019-01-16 10:48:29.1351 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.1351 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:48:29.1351 Debug Setting 'UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2019-01-16 10:48:29.1800 Trace Wrapping LevelLayoutRenderer with UppercaseLayoutRendererWrapper
+2019-01-16 10:48:29.1800 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.1800 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:48:29.1800 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.1800 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2019-01-16 10:48:29.1800 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:48:29.1800 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2019-01-16 10:48:29.1800 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2019-01-16 10:48:29.1800 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:48:29.1800 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:48:29.1800 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.1800 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-01-16 10:48:29.1800 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.1800 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:48:29.2137 Debug Setting 'FileTarget.name' to 't1'
+2019-01-16 10:48:29.2137 Debug Setting 'FileTarget.fileName' to '${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log'
+2019-01-16 10:48:29.2137 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2137 Trace Scanning BaseDirLayoutRenderer 'Layout Renderer: ${basedir}'
+2019-01-16 10:48:29.2401 Debug Setting 'DateLayoutRenderer.format' to 'yyyy-MM-dd'
+2019-01-16 10:48:29.2401 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2401 Trace Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:48:29.2413 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:48:29.2413 Debug Setting 'DateLayoutRenderer.format' to 'yyyy-MM-dd HH'
+2019-01-16 10:48:29.2413 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2413 Trace Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:48:29.2413 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:48:29.2413 Debug Setting 'FileTarget.layout' to '[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]'
+2019-01-16 10:48:29.2413 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2413 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:48:29.2413 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2413 Trace Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:48:29.2413 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2413 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:48:29.2413 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2413 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:48:29.2413 Debug Setting 'EventContextLayoutRenderer.item' to 'exception'
+2019-01-16 10:48:29.2413 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2413 Trace Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:48:29.2413 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2413 Trace Scanning StackTraceLayoutRenderer 'Layout Renderer: ${stacktrace}'
+2019-01-16 10:48:29.2413 Debug Setting 'EventContextLayoutRenderer.item' to 'stacktrace'
+2019-01-16 10:48:29.2413 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2413 Trace Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:48:29.2413 Info Adding target File Target[t1]
+2019-01-16 10:48:29.2413 Debug Registered target t1: NLog.Targets.FileTarget
+2019-01-16 10:48:29.2413 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2413 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:48:29.2413 Debug Setting 'UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2019-01-16 10:48:29.2413 Trace Wrapping LevelLayoutRenderer with UppercaseLayoutRendererWrapper
+2019-01-16 10:48:29.2413 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2413 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:48:29.2413 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2413 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2019-01-16 10:48:29.2413 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:48:29.2413 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2019-01-16 10:48:29.2413 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2019-01-16 10:48:29.2562 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:48:29.2562 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:48:29.2562 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2562 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-01-16 10:48:29.2562 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2562 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:48:29.2562 Debug Setting 'ConsoleTarget.name' to 't2'
+2019-01-16 10:48:29.2562 Debug Setting 'ConsoleTarget.layout' to '${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}'
+2019-01-16 10:48:29.2562 Debug Setting 'DateLayoutRenderer.format' to 'yyyyMMddHHmmss'
+2019-01-16 10:48:29.2562 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2562 Trace Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:48:29.2562 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:48:29.2562 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2562 Trace Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:48:29.2562 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2562 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:48:29.2562 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:48:29.2562 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:48:29.2562 Info Adding target Console Target[t2]
+2019-01-16 10:48:29.2562 Debug Registered target t2: NLog.Targets.ConsoleTarget
+2019-01-16 10:48:29.2562 Trace ParseRulesElement
+2019-01-16 10:48:29.2562 Info Configured from an XML element in C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\NLog.config...
+2019-01-16 10:48:29.2733 Debug Unused target checking is started... Rule Count: 4, Target Count: 2
+2019-01-16 10:48:29.2733 Debug Unused target checking is completed. Total Rule Count: 4, Total Target Count: 2, Unused Target Count: 0
+2019-01-16 10:48:29.2733 Debug --- NLog configuration dump ---
+2019-01-16 10:48:29.2733 Debug Targets:
+2019-01-16 10:48:29.2733 Debug File Target[t1]
+2019-01-16 10:48:29.2733 Debug Console Target[t2]
+2019-01-16 10:48:29.2733 Debug Rules:
+2019-01-16 10:48:29.2733 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error ] appendTo: [ t1 ]
+2019-01-16 10:48:29.2733 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error ] appendTo: [ t2 ]
+2019-01-16 10:48:29.2733 Debug logNamePattern: (Microsoft.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ ]
+2019-01-16 10:48:29.2733 Debug logNamePattern: (System.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ ]
+2019-01-16 10:48:29.2733 Debug --- End of NLog configuration dump ---
+2019-01-16 10:48:29.2733 Trace FindReachableObject<System.Object>:
+2019-01-16 10:48:29.2733 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error ] appendTo: [ t1 ]'
+2019-01-16 10:48:29.2733 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-01-16 10:48:29.2882 Trace  Scanning FileTarget 'File Target[t1]'
+2019-01-16 10:48:29.2882 Trace   Scanning Property FileName ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log'' NLog.Layouts
+2019-01-16 10:48:29.2882 Trace   Scanning SimpleLayout ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log''
+2019-01-16 10:48:29.2882 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:48:29.2882 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.2882 Trace    Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:48:29.2882 Trace     Scanning Property Culture '' System.Globalization
+2019-01-16 10:48:29.2882 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.2882 Trace    Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:48:29.2882 Trace     Scanning Property Culture '' System.Globalization
+2019-01-16 10:48:29.2882 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.2882 Trace   Scanning Property Layout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]'' NLog.Layouts
+2019-01-16 10:48:29.2882 Trace   Scanning SimpleLayout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]''
+2019-01-16 10:48:29.2882 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:48:29.2882 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.2882 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:48:29.2882 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.2882 Trace    Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:48:29.2882 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.2882 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:48:29.2882 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.2882 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:48:29.2882 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.2882 Trace    Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:48:29.2882 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.2882 Trace    Scanning StackTraceLayoutRenderer 'Layout Renderer: ${stacktrace}'
+2019-01-16 10:48:29.2882 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.2882 Trace    Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:48:29.2882 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.2882 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2019-01-16 10:48:29.2882 Trace   Scanning Property Encoding 'System.Text.UTF8Encoding+UTF8EncodingSealed' System.Text
+2019-01-16 10:48:29.2882 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-01-16 10:48:29.2882 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-01-16 10:48:29.2882 Trace  Scanning Property Levels 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LogLevel]' System.Collections.ObjectModel
+2019-01-16 10:48:29.2882 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error ] appendTo: [ t2 ]'
+2019-01-16 10:48:29.2882 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-01-16 10:48:29.2882 Trace  Scanning ConsoleTarget 'Console Target[t2]'
+2019-01-16 10:48:29.2882 Trace   Scanning Property Layout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}'' NLog.Layouts
+2019-01-16 10:48:29.3030 Trace   Scanning SimpleLayout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}''
+2019-01-16 10:48:29.3030 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:48:29.3030 Trace    Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:48:29.3030 Trace     Scanning Property Culture '' System.Globalization
+2019-01-16 10:48:29.3030 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3030 Trace    Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:48:29.3030 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3030 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:48:29.3030 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3030 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:48:29.3030 Trace   Scanning Property Encoding 'System.Text.OSEncoding' System.Text
+2019-01-16 10:48:29.3030 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-01-16 10:48:29.3030 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-01-16 10:48:29.3030 Trace  Scanning Property Levels 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LogLevel]' System.Collections.ObjectModel
+2019-01-16 10:48:29.3030 Trace Scanning LoggingRule 'logNamePattern: (Microsoft.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ ]'
+2019-01-16 10:48:29.3030 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-01-16 10:48:29.3030 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-01-16 10:48:29.3030 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-01-16 10:48:29.3030 Trace  Scanning Property Levels 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LogLevel]' System.Collections.ObjectModel
+2019-01-16 10:48:29.3030 Trace Scanning LoggingRule 'logNamePattern: (System.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ ]'
+2019-01-16 10:48:29.3030 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-01-16 10:48:29.3030 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-01-16 10:48:29.3030 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-01-16 10:48:29.3030 Trace  Scanning Property Levels 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LogLevel]' System.Collections.ObjectModel
+2019-01-16 10:48:29.3030 Info Found 36 configuration items
+2019-01-16 10:48:29.3030 Trace Initializing Layout Renderer: ${message}
+2019-01-16 10:48:29.3030 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:48:29.3030 Trace Initializing Layout Renderer: ${level}
+2019-01-16 10:48:29.3030 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:48:29.3030 Trace Initializing Layout Renderer: ${callsite}
+2019-01-16 10:48:29.3030 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:48:29.3030 Trace Initializing Layout Renderer: ${date}
+2019-01-16 10:48:29.3191 Trace Initializing '${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}'
+2019-01-16 10:48:29.3191 Trace FindReachableObject<System.Object>:
+2019-01-16 10:48:29.3191 Trace Scanning SimpleLayout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}''
+2019-01-16 10:48:29.3191 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:48:29.3191 Trace  Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:48:29.3191 Trace   Scanning Property Culture '' System.Globalization
+2019-01-16 10:48:29.3191 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3191 Trace  Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:48:29.3191 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3191 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:48:29.3191 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3191 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:48:29.3191 Trace Initializing Console Target[t2]
+2019-01-16 10:48:29.3191 Trace FindReachableObject<NLog.Layouts.Layout>:
+2019-01-16 10:48:29.3191 Trace Scanning ConsoleTarget 'Console Target[t2]'
+2019-01-16 10:48:29.3191 Trace  Scanning Property Layout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}'' NLog.Layouts
+2019-01-16 10:48:29.3191 Trace  Scanning SimpleLayout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}''
+2019-01-16 10:48:29.3191 Trace  Scanning Property Encoding 'System.Text.OSEncoding' System.Text
+2019-01-16 10:48:29.3356 Trace Console Target[t2] has 1 layouts
+2019-01-16 10:48:29.3356 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:48:29.3356 Trace Initializing Layout Renderer: ${event-context}
+2019-01-16 10:48:29.3356 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:48:29.3356 Trace Initializing Layout Renderer: ${stacktrace}
+2019-01-16 10:48:29.3356 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:48:29.3356 Trace Initializing Layout Renderer: ${event-context}
+2019-01-16 10:48:29.3356 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:48:29.3356 Trace Initializing Layout Renderer: ${message}
+2019-01-16 10:48:29.3356 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:48:29.3356 Trace Initializing Layout Renderer: ${level}
+2019-01-16 10:48:29.3356 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:48:29.3356 Trace Initializing Layout Renderer: ${callsite}
+2019-01-16 10:48:29.3356 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:48:29.3356 Trace Initializing Layout Renderer: ${longdate}
+2019-01-16 10:48:29.3356 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:48:29.3356 Trace Initializing '[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]'
+2019-01-16 10:48:29.3356 Trace FindReachableObject<System.Object>:
+2019-01-16 10:48:29.3356 Trace Scanning SimpleLayout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]''
+2019-01-16 10:48:29.3356 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:48:29.3356 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3356 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:48:29.3356 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3356 Trace  Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:48:29.3356 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3356 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:48:29.3356 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3356 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:48:29.3356 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3356 Trace  Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:48:29.3356 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3356 Trace  Scanning StackTraceLayoutRenderer 'Layout Renderer: ${stacktrace}'
+2019-01-16 10:48:29.3356 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3356 Trace  Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:48:29.3356 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3356 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:48:29.3501 Trace Initializing Layout Renderer: ${date}
+2019-01-16 10:48:29.3501 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:48:29.3501 Trace Initializing Layout Renderer: ${date}
+2019-01-16 10:48:29.3501 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:48:29.3501 Trace Initializing '${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log'
+2019-01-16 10:48:29.3501 Trace FindReachableObject<System.Object>:
+2019-01-16 10:48:29.3501 Trace Scanning SimpleLayout ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log''
+2019-01-16 10:48:29.3501 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:48:29.3501 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3501 Trace  Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:48:29.3501 Trace   Scanning Property Culture '' System.Globalization
+2019-01-16 10:48:29.3501 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3501 Trace  Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:48:29.3501 Trace   Scanning Property Culture '' System.Globalization
+2019-01-16 10:48:29.3501 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:48:29.3501 Trace Initializing File Target[t1]
+2019-01-16 10:48:29.3501 Trace FindReachableObject<NLog.Layouts.Layout>:
+2019-01-16 10:48:29.3501 Trace Scanning FileTarget 'File Target[t1]'
+2019-01-16 10:48:29.3501 Trace  Scanning Property FileName ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log'' NLog.Layouts
+2019-01-16 10:48:29.3501 Trace  Scanning SimpleLayout ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log''
+2019-01-16 10:48:29.3501 Trace  Scanning Property Layout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]'' NLog.Layouts
+2019-01-16 10:48:29.3501 Trace  Scanning SimpleLayout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]''
+2019-01-16 10:48:29.3501 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2019-01-16 10:48:29.3501 Trace  Scanning Property Encoding 'System.Text.UTF8Encoding+UTF8EncodingSealed' System.Text
+2019-01-16 10:48:29.3501 Trace File Target[t1] has 2 layouts
+2019-01-16 10:48:29.3501 Trace FileTarget(Name=t1): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2019-01-16 10:48:29.3701 Debug Watching path 'C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1' filter 'NLog.config' for changes.
+2019-01-16 10:48:29.3701 Info Configuration initialized.
+2019-01-16 10:48:29.3884 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.10.8381. Product version: 4.5.10.
+2019-01-16 10:48:29.3884 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.WebHost by level:
+2019-01-16 10:48:29.3884 Debug Trace =>
+2019-01-16 10:48:29.3884 Debug Debug => t1 t2
+2019-01-16 10:48:29.3884 Debug Info => t1 t2
+2019-01-16 10:48:29.3884 Debug Warn => t1 t2
+2019-01-16 10:48:29.3884 Debug Error => t1 t2
+2019-01-16 10:48:29.3884 Debug Fatal =>
+2019-01-16 10:48:32.7691 Debug Hide assemblies for callsite
+2019-01-16 10:48:32.7898 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.ApplicationLifetime by level:
+2019-01-16 10:48:32.7898 Debug Trace =>
+2019-01-16 10:48:32.7898 Debug Debug => t1 t2
+2019-01-16 10:48:32.7898 Debug Info => t1 t2
+2019-01-16 10:48:32.7898 Debug Warn => t1 t2
+2019-01-16 10:48:32.7898 Debug Error => t1 t2
+2019-01-16 10:48:32.7898 Debug Fatal =>
+2019-01-16 10:48:32.7898 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets by level:
+2019-01-16 10:48:32.7898 Debug Trace =>
+2019-01-16 10:48:32.7898 Debug Debug => t1 t2
+2019-01-16 10:48:32.7898 Debug Info => t1 t2
+2019-01-16 10:48:32.7898 Debug Warn => t1 t2
+2019-01-16 10:48:32.7898 Debug Error => t1 t2
+2019-01-16 10:48:32.7898 Debug Fatal =>
+2019-01-16 10:48:32.8092 Debug Targets for Microsoft.AspNetCore.Server.Kestrel by level:
+2019-01-16 10:48:32.8092 Debug Trace =>
+2019-01-16 10:48:32.8092 Debug Debug => t1 t2
+2019-01-16 10:48:32.8092 Debug Info => t1 t2
+2019-01-16 10:48:32.8092 Debug Warn => t1 t2
+2019-01-16 10:48:32.8092 Debug Error => t1 t2
+2019-01-16 10:48:32.8092 Debug Fatal =>
+2019-01-16 10:48:32.8469 Debug Targets for Microsoft.AspNetCore.DataProtection.TypeForwardingActivator by level:
+2019-01-16 10:48:32.8469 Debug Trace =>
+2019-01-16 10:48:32.8469 Debug Debug => t1 t2
+2019-01-16 10:48:32.8469 Debug Info => t1 t2
+2019-01-16 10:48:32.8469 Debug Warn => t1 t2
+2019-01-16 10:48:32.8469 Debug Error => t1 t2
+2019-01-16 10:48:32.8469 Debug Fatal =>
+2019-01-16 10:48:32.8603 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager by level:
+2019-01-16 10:48:32.8603 Debug Trace =>
+2019-01-16 10:48:32.8603 Debug Debug => t1 t2
+2019-01-16 10:48:32.8603 Debug Info => t1 t2
+2019-01-16 10:48:32.8603 Debug Warn => t1 t2
+2019-01-16 10:48:32.8603 Debug Error => t1 t2
+2019-01-16 10:48:32.8603 Debug Fatal =>
+2019-01-16 10:48:32.8603 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory by level:
+2019-01-16 10:48:32.8603 Debug Trace =>
+2019-01-16 10:48:32.8668 Debug Debug => t1 t2
+2019-01-16 10:48:32.8668 Debug Info => t1 t2
+2019-01-16 10:48:32.8668 Debug Warn => t1 t2
+2019-01-16 10:48:32.8668 Debug Error => t1 t2
+2019-01-16 10:48:32.8668 Debug Fatal =>
+2019-01-16 10:48:32.8668 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory by level:
+2019-01-16 10:48:32.8668 Debug Trace =>
+2019-01-16 10:48:32.8668 Debug Debug => t1 t2
+2019-01-16 10:48:32.8668 Debug Info => t1 t2
+2019-01-16 10:48:32.8668 Debug Warn => t1 t2
+2019-01-16 10:48:32.8668 Debug Error => t1 t2
+2019-01-16 10:48:32.8668 Debug Fatal =>
+2019-01-16 10:48:32.8668 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory by level:
+2019-01-16 10:48:32.8668 Debug Trace =>
+2019-01-16 10:48:32.8668 Debug Debug => t1 t2
+2019-01-16 10:48:32.8668 Debug Info => t1 t2
+2019-01-16 10:48:32.8668 Debug Warn => t1 t2
+2019-01-16 10:48:32.8668 Debug Error => t1 t2
+2019-01-16 10:48:32.8668 Debug Fatal =>
+2019-01-16 10:48:32.8668 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor by level:
+2019-01-16 10:48:32.8668 Debug Trace =>
+2019-01-16 10:48:32.8819 Debug Debug => t1 t2
+2019-01-16 10:48:32.8819 Debug Info => t1 t2
+2019-01-16 10:48:32.8819 Debug Warn => t1 t2
+2019-01-16 10:48:32.8819 Debug Error => t1 t2
+2019-01-16 10:48:32.8819 Debug Fatal =>
+2019-01-16 10:48:32.8819 Debug Targets for Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository by level:
+2019-01-16 10:48:32.8819 Debug Trace =>
+2019-01-16 10:48:32.8819 Debug Debug => t1 t2
+2019-01-16 10:48:32.8819 Debug Info => t1 t2
+2019-01-16 10:48:32.8819 Debug Warn => t1 t2
+2019-01-16 10:48:32.8819 Debug Error => t1 t2
+2019-01-16 10:48:32.8819 Debug Fatal =>
+2019-01-16 10:48:33.0119 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver by level:
+2019-01-16 10:48:33.0119 Debug Trace =>
+2019-01-16 10:48:33.0119 Debug Debug => t1 t2
+2019-01-16 10:48:33.0119 Debug Info => t1 t2
+2019-01-16 10:48:33.0119 Debug Warn => t1 t2
+2019-01-16 10:48:33.0119 Debug Error => t1 t2
+2019-01-16 10:48:33.0119 Debug Fatal =>
+2019-01-16 10:48:33.0119 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider by level:
+2019-01-16 10:48:33.0119 Debug Trace =>
+2019-01-16 10:48:33.0119 Debug Debug => t1 t2
+2019-01-16 10:48:33.0119 Debug Info => t1 t2
+2019-01-16 10:48:33.0119 Debug Warn => t1 t2
+2019-01-16 10:48:33.0119 Debug Error => t1 t2
+2019-01-16 10:48:33.0119 Debug Fatal =>
+2019-01-16 10:48:33.0119 Debug Targets for Microsoft.AspNetCore.DataProtection.Internal.DataProtectionStartupFilter by level:
+2019-01-16 10:48:33.0119 Debug Trace =>
+2019-01-16 10:48:33.0119 Debug Debug => t1 t2
+2019-01-16 10:48:33.0119 Debug Info => t1 t2
+2019-01-16 10:48:33.0119 Debug Warn => t1 t2
+2019-01-16 10:48:33.0119 Debug Error => t1 t2
+2019-01-16 10:48:33.0119 Debug Fatal =>
+2019-01-16 10:48:33.0844 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor by level:
+2019-01-16 10:48:33.0844 Debug Trace =>
+2019-01-16 10:48:33.0844 Debug Debug => t1 t2
+2019-01-16 10:48:33.0844 Debug Info => t1 t2
+2019-01-16 10:48:33.0844 Debug Warn => t1 t2
+2019-01-16 10:48:33.0844 Debug Error => t1 t2
+2019-01-16 10:48:33.0844 Debug Fatal =>
+2019-01-16 10:48:34.4751 Debug Targets for Microsoft.AspNetCore.Mvc.MvcJsonOptions by level:
+2019-01-16 10:48:34.4751 Debug Trace =>
+2019-01-16 10:48:34.4751 Debug Debug => t1 t2
+2019-01-16 10:48:34.4751 Debug Info => t1 t2
+2019-01-16 10:48:34.4751 Debug Warn => t1 t2
+2019-01-16 10:48:34.4751 Debug Error => t1 t2
+2019-01-16 10:48:34.4751 Debug Fatal =>
+2019-01-16 10:48:34.4751 Debug Targets for Microsoft.AspNetCore.Mvc.MvcOptions by level:
+2019-01-16 10:48:34.4751 Debug Trace =>
+2019-01-16 10:48:34.4751 Debug Debug => t1 t2
+2019-01-16 10:48:34.4751 Debug Info => t1 t2
+2019-01-16 10:48:34.4751 Debug Warn => t1 t2
+2019-01-16 10:48:34.4751 Debug Error => t1 t2
+2019-01-16 10:48:34.4751 Debug Fatal =>
+2019-01-16 10:48:34.6110 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.JsonPatchInputFormatter by level:
+2019-01-16 10:48:34.6110 Debug Trace =>
+2019-01-16 10:48:34.6110 Debug Debug => t1 t2
+2019-01-16 10:48:34.6110 Debug Info => t1 t2
+2019-01-16 10:48:34.6110 Debug Warn => t1 t2
+2019-01-16 10:48:34.6110 Debug Error => t1 t2
+2019-01-16 10:48:34.6110 Debug Fatal =>
+2019-01-16 10:48:34.6110 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.JsonInputFormatter by level:
+2019-01-16 10:48:34.6110 Debug Trace =>
+2019-01-16 10:48:34.6110 Debug Debug => t1 t2
+2019-01-16 10:48:34.6160 Debug Info => t1 t2
+2019-01-16 10:48:34.6160 Debug Warn => t1 t2
+2019-01-16 10:48:34.6160 Debug Error => t1 t2
+2019-01-16 10:48:34.6160 Debug Fatal =>
+2019-01-16 10:48:34.6160 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider by level:
+2019-01-16 10:48:34.6160 Debug Trace =>
+2019-01-16 10:48:34.6160 Debug Debug => t1 t2
+2019-01-16 10:48:34.6160 Debug Info => t1 t2
+2019-01-16 10:48:34.6160 Debug Warn => t1 t2
+2019-01-16 10:48:34.6160 Debug Error => t1 t2
+2019-01-16 10:48:34.6160 Debug Fatal =>
+2019-01-16 10:48:34.6160 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter by level:
+2019-01-16 10:48:34.6160 Debug Trace =>
+2019-01-16 10:48:34.6337 Debug Debug => t1 t2
+2019-01-16 10:48:34.6337 Debug Info => t1 t2
+2019-01-16 10:48:34.6337 Debug Warn => t1 t2
+2019-01-16 10:48:34.6337 Debug Error => t1 t2
+2019-01-16 10:48:34.6337 Debug Fatal =>
+2019-01-16 10:48:34.6337 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions by level:
+2019-01-16 10:48:34.6337 Debug Trace =>
+2019-01-16 10:48:34.6337 Debug Debug => t1 t2
+2019-01-16 10:48:34.6337 Debug Info => t1 t2
+2019-01-16 10:48:34.6337 Debug Warn => t1 t2
+2019-01-16 10:48:34.6337 Debug Error => t1 t2
+2019-01-16 10:48:34.6337 Debug Fatal =>
+2019-01-16 10:48:34.9335 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler by level:
+2019-01-16 10:48:34.9335 Debug Trace =>
+2019-01-16 10:48:34.9335 Debug Debug => t1 t2
+2019-01-16 10:48:34.9335 Debug Info => t1 t2
+2019-01-16 10:48:34.9335 Debug Warn => t1 t2
+2019-01-16 10:48:34.9335 Debug Error => t1 t2
+2019-01-16 10:48:34.9335 Debug Fatal =>
+2019-01-16 10:48:34.9335 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine by level:
+2019-01-16 10:48:34.9335 Debug Trace =>
+2019-01-16 10:48:34.9335 Debug Debug => t1 t2
+2019-01-16 10:48:34.9438 Debug Info => t1 t2
+2019-01-16 10:48:34.9438 Debug Warn => t1 t2
+2019-01-16 10:48:34.9438 Debug Error => t1 t2
+2019-01-16 10:48:34.9438 Debug Fatal =>
+2019-01-16 10:48:34.9438 Debug Targets for Microsoft.AspNetCore.Mvc.MvcViewOptions by level:
+2019-01-16 10:48:34.9438 Debug Trace =>
+2019-01-16 10:48:34.9438 Debug Debug => t1 t2
+2019-01-16 10:48:34.9438 Debug Info => t1 t2
+2019-01-16 10:48:34.9438 Debug Warn => t1 t2
+2019-01-16 10:48:34.9438 Debug Error => t1 t2
+2019-01-16 10:48:34.9438 Debug Fatal =>
+2019-01-16 10:48:34.9438 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.RazorProjectPageRouteModelProvider by level:
+2019-01-16 10:48:34.9438 Debug Trace =>
+2019-01-16 10:48:34.9438 Debug Debug => t1 t2
+2019-01-16 10:48:34.9438 Debug Info => t1 t2
+2019-01-16 10:48:34.9438 Debug Warn => t1 t2
+2019-01-16 10:48:34.9438 Debug Error => t1 t2
+2019-01-16 10:48:34.9438 Debug Fatal =>
+2019-01-16 10:48:34.9438 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.CompiledPageRouteModelProvider by level:
+2019-01-16 10:48:34.9438 Debug Trace =>
+2019-01-16 10:48:34.9438 Debug Debug => t1 t2
+2019-01-16 10:48:34.9438 Debug Info => t1 t2
+2019-01-16 10:48:34.9438 Debug Warn => t1 t2
+2019-01-16 10:48:34.9438 Debug Error => t1 t2
+2019-01-16 10:48:34.9438 Debug Fatal =>
+2019-01-16 10:48:34.9863 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory by level:
+2019-01-16 10:48:34.9863 Debug Trace =>
+2019-01-16 10:48:34.9863 Debug Debug => t1 t2
+2019-01-16 10:48:34.9863 Debug Info => t1 t2
+2019-01-16 10:48:34.9863 Debug Warn => t1 t2
+2019-01-16 10:48:34.9863 Debug Error => t1 t2
+2019-01-16 10:48:34.9863 Debug Fatal =>
+2019-01-16 10:48:35.0143 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder by level:
+2019-01-16 10:48:35.0143 Debug Trace =>
+2019-01-16 10:48:35.0143 Debug Debug => t1 t2
+2019-01-16 10:48:35.0143 Debug Info => t1 t2
+2019-01-16 10:48:35.0143 Debug Warn => t1 t2
+2019-01-16 10:48:35.0143 Debug Error => t1 t2
+2019-01-16 10:48:35.0143 Debug Fatal =>
+2019-01-16 10:48:35.0272 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker by level:
+2019-01-16 10:48:35.0272 Debug Trace =>
+2019-01-16 10:48:35.0272 Debug Debug => t1 t2
+2019-01-16 10:48:35.0272 Debug Info => t1 t2
+2019-01-16 10:48:35.0272 Debug Warn => t1 t2
+2019-01-16 10:48:35.0272 Debug Error => t1 t2
+2019-01-16 10:48:35.0272 Debug Fatal =>
+2019-01-16 10:48:35.0272 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector by level:
+2019-01-16 10:48:35.0374 Debug Trace =>
+2019-01-16 10:48:35.0374 Debug Debug => t1 t2
+2019-01-16 10:48:35.0374 Debug Info => t1 t2
+2019-01-16 10:48:35.0374 Debug Warn => t1 t2
+2019-01-16 10:48:35.0374 Debug Error => t1 t2
+2019-01-16 10:48:35.0374 Debug Fatal =>
+2019-01-16 10:48:35.0374 Debug Targets for Microsoft.AspNetCore.Mvc.ViewFeatures.CookieTempDataProvider by level:
+2019-01-16 10:48:35.0374 Debug Trace =>
+2019-01-16 10:48:35.0374 Debug Debug => t1 t2
+2019-01-16 10:48:35.0374 Debug Info => t1 t2
+2019-01-16 10:48:35.0374 Debug Warn => t1 t2
+2019-01-16 10:48:35.0374 Debug Error => t1 t2
+2019-01-16 10:48:35.0374 Debug Fatal =>
+2019-01-16 10:48:35.0642 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker by level:
+2019-01-16 10:48:35.0642 Debug Trace =>
+2019-01-16 10:48:35.0642 Debug Debug => t1 t2
+2019-01-16 10:48:35.0642 Debug Info => t1 t2
+2019-01-16 10:48:35.0642 Debug Warn => t1 t2
+2019-01-16 10:48:35.0642 Debug Error => t1 t2
+2019-01-16 10:48:35.0642 Debug Fatal =>
+2019-01-16 10:48:35.0642 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.ActionSelector by level:
+2019-01-16 10:48:35.0642 Debug Trace =>
+2019-01-16 10:48:35.0694 Debug Debug => t1 t2
+2019-01-16 10:48:35.0694 Debug Info => t1 t2
+2019-01-16 10:48:35.0694 Debug Warn => t1 t2
+2019-01-16 10:48:35.0694 Debug Error => t1 t2
+2019-01-16 10:48:35.0694 Debug Fatal =>
+2019-01-16 10:48:35.0694 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.MvcRouteHandler by level:
+2019-01-16 10:48:35.0694 Debug Trace =>
+2019-01-16 10:48:35.0694 Debug Debug => t1 t2
+2019-01-16 10:48:35.0694 Debug Info => t1 t2
+2019-01-16 10:48:35.0694 Debug Warn => t1 t2
+2019-01-16 10:48:35.0694 Debug Error => t1 t2
+2019-01-16 10:48:35.0694 Debug Fatal =>
+2019-01-16 10:48:35.1613 Debug Targets for WebCore.Startup by level:
+2019-01-16 10:48:35.1613 Debug Trace =>
+2019-01-16 10:48:35.1613 Debug Debug => t1 t2
+2019-01-16 10:48:35.1613 Debug Info => t1 t2
+2019-01-16 10:48:35.1630 Debug Warn => t1 t2
+2019-01-16 10:48:35.1630 Debug Error => t1 t2
+2019-01-16 10:48:35.1630 Debug Fatal =>
+2019-01-16 10:48:35.1630 Debug Targets for Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware by level:
+2019-01-16 10:48:35.1630 Debug Trace =>
+2019-01-16 10:48:35.1630 Debug Debug => t1 t2
+2019-01-16 10:48:35.1630 Debug Info => t1 t2
+2019-01-16 10:48:35.1630 Debug Warn => t1 t2
+2019-01-16 10:48:35.1630 Debug Error => t1 t2
+2019-01-16 10:48:35.1630 Debug Fatal =>
+2019-01-16 10:48:35.2062 Debug Targets for Microsoft.AspNetCore.Builder.RouterMiddleware by level:
+2019-01-16 10:48:35.2062 Debug Trace =>
+2019-01-16 10:48:35.2062 Debug Debug => t1 t2
+2019-01-16 10:48:35.2062 Debug Info => t1 t2
+2019-01-16 10:48:35.2062 Debug Warn => t1 t2
+2019-01-16 10:48:35.2062 Debug Error => t1 t2
+2019-01-16 10:48:35.2062 Debug Fatal =>
+2019-01-16 10:48:35.2105 Debug Targets for Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware by level:
+2019-01-16 10:48:35.2105 Debug Trace =>
+2019-01-16 10:48:35.2105 Debug Debug => t1 t2
+2019-01-16 10:48:35.2105 Debug Info => t1 t2
+2019-01-16 10:48:35.2105 Debug Warn => t1 t2
+2019-01-16 10:48:35.2105 Debug Error => t1 t2
+2019-01-16 10:48:35.2105 Debug Fatal =>
+2019-01-16 10:48:35.2105 Debug Targets for Microsoft.AspNetCore.CookiePolicy.CookiePolicyMiddleware by level:
+2019-01-16 10:48:35.2105 Debug Trace =>
+2019-01-16 10:48:35.2105 Debug Debug => t1 t2
+2019-01-16 10:48:35.2105 Debug Info => t1 t2
+2019-01-16 10:48:35.2105 Debug Warn => t1 t2
+2019-01-16 10:48:35.2105 Debug Error => t1 t2
+2019-01-16 10:48:35.2105 Debug Fatal =>
+2019-01-16 10:48:35.2105 Debug Targets for Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware by level:
+2019-01-16 10:48:35.2105 Debug Trace =>
+2019-01-16 10:48:35.2105 Debug Debug => t1 t2
+2019-01-16 10:48:35.2105 Debug Info => t1 t2
+2019-01-16 10:48:35.2105 Debug Warn => t1 t2
+2019-01-16 10:48:35.2105 Debug Error => t1 t2
+2019-01-16 10:48:35.2105 Debug Fatal =>
+2019-01-16 10:48:35.2292 Debug Targets for Microsoft.AspNetCore.Session.SessionMiddleware by level:
+2019-01-16 10:48:35.2292 Debug Trace =>
+2019-01-16 10:48:35.2292 Debug Debug => t1 t2
+2019-01-16 10:48:35.2292 Debug Info => t1 t2
+2019-01-16 10:48:35.2292 Debug Warn => t1 t2
+2019-01-16 10:48:35.2292 Debug Error => t1 t2
+2019-01-16 10:48:35.2292 Debug Fatal =>
+2019-01-16 10:48:35.2292 Debug Targets for Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware by level:
+2019-01-16 10:48:35.2292 Debug Trace =>
+2019-01-16 10:48:35.2292 Debug Debug => t1 t2
+2019-01-16 10:48:35.2292 Debug Info => t1 t2
+2019-01-16 10:48:35.2292 Debug Warn => t1 t2
+2019-01-16 10:48:35.2292 Debug Error => t1 t2
+2019-01-16 10:48:35.2292 Debug Fatal =>
+2019-01-16 10:48:35.2292 Debug Targets for Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware by level:
+2019-01-16 10:48:35.2292 Debug Trace =>
+2019-01-16 10:48:35.2292 Debug Debug => t1 t2
+2019-01-16 10:48:35.2292 Debug Info => t1 t2
+2019-01-16 10:48:35.2292 Debug Warn => t1 t2
+2019-01-16 10:48:35.2292 Debug Error => t1 t2
+2019-01-16 10:48:35.2292 Debug Fatal =>
+2019-01-16 10:48:35.2430 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor by level:
+2019-01-16 10:48:35.2430 Debug Trace =>
+2019-01-16 10:48:35.2430 Debug Debug => t1 t2
+2019-01-16 10:48:35.2430 Debug Info => t1 t2
+2019-01-16 10:48:35.2430 Debug Warn => t1 t2
+2019-01-16 10:48:35.2430 Debug Error => t1 t2
+2019-01-16 10:48:35.2430 Debug Fatal =>
+2019-01-16 10:48:35.2430 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer by level:
+2019-01-16 10:48:35.2430 Debug Trace =>
+2019-01-16 10:48:35.2430 Debug Debug => t1 t2
+2019-01-16 10:48:35.2430 Debug Info => t1 t2
+2019-01-16 10:48:35.2430 Debug Warn => t1 t2
+2019-01-16 10:48:35.2430 Debug Error => t1 t2
+2019-01-16 10:48:35.2430 Debug Fatal =>
+2019-01-16 10:48:35.3538 Debug Targets for HttpsConnectionAdapter by level:
+2019-01-16 10:48:35.3538 Debug Trace =>
+2019-01-16 10:48:35.3538 Debug Debug => t1 t2
+2019-01-16 10:48:35.3538 Debug Info => t1 t2
+2019-01-16 10:48:35.3538 Debug Warn => t1 t2
+2019-01-16 10:48:35.3538 Debug Error => t1 t2
+2019-01-16 10:48:35.3538 Debug Fatal =>
+2019-01-16 10:48:35.4637 Debug FileTarget(Name=t1): Process file 'C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log' on startup
+2019-01-16 10:48:35.4637 Debug Creating file appender: C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log
+2019-01-16 10:48:35.4637 Trace Opening C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log with allowFileSharedWriting=False
+2019-01-16 10:48:37.6253 Trace Opening C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log with allowFileSharedWriting=False
+2019-01-16 10:48:37.6253 Trace Opening C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log with allowFileSharedWriting=False
+2019-01-16 10:48:37.8241 Debug Targets for Microsoft.AspNetCore.Session.DistributedSession by level:
+2019-01-16 10:48:37.8241 Debug Trace =>
+2019-01-16 10:48:37.8241 Debug Debug => t1 t2
+2019-01-16 10:48:37.8241 Debug Info => t1 t2
+2019-01-16 10:48:37.8241 Debug Warn => t1 t2
+2019-01-16 10:48:37.8241 Debug Error => t1 t2
+2019-01-16 10:48:37.8241 Debug Fatal =>
+2019-01-16 10:48:38.3001 Debug Targets for Microsoft.AspNetCore.Routing.Tree.TreeRouter by level:
+2019-01-16 10:48:38.3001 Debug Trace =>
+2019-01-16 10:48:38.3001 Debug Debug => t1 t2
+2019-01-16 10:48:38.3001 Debug Info => t1 t2
+2019-01-16 10:48:38.3001 Debug Warn => t1 t2
+2019-01-16 10:48:38.3001 Debug Error => t1 t2
+2019-01-16 10:48:38.3001 Debug Fatal =>
+2019-01-16 10:48:38.3001 Debug Targets for Microsoft.AspNetCore.Routing.RouteConstraintMatcher by level:
+2019-01-16 10:48:38.3001 Debug Trace =>
+2019-01-16 10:48:38.3001 Debug Debug => t1 t2
+2019-01-16 10:48:38.3001 Debug Info => t1 t2
+2019-01-16 10:48:38.3001 Debug Warn => t1 t2
+2019-01-16 10:48:38.3039 Debug Error => t1 t2
+2019-01-16 10:48:38.3039 Debug Fatal =>
+2019-01-16 10:48:38.3039 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.MvcAttributeRouteHandler by level:
+2019-01-16 10:48:38.3039 Debug Trace =>
+2019-01-16 10:48:38.3039 Debug Debug => t1 t2
+2019-01-16 10:48:38.3039 Debug Info => t1 t2
+2019-01-16 10:48:38.3039 Debug Warn => t1 t2
+2019-01-16 10:48:38.3039 Debug Error => t1 t2
+2019-01-16 10:48:38.3039 Debug Fatal =>
+2019-01-16 10:48:38.3788 Debug Targets for Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgery by level:
+2019-01-16 10:48:38.3788 Debug Trace =>
+2019-01-16 10:48:38.3788 Debug Debug => t1 t2
+2019-01-16 10:48:38.3788 Debug Info => t1 t2
+2019-01-16 10:48:38.3788 Debug Warn => t1 t2
+2019-01-16 10:48:38.3788 Debug Error => t1 t2
+2019-01-16 10:48:38.3788 Debug Fatal =>
+2019-01-16 10:48:38.3788 Debug Targets for Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.AutoValidateAntiforgeryTokenAuthorizationFilter by level:
+2019-01-16 10:48:38.3816 Debug Trace =>
+2019-01-16 10:48:38.3816 Debug Debug => t1 t2
+2019-01-16 10:48:38.3816 Debug Info => t1 t2
+2019-01-16 10:48:38.3816 Debug Warn => t1 t2
+2019-01-16 10:48:38.3816 Debug Error => t1 t2
+2019-01-16 10:48:38.3816 Debug Fatal =>
+2019-01-16 10:48:38.4316 Debug Targets for Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker by level:
+2019-01-16 10:48:38.4316 Debug Trace =>
+2019-01-16 10:48:38.4316 Debug Debug => t1 t2
+2019-01-16 10:48:38.4316 Debug Info => t1 t2
+2019-01-16 10:48:38.4316 Debug Warn => t1 t2
+2019-01-16 10:48:38.4316 Debug Error => t1 t2
+2019-01-16 10:48:38.4316 Debug Fatal =>
+2019-01-16 10:48:38.4814 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.TagHelpers.HeadTagHelper by level:
+2019-01-16 10:48:38.4814 Debug Trace =>
+2019-01-16 10:48:38.4814 Debug Debug => t1 t2
+2019-01-16 10:48:38.4814 Debug Info => t1 t2
+2019-01-16 10:48:38.4814 Debug Warn => t1 t2
+2019-01-16 10:48:38.4814 Debug Error => t1 t2
+2019-01-16 10:48:38.4814 Debug Fatal =>
+2019-01-16 10:48:38.5050 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.TagHelpers.BodyTagHelper by level:
+2019-01-16 10:48:38.5050 Debug Trace =>
+2019-01-16 10:48:38.5050 Debug Debug => t1 t2
+2019-01-16 10:48:38.5050 Debug Info => t1 t2
+2019-01-16 10:48:38.5050 Debug Warn => t1 t2
+2019-01-16 10:48:38.5064 Debug Error => t1 t2
+2019-01-16 10:48:38.5064 Debug Fatal =>
+2019-01-16 10:48:47.3045 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder by level:
+2019-01-16 10:48:47.3045 Debug Trace =>
+2019-01-16 10:48:47.3045 Debug Debug => t1 t2
+2019-01-16 10:48:47.3045 Debug Info => t1 t2
+2019-01-16 10:48:47.3045 Debug Warn => t1 t2
+2019-01-16 10:48:47.3045 Debug Error => t1 t2
+2019-01-16 10:48:47.3045 Debug Fatal =>
+2019-01-16 10:48:47.3322 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.FileStreamResultExecutor by level:
+2019-01-16 10:48:47.3322 Debug Trace =>
+2019-01-16 10:48:47.3322 Debug Debug => t1 t2
+2019-01-16 10:48:47.3322 Debug Info => t1 t2
+2019-01-16 10:48:47.3322 Debug Warn => t1 t2
+2019-01-16 10:48:47.3322 Debug Error => t1 t2
+2019-01-16 10:48:47.3322 Debug Fatal =>
+2019-01-16 10:49:56.1338 Info Message Template Auto Format enabled
+2019-01-16 10:49:56.1338 Info Loading assembly: NLog.Web.AspNetCore
+2019-01-16 10:49:56.1338 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2019-01-16 10:49:56.1589 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.1637 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:49:56.1637 Debug Setting 'UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2019-01-16 10:49:56.2163 Trace Wrapping LevelLayoutRenderer with UppercaseLayoutRendererWrapper
+2019-01-16 10:49:56.2163 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2163 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:49:56.2163 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2163 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2019-01-16 10:49:56.2163 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:49:56.2163 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2019-01-16 10:49:56.2259 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2019-01-16 10:49:56.2259 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:49:56.2259 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:49:56.2259 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2259 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-01-16 10:49:56.2259 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2259 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:49:56.2459 Debug Setting 'FileTarget.name' to 't1'
+2019-01-16 10:49:56.2459 Debug Setting 'FileTarget.fileName' to '${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log'
+2019-01-16 10:49:56.2459 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2459 Trace Scanning BaseDirLayoutRenderer 'Layout Renderer: ${basedir}'
+2019-01-16 10:49:56.2671 Debug Setting 'DateLayoutRenderer.format' to 'yyyy-MM-dd'
+2019-01-16 10:49:56.2671 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2671 Trace Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:49:56.2671 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:49:56.2671 Debug Setting 'DateLayoutRenderer.format' to 'yyyy-MM-dd HH'
+2019-01-16 10:49:56.2671 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2671 Trace Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:49:56.2671 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:49:56.2671 Debug Setting 'FileTarget.layout' to '[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]'
+2019-01-16 10:49:56.2671 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2671 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:49:56.2671 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2671 Trace Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:49:56.2733 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2733 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:49:56.2733 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2733 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:49:56.2733 Debug Setting 'EventContextLayoutRenderer.item' to 'exception'
+2019-01-16 10:49:56.2733 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2733 Trace Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:49:56.2733 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2733 Trace Scanning StackTraceLayoutRenderer 'Layout Renderer: ${stacktrace}'
+2019-01-16 10:49:56.2733 Debug Setting 'EventContextLayoutRenderer.item' to 'stacktrace'
+2019-01-16 10:49:56.2733 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2733 Trace Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:49:56.2733 Info Adding target File Target[t1]
+2019-01-16 10:49:56.2733 Debug Registered target t1: NLog.Targets.FileTarget
+2019-01-16 10:49:56.2733 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2733 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:49:56.2733 Debug Setting 'UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2019-01-16 10:49:56.2733 Trace Wrapping LevelLayoutRenderer with UppercaseLayoutRendererWrapper
+2019-01-16 10:49:56.2733 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2733 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:49:56.2733 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2733 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2019-01-16 10:49:56.2733 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:49:56.2733 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2019-01-16 10:49:56.2733 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2019-01-16 10:49:56.2733 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:49:56.2733 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:49:56.2733 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2733 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-01-16 10:49:56.2733 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2733 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:49:56.2733 Debug Setting 'ConsoleTarget.name' to 't2'
+2019-01-16 10:49:56.2733 Debug Setting 'ConsoleTarget.layout' to '${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}'
+2019-01-16 10:49:56.2733 Debug Setting 'DateLayoutRenderer.format' to 'yyyyMMddHHmmss'
+2019-01-16 10:49:56.2733 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2733 Trace Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:49:56.2733 Trace  Scanning Property Culture '' System.Globalization
+2019-01-16 10:49:56.2733 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2733 Trace Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:49:56.2733 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2733 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:49:56.2733 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-01-16 10:49:56.2877 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:49:56.2877 Info Adding target Console Target[t2]
+2019-01-16 10:49:56.2877 Debug Registered target t2: NLog.Targets.ConsoleTarget
+2019-01-16 10:49:56.2877 Trace ParseRulesElement
+2019-01-16 10:49:56.2877 Info Configured from an XML element in C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\NLog.config...
+2019-01-16 10:49:56.3041 Debug Unused target checking is started... Rule Count: 4, Target Count: 2
+2019-01-16 10:49:56.3041 Debug Unused target checking is completed. Total Rule Count: 4, Total Target Count: 2, Unused Target Count: 0
+2019-01-16 10:49:56.3041 Debug --- NLog configuration dump ---
+2019-01-16 10:49:56.3041 Debug Targets:
+2019-01-16 10:49:56.3041 Debug File Target[t1]
+2019-01-16 10:49:56.3041 Debug Console Target[t2]
+2019-01-16 10:49:56.3041 Debug Rules:
+2019-01-16 10:49:56.3041 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error ] appendTo: [ t1 ]
+2019-01-16 10:49:56.3041 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error ] appendTo: [ t2 ]
+2019-01-16 10:49:56.3041 Debug logNamePattern: (Microsoft.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ ]
+2019-01-16 10:49:56.3041 Debug logNamePattern: (System.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ ]
+2019-01-16 10:49:56.3041 Debug --- End of NLog configuration dump ---
+2019-01-16 10:49:56.3202 Trace FindReachableObject<System.Object>:
+2019-01-16 10:49:56.3202 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error ] appendTo: [ t1 ]'
+2019-01-16 10:49:56.3202 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-01-16 10:49:56.3202 Trace  Scanning FileTarget 'File Target[t1]'
+2019-01-16 10:49:56.3202 Trace   Scanning Property FileName ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log'' NLog.Layouts
+2019-01-16 10:49:56.3202 Trace   Scanning SimpleLayout ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log''
+2019-01-16 10:49:56.3202 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:49:56.3202 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3202 Trace    Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:49:56.3202 Trace     Scanning Property Culture '' System.Globalization
+2019-01-16 10:49:56.3202 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3202 Trace    Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:49:56.3202 Trace     Scanning Property Culture '' System.Globalization
+2019-01-16 10:49:56.3202 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3202 Trace   Scanning Property Layout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]'' NLog.Layouts
+2019-01-16 10:49:56.3202 Trace   Scanning SimpleLayout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]''
+2019-01-16 10:49:56.3202 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:49:56.3202 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3202 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:49:56.3202 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3202 Trace    Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:49:56.3202 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3202 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:49:56.3202 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3202 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:49:56.3202 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3202 Trace    Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:49:56.3202 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3202 Trace    Scanning StackTraceLayoutRenderer 'Layout Renderer: ${stacktrace}'
+2019-01-16 10:49:56.3202 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3202 Trace    Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:49:56.3202 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3202 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2019-01-16 10:49:56.3202 Trace   Scanning Property Encoding 'System.Text.UTF8Encoding+UTF8EncodingSealed' System.Text
+2019-01-16 10:49:56.3202 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-01-16 10:49:56.3202 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-01-16 10:49:56.3353 Trace  Scanning Property Levels 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LogLevel]' System.Collections.ObjectModel
+2019-01-16 10:49:56.3353 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error ] appendTo: [ t2 ]'
+2019-01-16 10:49:56.3353 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-01-16 10:49:56.3353 Trace  Scanning ConsoleTarget 'Console Target[t2]'
+2019-01-16 10:49:56.3353 Trace   Scanning Property Layout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}'' NLog.Layouts
+2019-01-16 10:49:56.3353 Trace   Scanning SimpleLayout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}''
+2019-01-16 10:49:56.3353 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:49:56.3353 Trace    Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:49:56.3353 Trace     Scanning Property Culture '' System.Globalization
+2019-01-16 10:49:56.3353 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3353 Trace    Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:49:56.3353 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3353 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:49:56.3353 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3353 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:49:56.3353 Trace   Scanning Property Encoding 'System.Text.OSEncoding' System.Text
+2019-01-16 10:49:56.3353 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-01-16 10:49:56.3353 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-01-16 10:49:56.3353 Trace  Scanning Property Levels 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LogLevel]' System.Collections.ObjectModel
+2019-01-16 10:49:56.3353 Trace Scanning LoggingRule 'logNamePattern: (Microsoft.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ ]'
+2019-01-16 10:49:56.3353 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-01-16 10:49:56.3353 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-01-16 10:49:56.3353 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-01-16 10:49:56.3353 Trace  Scanning Property Levels 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LogLevel]' System.Collections.ObjectModel
+2019-01-16 10:49:56.3353 Trace Scanning LoggingRule 'logNamePattern: (System.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ ]'
+2019-01-16 10:49:56.3353 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-01-16 10:49:56.3353 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-01-16 10:49:56.3353 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-01-16 10:49:56.3353 Trace  Scanning Property Levels 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LogLevel]' System.Collections.ObjectModel
+2019-01-16 10:49:56.3353 Info Found 36 configuration items
+2019-01-16 10:49:56.3353 Trace Initializing Layout Renderer: ${message}
+2019-01-16 10:49:56.3353 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:49:56.3353 Trace Initializing Layout Renderer: ${level}
+2019-01-16 10:49:56.3353 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:49:56.3353 Trace Initializing Layout Renderer: ${callsite}
+2019-01-16 10:49:56.3353 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:49:56.3353 Trace Initializing Layout Renderer: ${date}
+2019-01-16 10:49:56.3353 Trace Initializing '${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}'
+2019-01-16 10:49:56.3503 Trace FindReachableObject<System.Object>:
+2019-01-16 10:49:56.3503 Trace Scanning SimpleLayout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}''
+2019-01-16 10:49:56.3503 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:49:56.3503 Trace  Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:49:56.3503 Trace   Scanning Property Culture '' System.Globalization
+2019-01-16 10:49:56.3503 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3503 Trace  Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:49:56.3503 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3503 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:49:56.3503 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3503 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:49:56.3503 Trace Initializing Console Target[t2]
+2019-01-16 10:49:56.3503 Trace FindReachableObject<NLog.Layouts.Layout>:
+2019-01-16 10:49:56.3503 Trace Scanning ConsoleTarget 'Console Target[t2]'
+2019-01-16 10:49:56.3503 Trace  Scanning Property Layout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}'' NLog.Layouts
+2019-01-16 10:49:56.3503 Trace  Scanning SimpleLayout ''${date:format=yyyyMMddHHmmss} ${callsite} ${level} ${message}''
+2019-01-16 10:49:56.3503 Trace  Scanning Property Encoding 'System.Text.OSEncoding' System.Text
+2019-01-16 10:49:56.3503 Trace Console Target[t2] has 1 layouts
+2019-01-16 10:49:56.3503 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:49:56.3503 Trace Initializing Layout Renderer: ${event-context}
+2019-01-16 10:49:56.3503 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:49:56.3503 Trace Initializing Layout Renderer: ${stacktrace}
+2019-01-16 10:49:56.3503 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:49:56.3503 Trace Initializing Layout Renderer: ${event-context}
+2019-01-16 10:49:56.3503 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:49:56.3503 Trace Initializing Layout Renderer: ${message}
+2019-01-16 10:49:56.3503 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:49:56.3503 Trace Initializing Layout Renderer: ${level}
+2019-01-16 10:49:56.3503 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:49:56.3503 Trace Initializing Layout Renderer: ${callsite}
+2019-01-16 10:49:56.3503 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:49:56.3665 Trace Initializing Layout Renderer: ${longdate}
+2019-01-16 10:49:56.3665 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:49:56.3665 Trace Initializing '[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]'
+2019-01-16 10:49:56.3665 Trace FindReachableObject<System.Object>:
+2019-01-16 10:49:56.3665 Trace Scanning SimpleLayout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]''
+2019-01-16 10:49:56.3665 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:49:56.3665 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3665 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-01-16 10:49:56.3665 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3665 Trace  Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-01-16 10:49:56.3665 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3665 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-01-16 10:49:56.3665 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3665 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-01-16 10:49:56.3665 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3665 Trace  Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:49:56.3665 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3665 Trace  Scanning StackTraceLayoutRenderer 'Layout Renderer: ${stacktrace}'
+2019-01-16 10:49:56.3665 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3665 Trace  Scanning EventContextLayoutRenderer 'Layout Renderer: ${event-context}'
+2019-01-16 10:49:56.3665 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3665 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:49:56.3665 Trace Initializing Layout Renderer: ${date}
+2019-01-16 10:49:56.3665 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:49:56.3665 Trace Initializing Layout Renderer: ${date}
+2019-01-16 10:49:56.3665 Trace Initializing Layout Renderer: ${literal}
+2019-01-16 10:49:56.3665 Trace Initializing '${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log'
+2019-01-16 10:49:56.3665 Trace FindReachableObject<System.Object>:
+2019-01-16 10:49:56.3665 Trace Scanning SimpleLayout ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log''
+2019-01-16 10:49:56.3665 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-01-16 10:49:56.3665 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3665 Trace  Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:49:56.3665 Trace   Scanning Property Culture '' System.Globalization
+2019-01-16 10:49:56.3665 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3665 Trace  Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-01-16 10:49:56.3665 Trace   Scanning Property Culture '' System.Globalization
+2019-01-16 10:49:56.3665 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-01-16 10:49:56.3665 Trace Initializing File Target[t1]
+2019-01-16 10:49:56.3665 Trace FindReachableObject<NLog.Layouts.Layout>:
+2019-01-16 10:49:56.3665 Trace Scanning FileTarget 'File Target[t1]'
+2019-01-16 10:49:56.3665 Trace  Scanning Property FileName ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log'' NLog.Layouts
+2019-01-16 10:49:56.3665 Trace  Scanning SimpleLayout ''${basedir}/logs/${date:format=yyyy-MM-dd}/${date:format=yyyy-MM-dd HH}.log''
+2019-01-16 10:49:56.3665 Trace  Scanning Property Layout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]'' NLog.Layouts
+2019-01-16 10:49:56.3665 Trace  Scanning SimpleLayout ''[${longdate}] [${callsite}] [${level}]: [${message}] [${event-context:item=exception}] [${stacktrace}] [${event-context:item=stacktrace}]''
+2019-01-16 10:49:56.3665 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2019-01-16 10:49:56.3665 Trace  Scanning Property Encoding 'System.Text.UTF8Encoding+UTF8EncodingSealed' System.Text
+2019-01-16 10:49:56.3665 Trace File Target[t1] has 2 layouts
+2019-01-16 10:49:56.3820 Trace FileTarget(Name=t1): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2019-01-16 10:49:56.3820 Debug Watching path 'C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1' filter 'NLog.config' for changes.
+2019-01-16 10:49:56.3820 Info Configuration initialized.
+2019-01-16 10:49:56.4005 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.10.8381. Product version: 4.5.10.
+2019-01-16 10:49:56.4005 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.WebHost by level:
+2019-01-16 10:49:56.4005 Debug Trace =>
+2019-01-16 10:49:56.4005 Debug Debug => t1 t2
+2019-01-16 10:49:56.4005 Debug Info => t1 t2
+2019-01-16 10:49:56.4005 Debug Warn => t1 t2
+2019-01-16 10:49:56.4005 Debug Error => t1 t2
+2019-01-16 10:49:56.4005 Debug Fatal =>
+2019-01-16 10:49:59.7891 Debug Hide assemblies for callsite
+2019-01-16 10:49:59.8075 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.ApplicationLifetime by level:
+2019-01-16 10:49:59.8075 Debug Trace =>
+2019-01-16 10:49:59.8075 Debug Debug => t1 t2
+2019-01-16 10:49:59.8075 Debug Info => t1 t2
+2019-01-16 10:49:59.8075 Debug Warn => t1 t2
+2019-01-16 10:49:59.8075 Debug Error => t1 t2
+2019-01-16 10:49:59.8075 Debug Fatal =>
+2019-01-16 10:49:59.8075 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets by level:
+2019-01-16 10:49:59.8075 Debug Trace =>
+2019-01-16 10:49:59.8075 Debug Debug => t1 t2
+2019-01-16 10:49:59.8075 Debug Info => t1 t2
+2019-01-16 10:49:59.8075 Debug Warn => t1 t2
+2019-01-16 10:49:59.8075 Debug Error => t1 t2
+2019-01-16 10:49:59.8075 Debug Fatal =>
+2019-01-16 10:49:59.8354 Debug Targets for Microsoft.AspNetCore.Server.Kestrel by level:
+2019-01-16 10:49:59.8354 Debug Trace =>
+2019-01-16 10:49:59.8354 Debug Debug => t1 t2
+2019-01-16 10:49:59.8354 Debug Info => t1 t2
+2019-01-16 10:49:59.8354 Debug Warn => t1 t2
+2019-01-16 10:49:59.8354 Debug Error => t1 t2
+2019-01-16 10:49:59.8354 Debug Fatal =>
+2019-01-16 10:49:59.8719 Debug Targets for Microsoft.AspNetCore.DataProtection.TypeForwardingActivator by level:
+2019-01-16 10:49:59.8719 Debug Trace =>
+2019-01-16 10:49:59.8719 Debug Debug => t1 t2
+2019-01-16 10:49:59.8719 Debug Info => t1 t2
+2019-01-16 10:49:59.8719 Debug Warn => t1 t2
+2019-01-16 10:49:59.8719 Debug Error => t1 t2
+2019-01-16 10:49:59.8719 Debug Fatal =>
+2019-01-16 10:49:59.8922 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager by level:
+2019-01-16 10:49:59.8922 Debug Trace =>
+2019-01-16 10:49:59.8922 Debug Debug => t1 t2
+2019-01-16 10:49:59.8922 Debug Info => t1 t2
+2019-01-16 10:49:59.8922 Debug Warn => t1 t2
+2019-01-16 10:49:59.8922 Debug Error => t1 t2
+2019-01-16 10:49:59.8922 Debug Fatal =>
+2019-01-16 10:49:59.8922 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory by level:
+2019-01-16 10:49:59.8922 Debug Trace =>
+2019-01-16 10:49:59.8968 Debug Debug => t1 t2
+2019-01-16 10:49:59.8968 Debug Info => t1 t2
+2019-01-16 10:49:59.8968 Debug Warn => t1 t2
+2019-01-16 10:49:59.8968 Debug Error => t1 t2
+2019-01-16 10:49:59.8968 Debug Fatal =>
+2019-01-16 10:49:59.8968 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory by level:
+2019-01-16 10:49:59.8968 Debug Trace =>
+2019-01-16 10:49:59.8968 Debug Debug => t1 t2
+2019-01-16 10:49:59.8968 Debug Info => t1 t2
+2019-01-16 10:49:59.8968 Debug Warn => t1 t2
+2019-01-16 10:49:59.8968 Debug Error => t1 t2
+2019-01-16 10:49:59.8968 Debug Fatal =>
+2019-01-16 10:49:59.8968 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory by level:
+2019-01-16 10:49:59.8968 Debug Trace =>
+2019-01-16 10:49:59.8968 Debug Debug => t1 t2
+2019-01-16 10:49:59.8968 Debug Info => t1 t2
+2019-01-16 10:49:59.8968 Debug Warn => t1 t2
+2019-01-16 10:49:59.8968 Debug Error => t1 t2
+2019-01-16 10:49:59.8968 Debug Fatal =>
+2019-01-16 10:49:59.8968 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor by level:
+2019-01-16 10:49:59.8968 Debug Trace =>
+2019-01-16 10:49:59.8968 Debug Debug => t1 t2
+2019-01-16 10:49:59.8968 Debug Info => t1 t2
+2019-01-16 10:49:59.8968 Debug Warn => t1 t2
+2019-01-16 10:49:59.8968 Debug Error => t1 t2
+2019-01-16 10:49:59.8968 Debug Fatal =>
+2019-01-16 10:49:59.8968 Debug Targets for Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository by level:
+2019-01-16 10:49:59.8968 Debug Trace =>
+2019-01-16 10:49:59.9127 Debug Debug => t1 t2
+2019-01-16 10:49:59.9127 Debug Info => t1 t2
+2019-01-16 10:49:59.9127 Debug Warn => t1 t2
+2019-01-16 10:49:59.9127 Debug Error => t1 t2
+2019-01-16 10:49:59.9127 Debug Fatal =>
+2019-01-16 10:50:00.0455 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver by level:
+2019-01-16 10:50:00.0455 Debug Trace =>
+2019-01-16 10:50:00.0455 Debug Debug => t1 t2
+2019-01-16 10:50:00.0455 Debug Info => t1 t2
+2019-01-16 10:50:00.0455 Debug Warn => t1 t2
+2019-01-16 10:50:00.0455 Debug Error => t1 t2
+2019-01-16 10:50:00.0455 Debug Fatal =>
+2019-01-16 10:50:00.0455 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider by level:
+2019-01-16 10:50:00.0455 Debug Trace =>
+2019-01-16 10:50:00.0455 Debug Debug => t1 t2
+2019-01-16 10:50:00.0455 Debug Info => t1 t2
+2019-01-16 10:50:00.0455 Debug Warn => t1 t2
+2019-01-16 10:50:00.0455 Debug Error => t1 t2
+2019-01-16 10:50:00.0455 Debug Fatal =>
+2019-01-16 10:50:00.0455 Debug Targets for Microsoft.AspNetCore.DataProtection.Internal.DataProtectionStartupFilter by level:
+2019-01-16 10:50:00.0455 Debug Trace =>
+2019-01-16 10:50:00.0455 Debug Debug => t1 t2
+2019-01-16 10:50:00.0455 Debug Info => t1 t2
+2019-01-16 10:50:00.0455 Debug Warn => t1 t2
+2019-01-16 10:50:00.0455 Debug Error => t1 t2
+2019-01-16 10:50:00.0455 Debug Fatal =>
+2019-01-16 10:50:00.1190 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor by level:
+2019-01-16 10:50:00.1190 Debug Trace =>
+2019-01-16 10:50:00.1190 Debug Debug => t1 t2
+2019-01-16 10:50:00.1190 Debug Info => t1 t2
+2019-01-16 10:50:00.1190 Debug Warn => t1 t2
+2019-01-16 10:50:00.1190 Debug Error => t1 t2
+2019-01-16 10:50:00.1190 Debug Fatal =>
+2019-01-16 10:50:01.5198 Debug Targets for Microsoft.AspNetCore.Mvc.MvcJsonOptions by level:
+2019-01-16 10:50:01.5198 Debug Trace =>
+2019-01-16 10:50:01.5198 Debug Debug => t1 t2
+2019-01-16 10:50:01.5198 Debug Info => t1 t2
+2019-01-16 10:50:01.5198 Debug Warn => t1 t2
+2019-01-16 10:50:01.5198 Debug Error => t1 t2
+2019-01-16 10:50:01.5198 Debug Fatal =>
+2019-01-16 10:50:01.5279 Debug Targets for Microsoft.AspNetCore.Mvc.MvcOptions by level:
+2019-01-16 10:50:01.5279 Debug Trace =>
+2019-01-16 10:50:01.5279 Debug Debug => t1 t2
+2019-01-16 10:50:01.5279 Debug Info => t1 t2
+2019-01-16 10:50:01.5279 Debug Warn => t1 t2
+2019-01-16 10:50:01.5279 Debug Error => t1 t2
+2019-01-16 10:50:01.5279 Debug Fatal =>
+2019-01-16 10:50:01.6583 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.JsonPatchInputFormatter by level:
+2019-01-16 10:50:01.6583 Debug Trace =>
+2019-01-16 10:50:01.6583 Debug Debug => t1 t2
+2019-01-16 10:50:01.6583 Debug Info => t1 t2
+2019-01-16 10:50:01.6583 Debug Warn => t1 t2
+2019-01-16 10:50:01.6583 Debug Error => t1 t2
+2019-01-16 10:50:01.6669 Debug Fatal =>
+2019-01-16 10:50:01.6669 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.JsonInputFormatter by level:
+2019-01-16 10:50:01.6669 Debug Trace =>
+2019-01-16 10:50:01.6669 Debug Debug => t1 t2
+2019-01-16 10:50:01.6669 Debug Info => t1 t2
+2019-01-16 10:50:01.6669 Debug Warn => t1 t2
+2019-01-16 10:50:01.6669 Debug Error => t1 t2
+2019-01-16 10:50:01.6669 Debug Fatal =>
+2019-01-16 10:50:01.6669 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider by level:
+2019-01-16 10:50:01.6669 Debug Trace =>
+2019-01-16 10:50:01.6669 Debug Debug => t1 t2
+2019-01-16 10:50:01.6669 Debug Info => t1 t2
+2019-01-16 10:50:01.6669 Debug Warn => t1 t2
+2019-01-16 10:50:01.6669 Debug Error => t1 t2
+2019-01-16 10:50:01.6669 Debug Fatal =>
+2019-01-16 10:50:01.6669 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter by level:
+2019-01-16 10:50:01.6669 Debug Trace =>
+2019-01-16 10:50:01.6669 Debug Debug => t1 t2
+2019-01-16 10:50:01.6669 Debug Info => t1 t2
+2019-01-16 10:50:01.6669 Debug Warn => t1 t2
+2019-01-16 10:50:01.6669 Debug Error => t1 t2
+2019-01-16 10:50:01.6669 Debug Fatal =>
+2019-01-16 10:50:01.6835 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions by level:
+2019-01-16 10:50:01.6835 Debug Trace =>
+2019-01-16 10:50:01.6835 Debug Debug => t1 t2
+2019-01-16 10:50:01.6835 Debug Info => t1 t2
+2019-01-16 10:50:01.6835 Debug Warn => t1 t2
+2019-01-16 10:50:01.6835 Debug Error => t1 t2
+2019-01-16 10:50:01.6835 Debug Fatal =>
+2019-01-16 10:50:01.9647 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler by level:
+2019-01-16 10:50:01.9647 Debug Trace =>
+2019-01-16 10:50:01.9647 Debug Debug => t1 t2
+2019-01-16 10:50:01.9647 Debug Info => t1 t2
+2019-01-16 10:50:01.9647 Debug Warn => t1 t2
+2019-01-16 10:50:01.9647 Debug Error => t1 t2
+2019-01-16 10:50:01.9647 Debug Fatal =>
+2019-01-16 10:50:01.9800 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine by level:
+2019-01-16 10:50:01.9800 Debug Trace =>
+2019-01-16 10:50:01.9800 Debug Debug => t1 t2
+2019-01-16 10:50:01.9800 Debug Info => t1 t2
+2019-01-16 10:50:01.9800 Debug Warn => t1 t2
+2019-01-16 10:50:01.9800 Debug Error => t1 t2
+2019-01-16 10:50:01.9800 Debug Fatal =>
+2019-01-16 10:50:01.9800 Debug Targets for Microsoft.AspNetCore.Mvc.MvcViewOptions by level:
+2019-01-16 10:50:01.9800 Debug Trace =>
+2019-01-16 10:50:01.9800 Debug Debug => t1 t2
+2019-01-16 10:50:01.9800 Debug Info => t1 t2
+2019-01-16 10:50:01.9800 Debug Warn => t1 t2
+2019-01-16 10:50:01.9800 Debug Error => t1 t2
+2019-01-16 10:50:01.9800 Debug Fatal =>
+2019-01-16 10:50:01.9800 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.RazorProjectPageRouteModelProvider by level:
+2019-01-16 10:50:01.9800 Debug Trace =>
+2019-01-16 10:50:01.9800 Debug Debug => t1 t2
+2019-01-16 10:50:01.9800 Debug Info => t1 t2
+2019-01-16 10:50:01.9800 Debug Warn => t1 t2
+2019-01-16 10:50:01.9800 Debug Error => t1 t2
+2019-01-16 10:50:01.9800 Debug Fatal =>
+2019-01-16 10:50:01.9800 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.CompiledPageRouteModelProvider by level:
+2019-01-16 10:50:01.9800 Debug Trace =>
+2019-01-16 10:50:01.9800 Debug Debug => t1 t2
+2019-01-16 10:50:01.9909 Debug Info => t1 t2
+2019-01-16 10:50:01.9909 Debug Warn => t1 t2
+2019-01-16 10:50:01.9909 Debug Error => t1 t2
+2019-01-16 10:50:01.9909 Debug Fatal =>
+2019-01-16 10:50:02.0138 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory by level:
+2019-01-16 10:50:02.0138 Debug Trace =>
+2019-01-16 10:50:02.0138 Debug Debug => t1 t2
+2019-01-16 10:50:02.0138 Debug Info => t1 t2
+2019-01-16 10:50:02.0138 Debug Warn => t1 t2
+2019-01-16 10:50:02.0138 Debug Error => t1 t2
+2019-01-16 10:50:02.0138 Debug Fatal =>
+2019-01-16 10:50:02.0387 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder by level:
+2019-01-16 10:50:02.0387 Debug Trace =>
+2019-01-16 10:50:02.0387 Debug Debug => t1 t2
+2019-01-16 10:50:02.0387 Debug Info => t1 t2
+2019-01-16 10:50:02.0387 Debug Warn => t1 t2
+2019-01-16 10:50:02.0387 Debug Error => t1 t2
+2019-01-16 10:50:02.0387 Debug Fatal =>
+2019-01-16 10:50:02.0387 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker by level:
+2019-01-16 10:50:02.0387 Debug Trace =>
+2019-01-16 10:50:02.0387 Debug Debug => t1 t2
+2019-01-16 10:50:02.0387 Debug Info => t1 t2
+2019-01-16 10:50:02.0387 Debug Warn => t1 t2
+2019-01-16 10:50:02.0542 Debug Error => t1 t2
+2019-01-16 10:50:02.0542 Debug Fatal =>
+2019-01-16 10:50:02.0542 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector by level:
+2019-01-16 10:50:02.0542 Debug Trace =>
+2019-01-16 10:50:02.0542 Debug Debug => t1 t2
+2019-01-16 10:50:02.0542 Debug Info => t1 t2
+2019-01-16 10:50:02.0542 Debug Warn => t1 t2
+2019-01-16 10:50:02.0542 Debug Error => t1 t2
+2019-01-16 10:50:02.0542 Debug Fatal =>
+2019-01-16 10:50:02.0710 Debug Targets for Microsoft.AspNetCore.Mvc.ViewFeatures.CookieTempDataProvider by level:
+2019-01-16 10:50:02.0710 Debug Trace =>
+2019-01-16 10:50:02.0710 Debug Debug => t1 t2
+2019-01-16 10:50:02.0710 Debug Info => t1 t2
+2019-01-16 10:50:02.0710 Debug Warn => t1 t2
+2019-01-16 10:50:02.0710 Debug Error => t1 t2
+2019-01-16 10:50:02.0710 Debug Fatal =>
+2019-01-16 10:50:02.0971 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker by level:
+2019-01-16 10:50:02.0971 Debug Trace =>
+2019-01-16 10:50:02.0971 Debug Debug => t1 t2
+2019-01-16 10:50:02.0971 Debug Info => t1 t2
+2019-01-16 10:50:02.0971 Debug Warn => t1 t2
+2019-01-16 10:50:02.0971 Debug Error => t1 t2
+2019-01-16 10:50:02.0971 Debug Fatal =>
+2019-01-16 10:50:02.1036 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.ActionSelector by level:
+2019-01-16 10:50:02.1036 Debug Trace =>
+2019-01-16 10:50:02.1036 Debug Debug => t1 t2
+2019-01-16 10:50:02.1036 Debug Info => t1 t2
+2019-01-16 10:50:02.1036 Debug Warn => t1 t2
+2019-01-16 10:50:02.1036 Debug Error => t1 t2
+2019-01-16 10:50:02.1036 Debug Fatal =>
+2019-01-16 10:50:02.1036 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.MvcRouteHandler by level:
+2019-01-16 10:50:02.1036 Debug Trace =>
+2019-01-16 10:50:02.1036 Debug Debug => t1 t2
+2019-01-16 10:50:02.1036 Debug Info => t1 t2
+2019-01-16 10:50:02.1036 Debug Warn => t1 t2
+2019-01-16 10:50:02.1036 Debug Error => t1 t2
+2019-01-16 10:50:02.1036 Debug Fatal =>
+2019-01-16 10:50:02.1820 Debug Targets for WebCore.Startup by level:
+2019-01-16 10:50:02.1820 Debug Trace =>
+2019-01-16 10:50:02.1820 Debug Debug => t1 t2
+2019-01-16 10:50:02.1820 Debug Info => t1 t2
+2019-01-16 10:50:02.1820 Debug Warn => t1 t2
+2019-01-16 10:50:02.1820 Debug Error => t1 t2
+2019-01-16 10:50:02.1820 Debug Fatal =>
+2019-01-16 10:50:02.1820 Debug Targets for Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware by level:
+2019-01-16 10:50:02.1820 Debug Trace =>
+2019-01-16 10:50:02.1820 Debug Debug => t1 t2
+2019-01-16 10:50:02.1820 Debug Info => t1 t2
+2019-01-16 10:50:02.1820 Debug Warn => t1 t2
+2019-01-16 10:50:02.1820 Debug Error => t1 t2
+2019-01-16 10:50:02.1820 Debug Fatal =>
+2019-01-16 10:50:02.2187 Debug Targets for Microsoft.AspNetCore.Builder.RouterMiddleware by level:
+2019-01-16 10:50:02.2187 Debug Trace =>
+2019-01-16 10:50:02.2187 Debug Debug => t1 t2
+2019-01-16 10:50:02.2187 Debug Info => t1 t2
+2019-01-16 10:50:02.2187 Debug Warn => t1 t2
+2019-01-16 10:50:02.2187 Debug Error => t1 t2
+2019-01-16 10:50:02.2187 Debug Fatal =>
+2019-01-16 10:50:02.2187 Debug Targets for Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware by level:
+2019-01-16 10:50:02.2187 Debug Trace =>
+2019-01-16 10:50:02.2187 Debug Debug => t1 t2
+2019-01-16 10:50:02.2187 Debug Info => t1 t2
+2019-01-16 10:50:02.2187 Debug Warn => t1 t2
+2019-01-16 10:50:02.2187 Debug Error => t1 t2
+2019-01-16 10:50:02.2187 Debug Fatal =>
+2019-01-16 10:50:02.2266 Debug Targets for Microsoft.AspNetCore.CookiePolicy.CookiePolicyMiddleware by level:
+2019-01-16 10:50:02.2266 Debug Trace =>
+2019-01-16 10:50:02.2266 Debug Debug => t1 t2
+2019-01-16 10:50:02.2266 Debug Info => t1 t2
+2019-01-16 10:50:02.2266 Debug Warn => t1 t2
+2019-01-16 10:50:02.2266 Debug Error => t1 t2
+2019-01-16 10:50:02.2266 Debug Fatal =>
+2019-01-16 10:50:02.2266 Debug Targets for Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware by level:
+2019-01-16 10:50:02.2266 Debug Trace =>
+2019-01-16 10:50:02.2266 Debug Debug => t1 t2
+2019-01-16 10:50:02.2266 Debug Info => t1 t2
+2019-01-16 10:50:02.2266 Debug Warn => t1 t2
+2019-01-16 10:50:02.2266 Debug Error => t1 t2
+2019-01-16 10:50:02.2266 Debug Fatal =>
+2019-01-16 10:50:02.2266 Debug Targets for Microsoft.AspNetCore.Session.SessionMiddleware by level:
+2019-01-16 10:50:02.2266 Debug Trace =>
+2019-01-16 10:50:02.2266 Debug Debug => t1 t2
+2019-01-16 10:50:02.2266 Debug Info => t1 t2
+2019-01-16 10:50:02.2266 Debug Warn => t1 t2
+2019-01-16 10:50:02.2266 Debug Error => t1 t2
+2019-01-16 10:50:02.2266 Debug Fatal =>
+2019-01-16 10:50:02.2421 Debug Targets for Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware by level:
+2019-01-16 10:50:02.2421 Debug Trace =>
+2019-01-16 10:50:02.2421 Debug Debug => t1 t2
+2019-01-16 10:50:02.2421 Debug Info => t1 t2
+2019-01-16 10:50:02.2421 Debug Warn => t1 t2
+2019-01-16 10:50:02.2421 Debug Error => t1 t2
+2019-01-16 10:50:02.2421 Debug Fatal =>
+2019-01-16 10:50:02.2421 Debug Targets for Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware by level:
+2019-01-16 10:50:02.2421 Debug Trace =>
+2019-01-16 10:50:02.2421 Debug Debug => t1 t2
+2019-01-16 10:50:02.2421 Debug Info => t1 t2
+2019-01-16 10:50:02.2421 Debug Warn => t1 t2
+2019-01-16 10:50:02.2421 Debug Error => t1 t2
+2019-01-16 10:50:02.2421 Debug Fatal =>
+2019-01-16 10:50:02.2421 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor by level:
+2019-01-16 10:50:02.2421 Debug Trace =>
+2019-01-16 10:50:02.2421 Debug Debug => t1 t2
+2019-01-16 10:50:02.2421 Debug Info => t1 t2
+2019-01-16 10:50:02.2421 Debug Warn => t1 t2
+2019-01-16 10:50:02.2421 Debug Error => t1 t2
+2019-01-16 10:50:02.2421 Debug Fatal =>
+2019-01-16 10:50:02.2582 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer by level:
+2019-01-16 10:50:02.2582 Debug Trace =>
+2019-01-16 10:50:02.2582 Debug Debug => t1 t2
+2019-01-16 10:50:02.2582 Debug Info => t1 t2
+2019-01-16 10:50:02.2582 Debug Warn => t1 t2
+2019-01-16 10:50:02.2582 Debug Error => t1 t2
+2019-01-16 10:50:02.2582 Debug Fatal =>
+2019-01-16 10:50:02.3302 Debug Targets for HttpsConnectionAdapter by level:
+2019-01-16 10:50:02.3302 Debug Trace =>
+2019-01-16 10:50:02.3302 Debug Debug => t1 t2
+2019-01-16 10:50:02.3302 Debug Info => t1 t2
+2019-01-16 10:50:02.3302 Debug Warn => t1 t2
+2019-01-16 10:50:02.3302 Debug Error => t1 t2
+2019-01-16 10:50:02.3302 Debug Fatal =>
+2019-01-16 10:50:02.4719 Debug FileTarget(Name=t1): Process file 'C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log' on startup
+2019-01-16 10:50:02.4803 Debug Creating file appender: C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log
+2019-01-16 10:50:02.4803 Trace Opening C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log with allowFileSharedWriting=False
+2019-01-16 10:50:04.3446 Trace Opening C:\Users\Administrator\Desktop\Git开源\webcore\WebCore\bin\Debug\netcoreapp2.1\logs\2019-01-16\2019-01-16 10.log with allowFileSharedWriting=False
+2019-01-16 10:50:04.4729 Debug Targets for Microsoft.AspNetCore.Session.DistributedSession by level:
+2019-01-16 10:50:04.4729 Debug Trace =>
+2019-01-16 10:50:04.4729 Debug Debug => t1 t2
+2019-01-16 10:50:04.4729 Debug Info => t1 t2
+2019-01-16 10:50:04.4770 Debug Warn => t1 t2
+2019-01-16 10:50:04.4770 Debug Error => t1 t2
+2019-01-16 10:50:04.4770 Debug Fatal =>
+2019-01-16 10:50:04.6633 Debug Targets for Microsoft.AspNetCore.Routing.Tree.TreeRouter by level:
+2019-01-16 10:50:04.6633 Debug Trace =>
+2019-01-16 10:50:04.6633 Debug Debug => t1 t2
+2019-01-16 10:50:04.6633 Debug Info => t1 t2
+2019-01-16 10:50:04.6633 Debug Warn => t1 t2
+2019-01-16 10:50:04.6633 Debug Error => t1 t2
+2019-01-16 10:50:04.6633 Debug Fatal =>
+2019-01-16 10:50:04.6633 Debug Targets for Microsoft.AspNetCore.Routing.RouteConstraintMatcher by level:
+2019-01-16 10:50:04.6633 Debug Trace =>
+2019-01-16 10:50:04.6633 Debug Debug => t1 t2
+2019-01-16 10:50:04.6633 Debug Info => t1 t2
+2019-01-16 10:50:04.6633 Debug Warn => t1 t2
+2019-01-16 10:50:04.6633 Debug Error => t1 t2
+2019-01-16 10:50:04.6633 Debug Fatal =>
+2019-01-16 10:50:04.6633 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.MvcAttributeRouteHandler by level:
+2019-01-16 10:50:04.6633 Debug Trace =>
+2019-01-16 10:50:04.6633 Debug Debug => t1 t2
+2019-01-16 10:50:04.6633 Debug Info => t1 t2
+2019-01-16 10:50:04.6633 Debug Warn => t1 t2
+2019-01-16 10:50:04.6633 Debug Error => t1 t2
+2019-01-16 10:50:04.6633 Debug Fatal =>
+2019-01-16 10:50:04.7504 Debug Targets for Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgery by level:
+2019-01-16 10:50:04.7504 Debug Trace =>
+2019-01-16 10:50:04.7504 Debug Debug => t1 t2
+2019-01-16 10:50:04.7504 Debug Info => t1 t2
+2019-01-16 10:50:04.7504 Debug Warn => t1 t2
+2019-01-16 10:50:04.7504 Debug Error => t1 t2
+2019-01-16 10:50:04.7504 Debug Fatal =>
+2019-01-16 10:50:04.7504 Debug Targets for Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.AutoValidateAntiforgeryTokenAuthorizationFilter by level:
+2019-01-16 10:50:04.7504 Debug Trace =>
+2019-01-16 10:50:04.7504 Debug Debug => t1 t2
+2019-01-16 10:50:04.7504 Debug Info => t1 t2
+2019-01-16 10:50:04.7504 Debug Warn => t1 t2
+2019-01-16 10:50:04.7504 Debug Error => t1 t2
+2019-01-16 10:50:04.7504 Debug Fatal =>
+2019-01-16 10:50:04.7950 Debug Targets for Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker by level:
+2019-01-16 10:50:04.7950 Debug Trace =>
+2019-01-16 10:50:04.7950 Debug Debug => t1 t2
+2019-01-16 10:50:04.7950 Debug Info => t1 t2
+2019-01-16 10:50:04.7950 Debug Warn => t1 t2
+2019-01-16 10:50:04.7950 Debug Error => t1 t2
+2019-01-16 10:50:04.7950 Debug Fatal =>
+2019-01-16 10:50:04.8471 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.TagHelpers.HeadTagHelper by level:
+2019-01-16 10:50:04.8471 Debug Trace =>
+2019-01-16 10:50:04.8471 Debug Debug => t1 t2
+2019-01-16 10:50:04.8503 Debug Info => t1 t2
+2019-01-16 10:50:04.8503 Debug Warn => t1 t2
+2019-01-16 10:50:04.8503 Debug Error => t1 t2
+2019-01-16 10:50:04.8503 Debug Fatal =>
+2019-01-16 10:50:04.8503 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.TagHelpers.BodyTagHelper by level:
+2019-01-16 10:50:04.8503 Debug Trace =>
+2019-01-16 10:50:04.8503 Debug Debug => t1 t2
+2019-01-16 10:50:04.8503 Debug Info => t1 t2
+2019-01-16 10:50:04.8503 Debug Warn => t1 t2
+2019-01-16 10:50:04.8503 Debug Error => t1 t2
+2019-01-16 10:50:04.8503 Debug Fatal =>
+2019-01-16 10:50:07.9575 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder by level:
+2019-01-16 10:50:07.9575 Debug Trace =>
+2019-01-16 10:50:07.9575 Debug Debug => t1 t2
+2019-01-16 10:50:07.9599 Debug Info => t1 t2
+2019-01-16 10:50:07.9599 Debug Warn => t1 t2
+2019-01-16 10:50:07.9599 Debug Error => t1 t2
+2019-01-16 10:50:07.9599 Debug Fatal =>
+2019-01-16 10:50:07.9962 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.FileStreamResultExecutor by level:
+2019-01-16 10:50:07.9962 Debug Trace =>
+2019-01-16 10:50:07.9962 Debug Debug => t1 t2
+2019-01-16 10:50:07.9962 Debug Info => t1 t2
+2019-01-16 10:50:07.9962 Debug Warn => t1 t2
+2019-01-16 10:50:07.9962 Debug Error => t1 t2
+2019-01-16 10:50:07.9962 Debug Fatal =>
+2019-01-16 10:50:11.6342 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor by level:
+2019-01-16 10:50:11.6342 Debug Trace =>
+2019-01-16 10:50:11.6342 Debug Debug => t1 t2
+2019-01-16 10:50:11.6342 Debug Info => t1 t2
+2019-01-16 10:50:11.6342 Debug Warn => t1 t2
+2019-01-16 10:50:11.6342 Debug Error => t1 t2
+2019-01-16 10:50:11.6342 Debug Fatal =>

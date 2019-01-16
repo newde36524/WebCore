@@ -31,5 +31,17 @@ namespace WebCore.WebApi
                 return (new ActionResult<bool>(false) as IConvertToActionResult).Convert();
             }
         }
+
+        [HttpGet("[action]")]
+        public IActionResult RedirectAction1(string url)
+        {
+            return RedirectPermanent(url);
+        }
+
+        [HttpGet("[action]")]
+        public IActionResult RedirectAction2(string url)
+        {
+            return RedirectPreserveMethod(url);
+        }
     }
 }

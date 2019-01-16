@@ -27,6 +27,7 @@ using Microsoft.Extensions.Logging;
 using System.Text;
 using WebCore.Hosting;
 using WebCore.Extension.Options;
+using WebCore.SignalRHub;
 
 namespace WebCore
 {
@@ -64,6 +65,12 @@ namespace WebCore
                 //options.Filters.Add(typeof(MyResultFilterAttribute));
             });
 
+            #region 开启SignalR
+
+            services.AddSignalR();
+
+            #endregion
+
             #region 配置自定义Service
 
             services.AddHostedService<MyRabbitMqService>();
@@ -75,7 +82,6 @@ namespace WebCore
             services.Configure<RabbitMqOption>(Configuration.GetSection("rabbitmq"));
 
             #endregion
-
 
             #region 设置自定义ActionResult
 
@@ -113,9 +119,6 @@ namespace WebCore
             return new AutofacServiceProvider(containerBuilder.Build());
 
             #endregion
-
-
-
 
         }
 
@@ -298,6 +301,26 @@ namespace WebCore
             {
                 Console.WriteLine("网站已停止");
                 logger.LogInformation("网站已停止");
+            });
+
+            #endregion
+
+            #region 设置Cors
+
+            app.UseCors(options => {
+                options.AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin()
+                .AllowCredentials()
+                .WithOrigins("https://localhost:5000");
+            });
+
+            #endregion
+
+            #region 设置SignalR
+
+            app.UseSignalR(routes => {
+                routes.MapHub<MyHub>("/MySignalRHub");
             });
 
             #endregion
