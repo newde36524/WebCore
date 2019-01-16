@@ -25,6 +25,8 @@ using WebCore.CustomerActionResult;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using System.Text;
+using WebCore.Hosting;
+using WebCore.Extension.Options;
 
 namespace WebCore
 {
@@ -62,6 +64,19 @@ namespace WebCore
                 //options.Filters.Add(typeof(MyResultFilterAttribute));
             });
 
+            #region 配置自定义Service
+
+            services.AddHostedService<MyRabbitMqService>();
+
+            #endregion
+
+            #region 配置自定义Option
+
+            services.Configure<RabbitMqOption>(Configuration.GetSection("rabbitmq"));
+
+            #endregion
+
+
             #region 设置自定义ActionResult
 
             services.TryAddSingleton<IActionResultExecutor<MyContentResult>, MyContentResultExecutor>();
@@ -98,6 +113,9 @@ namespace WebCore
             return new AutofacServiceProvider(containerBuilder.Build());
 
             #endregion
+
+
+
 
         }
 

@@ -22,14 +22,14 @@ namespace WebCore.WebApi
         {
             return Redirect(url);
 
-            //if (Url.IsLocalUrl(url))//指示参数是否拥有当前域名地址
-            //{
-            //    return Redirect(url);
-            //}
-            //else
-            //{
-            //    return (new ActionResult<bool>(false) as IConvertToActionResult).Convert();
-            //}
+            if (Url.IsLocalUrl(url))//指示参数是否拥有当前域名地址
+            {
+                return Redirect(url);
+            }
+            else
+            {
+                return (new ActionResult<bool>(false) as IConvertToActionResult).Convert();
+            }
         }
     }
 }

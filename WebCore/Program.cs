@@ -7,7 +7,6 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-
 using WebCore.Extension;
 
 namespace WebCore
@@ -22,6 +21,11 @@ namespace WebCore
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                //.ConfigureLogging(logging =>
+                //{
+                //    logging.ClearProviders();
+                //    logging.SetMinimumLevel(LogLevel.Trace);
+                //})
                 .UseNLoger()//启用Nlog日志
                 .UseStartup<Startup>()
                 //.UseUrls("http://127.0.0.1:5002")

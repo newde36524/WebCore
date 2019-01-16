@@ -70,7 +70,11 @@ using WebCore;
             ");
             EndContext();
             BeginContext(510, 71, false);
+<<<<<<< HEAD:WebCore/obj/Debug/netcoreapp2.2/Razor/Pages/Index.cshtml.g.cs
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e4b68f3fd49fafed85b0ce73e357918f1361efe56138", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5678b399462b45faa11394a283833b8e", async() => {
+>>>>>>> parent of 23ccfee... 添加Nlog日志:WebCore/obj/Debug/netcoreapp2.1/Razor/Pages/Index.g.cshtml.cs
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -101,7 +105,11 @@ using WebCore;
             ");
             EndContext();
             BeginContext(1013, 77, false);
+<<<<<<< HEAD:WebCore/obj/Debug/netcoreapp2.2/Razor/Pages/Index.cshtml.g.cs
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e4b68f3fd49fafed85b0ce73e357918f1361efe57914", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "180e2d83990c4b4c9cdad8042dfd3869", async() => {
+>>>>>>> parent of 23ccfee... 添加Nlog日志:WebCore/obj/Debug/netcoreapp2.1/Razor/Pages/Index.g.cshtml.cs
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -132,7 +140,11 @@ using WebCore;
             ");
             EndContext();
             BeginContext(1546, 79, false);
+<<<<<<< HEAD:WebCore/obj/Debug/netcoreapp2.2/Razor/Pages/Index.cshtml.g.cs
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e4b68f3fd49fafed85b0ce73e357918f1361efe59715", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "71045a1199194810b0deca9a68089e1b", async() => {
+>>>>>>> parent of 23ccfee... 添加Nlog日志:WebCore/obj/Debug/netcoreapp2.1/Razor/Pages/Index.g.cshtml.cs
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

@@ -16,7 +16,7 @@ namespace WebCore.Middleware
         public async override Task Invoke(HttpContext context)
         {
             //befor
-            //LoggerFactory.AddConsole();
+            LoggerFactory.AddConsole();
             //context.Response.Headers.Add("SampleMiddlewareBefore", "SampleMiddlewareBefore");
             await base.Invoke(context);
             //after
