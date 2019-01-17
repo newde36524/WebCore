@@ -35,40 +35,33 @@ namespace WebCore.Extension
         /// </summary>
         protected void Register()
         {
-            try
+            var factory = new ConnectionFactory()
             {
-                var factory = new ConnectionFactory()
-                {
-                    HostName = Options.Value.RabbitHost,
-                    UserName = Options.Value.RabbitUserName,
-                    Password = Options.Value.RabbitPassword,
-                    Port = Options.Value.RabbitPort
-                };
-                this.Connection = factory.CreateConnection();
-                this.Channel = Connection.CreateModel();
-                Console.WriteLine($"RabbitListener register,routeKey:{Options.Value.RouteKey}");
-                Channel.ExchangeDeclare(exchange: Options.Value.Extrange, type: "topic");
-                Channel.QueueDeclare(queue: Options.Value.QueueName, exclusive: false);
-                Channel.QueueBind(queue: Options.Value.QueueName,
-                                  exchange: Options.Value.Extrange,
-                                  routingKey: Options.Value.RouteKey);
-                var consumer = new EventingBasicConsumer(Channel);
-                consumer.Received += (model, ea) =>
-                {
-                    var body = ea.Body;
-                    var message = Encoding.UTF8.GetString(body);
-                    var result = Process(message);
-                    if (result)
-                    {
-                        Channel.BasicAck(ea.DeliveryTag, false);
-                    }
-                };
-                Channel.BasicConsume(queue: Options.Value.QueueName, consumer: consumer);
-            }
-            catch (Exception ex)
+                HostName = Options.Value.RabbitHost,
+                UserName = Options.Value.RabbitUserName,
+                Password = Options.Value.RabbitPassword,
+                Port = Options.Value.RabbitPort
+            };
+            this.Connection = factory.CreateConnection();
+            this.Channel = Connection.CreateModel();
+            Console.WriteLine($"RabbitListener register,routeKey:{Options.Value.RouteKey}");
+            Channel.ExchangeDeclare(exchange: Options.Value.Extrange, type: "topic");
+            Channel.QueueDeclare(queue: Options.Value.QueueName, exclusive: false);
+            Channel.QueueBind(queue: Options.Value.QueueName,
+                              exchange: Options.Value.Extrange,
+                              routingKey: Options.Value.RouteKey);
+            var consumer = new EventingBasicConsumer(Channel);
+            consumer.Received += (model, ea) =>
             {
-                Console.WriteLine($"RabbitListener init error,ex:{ex.Message}");
-            }
+                var body = ea.Body;
+                var message = Encoding.UTF8.GetString(body);
+                var result = Process(message);
+                if (result)
+                {
+                    Channel.BasicAck(ea.DeliveryTag, false);
+                }
+            };
+            Channel.BasicConsume(queue: Options.Value.QueueName, consumer: consumer);
         }
 
         /// <summary>
