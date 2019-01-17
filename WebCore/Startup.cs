@@ -28,6 +28,7 @@ using System.Text;
 using WebCore.Hosting;
 using WebCore.Extension.Options;
 using WebCore.SignalRHub;
+using RabbitMQ.Client;
 
 namespace WebCore
 {
@@ -71,9 +72,24 @@ namespace WebCore
 
             #endregion
 
-            #region 配置自定义Service
+            #region 配置自定义RabbitMqService和注册发布客户端
 
             services.AddHostedService<MyRabbitMqService>();
+            services.AddSingleton<IQueuePublish, MyRabbitMqDeclareClient>();
+            services.AddSingleton<IModel>(service =>
+            {
+                var option = service.GetRequiredService<IOptions<RabbitMqOption>>();
+                var factory = new ConnectionFactory()
+                {
+                    HostName = option.Value.RabbitHost,
+                    UserName = option.Value.RabbitUserName,
+                    Password = option.Value.RabbitPassword,
+                    Port = option.Value.RabbitPort
+                };
+                var connection = factory.CreateConnection();
+                var channel = connection.CreateModel();
+                return channel;
+            });
 
             #endregion
 
@@ -307,7 +323,8 @@ namespace WebCore
 
             #region 设置Cors
 
-            app.UseCors(options => {
+            app.UseCors(options =>
+            {
                 options.AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowAnyOrigin()
@@ -319,7 +336,8 @@ namespace WebCore
 
             #region 设置SignalR
 
-            app.UseSignalR(routes => {
+            app.UseSignalR(routes =>
+            {
                 routes.MapHub<MyHub>("/MySignalRHub");
             });
 

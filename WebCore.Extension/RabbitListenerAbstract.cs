@@ -18,12 +18,9 @@ namespace WebCore.Extension
             Options = options;
         }
 
-        private IConnection connection;
-        private IModel channel;
+        public IModel Channel { get; set; }
+        public IConnection Connection { get; set; }
 
-        protected string RouteKey { get; set; }
-        protected string QueueName { get; set; }
-        protected string Exchange { get; set; } = "message";
         public IOptions<RabbitMqOption> Options { get; }
 
         /// <summary>
@@ -47,15 +44,15 @@ namespace WebCore.Extension
                     Password = Options.Value.RabbitPassword,
                     Port = Options.Value.RabbitPort
                 };
-                this.connection = factory.CreateConnection();
-                this.channel = connection.CreateModel();
-                Console.WriteLine($"RabbitListener register,routeKey:{RouteKey}");
-                channel.ExchangeDeclare(exchange: Exchange, type: "topic");
-                channel.QueueDeclare(queue: QueueName, exclusive: false);
-                channel.QueueBind(queue: QueueName,
-                                  exchange: Exchange,
-                                  routingKey: RouteKey);
-                var consumer = new EventingBasicConsumer(channel);
+                this.Connection = factory.CreateConnection();
+                this.Channel = Connection.CreateModel();
+                Console.WriteLine($"RabbitListener register,routeKey:{Options.Value.RouteKey}");
+                Channel.ExchangeDeclare(exchange: Options.Value.Extrange, type: "topic");
+                Channel.QueueDeclare(queue: Options.Value.QueueName, exclusive: false);
+                Channel.QueueBind(queue: Options.Value.QueueName,
+                                  exchange: Options.Value.Extrange,
+                                  routingKey: Options.Value.RouteKey);
+                var consumer = new EventingBasicConsumer(Channel);
                 consumer.Received += (model, ea) =>
                 {
                     var body = ea.Body;
@@ -63,10 +60,10 @@ namespace WebCore.Extension
                     var result = Process(message);
                     if (result)
                     {
-                        channel.BasicAck(ea.DeliveryTag, false);
+                        Channel.BasicAck(ea.DeliveryTag, false);
                     }
                 };
-                channel.BasicConsume(queue: QueueName, consumer: consumer);
+                Channel.BasicConsume(queue: Options.Value.QueueName, consumer: consumer);
             }
             catch (Exception ex)
             {
@@ -79,7 +76,7 @@ namespace WebCore.Extension
         /// </summary>
         protected void UnRegister()
         {
-            this.connection.Close();
+            this.Connection.Close();
         }
     }
 }
