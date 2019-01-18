@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -29,6 +29,9 @@ using WebCore.Hosting;
 using WebCore.Extension.Options;
 using WebCore.SignalRHub;
 using RabbitMQ.Client;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace WebCore
 {
@@ -53,7 +56,7 @@ namespace WebCore
 
             services.AddOptions();
             services.AddDirectoryBrowser();
-            services.AddSession();//¿ªÆôsession
+            services.AddSession();//å¼€å¯session
             var config = Configuration.GetSection("RootobjectSection").Get<Rootobject>();
 
             services.AddRouting();
@@ -61,18 +64,22 @@ namespace WebCore
             services.AddMvc(options =>
             {
                 var o = options;
-                //options.Filters.Add(typeof(ActionFilterAttribute)); // È«¾Ö×¢²á¹ıÂËÆ÷
+                //options.Filters.Add(typeof(ActionFilterAttribute)); // å…¨å±€æ³¨å†Œè¿‡æ»¤å™¨
                 //options.Filters.Add(typeof(AjaxRequestFilterAttribute));
                 //options.Filters.Add(typeof(MyResultFilterAttribute));
             });
 
-            #region ¿ªÆôSignalR
+            #region å¼€å¯Authorizationè®¤è¯
+
+            #endregion
+
+            #region å¼€å¯SignalR
 
             services.AddSignalR();
 
             #endregion
 
-            #region ÅäÖÃ×Ô¶¨ÒåRabbitMqServiceºÍ×¢²á·¢²¼¿Í»§¶Ë
+            #region é…ç½®è‡ªå®šä¹‰RabbitMqServiceå’Œæ³¨å†Œå‘å¸ƒå®¢æˆ·ç«¯
 
             services.AddHostedService<MyRabbitMqService>();
             services.AddSingleton<IQueuePublish, MyRabbitMqDeclareClient>();
@@ -93,28 +100,28 @@ namespace WebCore
 
             #endregion
 
-            #region ÅäÖÃ×Ô¶¨ÒåOption
+            #region é…ç½®è‡ªå®šä¹‰Option
 
             services.Configure<RabbitMqOption>(Configuration.GetSection("rabbitmq"));
 
             #endregion
 
-            #region ÉèÖÃ×Ô¶¨ÒåActionResult
+            #region è®¾ç½®è‡ªå®šä¹‰ActionResult
 
             services.TryAddSingleton<IActionResultExecutor<MyContentResult>, MyContentResultExecutor>();
             services.TryAddSingleton<IActionResultExecutor<MyJsonResult>, MyJsonResultExecutor>();
 
             #endregion
 
-            #region ÉèÖÃ Swagger APIÎÄµµ
+            #region è®¾ç½® Swagger APIæ–‡æ¡£
 
             services.AddSwaggerGen(option =>
             {
                 option.SwaggerDoc("v1", new Info
                 {
                     Version = "v1",
-                    Title = "Web Api ½Ó¿ÚÎÄµµ",
-                    Description = "Swagger WebApiµ÷ÊÔÓ¦ÓÃ",
+                    Title = "Web Api æ¥å£æ–‡æ¡£",
+                    Description = "Swagger WebApiè°ƒè¯•åº”ç”¨",
                     TermsOfService = "None"
                 });
 
@@ -123,12 +130,12 @@ namespace WebCore
                 //var xmlPath = Path.Combine(basePath, "DapperSwaggerAutofac.xml");
                 //c.IncludeXmlComments(xmlPath);
 
-                //c.OperationFilter<HttpHeaderOperation>(); // Ìí¼ÓhttpHeader²ÎÊı
+                //c.OperationFilter<HttpHeaderOperation>(); // æ·»åŠ httpHeaderå‚æ•°
             });
 
             #endregion
 
-            #region Ä¬ÈÏÈİÆ÷Ìæ»»Autofac
+            #region é»˜è®¤å®¹å™¨æ›¿æ¢Autofac
 
             var containerBuilder = new ContainerBuilder();
             containerBuilder.Populate(services);
@@ -141,9 +148,9 @@ namespace WebCore
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime applicationLifetime, ILoggerFactory loggerFactory)
         {
-            #region ¿ª·¢»·¾³´íÎóÒ³ÉèÖÃ
+            #region å¼€å‘ç¯å¢ƒé”™è¯¯é¡µè®¾ç½®
 
-            if (env.IsDevelopment())//ÅĞ¶ÏÊÇ·ñÊÇ¿ª·¢»·¾³
+            if (env.IsDevelopment())//åˆ¤æ–­æ˜¯å¦æ˜¯å¼€å‘ç¯å¢ƒ
             {
                 //app.UseBrowserLink();
                 app.UseStatusCodePages(async context =>
@@ -157,22 +164,22 @@ namespace WebCore
             }
             else
             {
-                app.UseExceptionHandler("/Error");//Èç¹û²»ÊÇ¾ÍÌø×ªµ½´íÎóÒ³
+                app.UseExceptionHandler("/Error");//å¦‚æœä¸æ˜¯å°±è·³è½¬åˆ°é”™è¯¯é¡µ
                 app.UseHsts();
             }
-            app.UseSession();//¿ªÆôSession
+            app.UseSession();//å¼€å¯Session
             #endregion
 
-            #region MVC Â·ÓÉ httpsÖØ¶¨Ïò ×´Ì¬Ò³ÂëÅäÖÃÏà¹Ø
+            #region MVC è·¯ç”± httpsé‡å®šå‘ çŠ¶æ€é¡µç é…ç½®ç›¸å…³
 
             app.UseRouter(routeBuilder =>
             {
                 //routeBuilder.MapRoute(name: "default1", template: "test");
-                //routeBuilder.MapGet("", context => Task.CompletedTask);//×¢Òâ²»ÒªÕâÑùÅäÖÃ£¬»áÔì³ÉÍøÕ¾·ÃÎÊ²»·ûºÏÔ¤ÆÚ£¬ÎŞ·¨ÏÔÊ¾ÍøÒ³
-                //MapGet MapPost MapPut MapDelete  ºÍÌØĞÔÅäÖÃÊÇÒ»ÑùµÄ  ¿ÉÒÔÔÚÕâÀï×öÂ·ÓÉ¶¨ÖÆ»¯
+                //routeBuilder.MapGet("", context => Task.CompletedTask);//æ³¨æ„ä¸è¦è¿™æ ·é…ç½®ï¼Œä¼šé€ æˆç½‘ç«™è®¿é—®ä¸ç¬¦åˆé¢„æœŸï¼Œæ— æ³•æ˜¾ç¤ºç½‘é¡µ
+                //MapGet MapPost MapPut MapDelete  å’Œç‰¹æ€§é…ç½®æ˜¯ä¸€æ ·çš„  å¯ä»¥åœ¨è¿™é‡Œåšè·¯ç”±å®šåˆ¶åŒ–
             })
-            .UseStatusCodePages()//ÅäÖÃ×´Ì¬ÂëÒ³Ãæ
-            .UseHttpsRedirection()//http=>https µÄÖØ¶¨Ïò
+            .UseStatusCodePages()//é…ç½®çŠ¶æ€ç é¡µé¢
+            .UseHttpsRedirection()//http=>https çš„é‡å®šå‘
             .UseCookiePolicy()
             .UseForwardedHeaders(new ForwardedHeadersOptions
             {
@@ -180,7 +187,7 @@ namespace WebCore
             })
             .UseMvc()
             .UseMvc(routes =>
-            {//ÅäÖÃÄ¬ÈÏÂ·ÓÉ
+            {//é…ç½®é»˜è®¤è·¯ç”±
                 routes.MapRoute(
                    name: "default",
                    template: "{controller=home}/{action=index}/{id?}");
@@ -191,61 +198,61 @@ namespace WebCore
 
             #endregion
 
-            #region ÆôÓÃÎÄ¼şÏµÍ³ÎÄ¼ş¼ĞÊÓÍ¼
+            #region å¯ç”¨æ–‡ä»¶ç³»ç»Ÿæ–‡ä»¶å¤¹è§†å›¾
 
-            app.UseStaticFiles()//Ä¬ÈÏÔÊĞí·ÃÎÊwwwrootÎÄ¼ş¼Ğ
+            app.UseStaticFiles()//é»˜è®¤å…è®¸è®¿é—®wwwrootæ–‡ä»¶å¤¹
             .UseDefaultFiles(new DefaultFilesOptions()
-            {//UseDefaultFiles ±ØĞëÔÚ UseStaticFiles Ö®Ç°µ÷ÓÃ¡£UseDefaultFiles Ö»ÊÇÖØĞ´ÁË URL£¬¶ø²»ÊÇÕæµÄÌá¹©ÁËÕâÑùÒ»¸öÎÄ¼ş¡£Äã±ØĞë¿ªÆô¾²Ì¬ÎÄ¼şÖĞ¼ä¼ş£¨UseStaticFiles£©À´Ìá¹©Õâ¸öÎÄ¼ş¡£
+            {//UseDefaultFiles å¿…é¡»åœ¨ UseStaticFiles ä¹‹å‰è°ƒç”¨ã€‚UseDefaultFiles åªæ˜¯é‡å†™äº† URLï¼Œè€Œä¸æ˜¯çœŸçš„æä¾›äº†è¿™æ ·ä¸€ä¸ªæ–‡ä»¶ã€‚ä½ å¿…é¡»å¼€å¯é™æ€æ–‡ä»¶ä¸­é—´ä»¶ï¼ˆUseStaticFilesï¼‰æ¥æä¾›è¿™ä¸ªæ–‡ä»¶ã€‚
                 DefaultFileNames = new List<string>() { "test" }
             })
             .UseStaticFiles(new StaticFileOptions()//
             {
-                ServeUnknownFileTypes = true,//ÓĞ°²È«·çÏÕ  Ä¬ÈÏ¹Ø±Õ false
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticSource", "Images")), //Ö¸¶¨¾²Ì¬ÎÄ¼şµÄÄ¿Â¼Î»ÖÃ
-                RequestPath = new PathString("/StaticFiles"),//ÅäÖÃ¾²Ì¬ÎÄ¼şµÄ·ÃÎÊÂ·ÓÉ Àı£ºhttps://localhost:44320/staticfiles/a.jpg
+                ServeUnknownFileTypes = true,//æœ‰å®‰å…¨é£é™©  é»˜è®¤å…³é—­ false
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticSource", "Images")), //æŒ‡å®šé™æ€æ–‡ä»¶çš„ç›®å½•ä½ç½®
+                RequestPath = new PathString("/StaticFiles"),//é…ç½®é™æ€æ–‡ä»¶çš„è®¿é—®è·¯ç”± ä¾‹ï¼šhttps://localhost:44320/staticfiles/a.jpg
                 ContentTypeProvider = new FileExtensionContentTypeProvider(new Dictionary<string, string>()
                    {
-                        { ".xxx","application/xxx"}//ÅäÖÃÀ©Õ¹ÃûÓ³Éä
+                        { ".xxx","application/xxx"}//é…ç½®æ‰©å±•åæ˜ å°„
                  })
             })
             .UseStaticFiles(new StaticFileOptions()//
             {
-                ServeUnknownFileTypes = false,//ÓĞ°²È«·çÏÕ  Ä¬ÈÏ¹Ø±Õ false
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticSource", "Css")), //Ö¸¶¨¾²Ì¬ÎÄ¼şµÄÄ¿Â¼Î»ÖÃ
-                RequestPath = new PathString("/Style"),//ÅäÖÃ¾²Ì¬ÎÄ¼şµÄ·ÃÎÊÂ·ÓÉ Àı£ºhttps://localhost:44320/Style/styleSheet.css
+                ServeUnknownFileTypes = false,//æœ‰å®‰å…¨é£é™©  é»˜è®¤å…³é—­ false
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticSource", "Css")), //æŒ‡å®šé™æ€æ–‡ä»¶çš„ç›®å½•ä½ç½®
+                RequestPath = new PathString("/Style"),//é…ç½®é™æ€æ–‡ä»¶çš„è®¿é—®è·¯ç”± ä¾‹ï¼šhttps://localhost:44320/Style/styleSheet.css
                 ContentTypeProvider = new FileExtensionContentTypeProvider(new Dictionary<string, string>()
                    {
-                        { ".css","text/css"}//ÅäÖÃÀ©Õ¹ÃûÓ³Éä
+                        { ".css","text/css"}//é…ç½®æ‰©å±•åæ˜ å°„
                  })
             })
-            .UseDirectoryBrowser(new DirectoryBrowserOptions()//Ö»ÓĞÄ¿Â¼·ÃÎÊ¹¦ÄÜ£¬²»ÄÜ·ÃÎÊÎÄ¼ş
-            {//Ä¬ÈÏ½ûÓÃ£¬¿ªÆôÄ¿Â¼·ÃÎÊ¹¦ÄÜ
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory())),//Ö¸¶¨·ÃÎÊÄ¿Â¼
-                RequestPath = new PathString("/app")//Ö¸¶¨·ÃÎÊÂ·ÓÉ Àı£ºhttps://localhost:44320/app/
+            .UseDirectoryBrowser(new DirectoryBrowserOptions()//åªæœ‰ç›®å½•è®¿é—®åŠŸèƒ½ï¼Œä¸èƒ½è®¿é—®æ–‡ä»¶
+            {//é»˜è®¤ç¦ç”¨ï¼Œå¼€å¯ç›®å½•è®¿é—®åŠŸèƒ½
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory())),//æŒ‡å®šè®¿é—®ç›®å½•
+                RequestPath = new PathString("/app")//æŒ‡å®šè®¿é—®è·¯ç”± ä¾‹ï¼šhttps://localhost:44320/app/
             })
 
-            .UseDirectoryBrowser(new DirectoryBrowserOptions()//Ö»ÓĞÄ¿Â¼·ÃÎÊ¹¦ÄÜ£¬²»ÄÜ·ÃÎÊÎÄ¼ş
-            {//Ä¬ÈÏ½ûÓÃ£¬¿ªÆôÄ¿Â¼·ÃÎÊ¹¦ÄÜ
-                FileProvider = new PhysicalFileProvider(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)),//Ö¸¶¨·ÃÎÊÄ¿Â¼
-                RequestPath = new PathString("/Desktop")//Ö¸¶¨·ÃÎÊÂ·ÓÉ Àı£ºhttps://localhost:44320/Desktop/
+            .UseDirectoryBrowser(new DirectoryBrowserOptions()//åªæœ‰ç›®å½•è®¿é—®åŠŸèƒ½ï¼Œä¸èƒ½è®¿é—®æ–‡ä»¶
+            {//é»˜è®¤ç¦ç”¨ï¼Œå¼€å¯ç›®å½•è®¿é—®åŠŸèƒ½
+                FileProvider = new PhysicalFileProvider(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)),//æŒ‡å®šè®¿é—®ç›®å½•
+                RequestPath = new PathString("/Desktop")//æŒ‡å®šè®¿é—®è·¯ç”± ä¾‹ï¼šhttps://localhost:44320/Desktop/
             });
 
-            var option = new FileServerOptions()//ÓĞÄ¿Â¼·ÃÎÊ¹¦ÄÜ£¬Ò²ÄÜ·ÃÎÊÎÄ¼ş
+            var option = new FileServerOptions()//æœ‰ç›®å½•è®¿é—®åŠŸèƒ½ï¼Œä¹Ÿèƒ½è®¿é—®æ–‡ä»¶
             {
-                EnableDirectoryBrowsing = true,//ÆôÓÃ¾²Ì¬ÎÄ¼ş¡¢Ä¬ÈÏÎÄ¼şºÍÄ¿Â¼ä¯ÀÀ¹¦ÄÜ
+                EnableDirectoryBrowsing = true,//å¯ç”¨é™æ€æ–‡ä»¶ã€é»˜è®¤æ–‡ä»¶å’Œç›®å½•æµè§ˆåŠŸèƒ½
                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticSource", "Images")),
-                RequestPath = new PathString("/downStaticFiles")//ÅäÖÃ¾²Ì¬ÎÄ¼şµÄ·ÃÎÊÂ·ÓÉ Àı£ºhttps://localhost:44320/staticfiles/a.jpg
+                RequestPath = new PathString("/downStaticFiles")//é…ç½®é™æ€æ–‡ä»¶çš„è®¿é—®è·¯ç”± ä¾‹ï¼šhttps://localhost:44320/staticfiles/a.jpg
             };
 
-            app.UseFileServer()//ÆôÓÃ¾²Ì¬ÎÄ¼şºÍÄ¬ÈÏÎÄ¼ş£¬µ«²»ÔÊĞíÖ±½Ó·ÃÎÊÄ¿Â¼
-             .UseFileServer(option);//ÅäÖÃ¾²Ì¬ÎÄ¼şµÄ·ÃÎÊ·½Ê½£¬¾²Ì¬ÎÄ¼şµÄ·ÃÎÊ²»×ßÖĞ¼ä¼ş¹ıÂËÆ÷£¬²¢ÇÒ²»×ßÂ·ÓÉ£¬ÒòÎªËûÖ»Ê¶±ğÂ·¾¶£¬²¢²»ÊÇÂ·ÓÉµ½¾ßÌåµÄAction
+            app.UseFileServer()//å¯ç”¨é™æ€æ–‡ä»¶å’Œé»˜è®¤æ–‡ä»¶ï¼Œä½†ä¸å…è®¸ç›´æ¥è®¿é—®ç›®å½•
+             .UseFileServer(option);//é…ç½®é™æ€æ–‡ä»¶çš„è®¿é—®æ–¹å¼ï¼Œé™æ€æ–‡ä»¶çš„è®¿é—®ä¸èµ°ä¸­é—´ä»¶è¿‡æ»¤å™¨ï¼Œå¹¶ä¸”ä¸èµ°è·¯ç”±ï¼Œå› ä¸ºä»–åªè¯†åˆ«è·¯å¾„ï¼Œå¹¶ä¸æ˜¯è·¯ç”±åˆ°å…·ä½“çš„Action
 
             #endregion
 
-            #region ÆôÓÃSwaggerÖĞ¼ä¼ş
+            #region å¯ç”¨Swaggerä¸­é—´ä»¶
 
             app
-            .UseSwagger()//×¢Òâ ²»¹ÜÓĞÃ»ÓĞÅäÖÃSwaggerOptions²ÎÊı£¬ÕâÒ»²½¶¼ÊÇ±ØĞëµÄ
+            .UseSwagger()//æ³¨æ„ ä¸ç®¡æœ‰æ²¡æœ‰é…ç½®SwaggerOptionså‚æ•°ï¼Œè¿™ä¸€æ­¥éƒ½æ˜¯å¿…é¡»çš„
             //.UseSwagger(options =>
             //{
             //    options.RouteTemplate = "/swagger/v1/swagger.json";
@@ -253,45 +260,45 @@ namespace WebCore
             //})
             .UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger ½Ó¿Ú V1.0");
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger æ¥å£ V1.0");
             });
 
             #endregion
 
-            #region ÉèÖÃ×Ô¶¨ÒåÖĞ¼ä¼ş
+            #region è®¾ç½®è‡ªå®šä¹‰ä¸­é—´ä»¶
 
             app.UseWebSockets()
             .UseMiddleware<AddEndpointMiddleware>("")
-            .UseMiddleware<WebSocketMiddleware>()//Ê¹ÓÃ WebSocket ÖĞ¼ä¼ş
-            .UseMiddleware<SampleMiddleware>();//Ê¹ÓÃ×Ô¶¨ÒåÖĞ¼ä¼ş£¬¿ò¼ÜÄÚ²¿Ìá¹©¶à¸öÄ¬ÈÏÖĞ¼ä¼ş£¬Ò²ÊÇÍ¨¹ıÕâÖÖ·½Ê½Ìí¼ÓµÄ£¬Ò²¿ÉÒÔÍ¨¹ı¶¨ÒåIApplicationBuilderµÄÀ©Õ¹·½·¨ÃÀ»¯×¢²á
+            .UseMiddleware<WebSocketMiddleware>()//ä½¿ç”¨ WebSocket ä¸­é—´ä»¶
+            .UseMiddleware<SampleMiddleware>();//ä½¿ç”¨è‡ªå®šä¹‰ä¸­é—´ä»¶ï¼Œæ¡†æ¶å†…éƒ¨æä¾›å¤šä¸ªé»˜è®¤ä¸­é—´ä»¶ï¼Œä¹Ÿæ˜¯é€šè¿‡è¿™ç§æ–¹å¼æ·»åŠ çš„ï¼Œä¹Ÿå¯ä»¥é€šè¿‡å®šä¹‰IApplicationBuilderçš„æ‰©å±•æ–¹æ³•ç¾åŒ–æ³¨å†Œ
 
             #endregion
 
             #region Map Use Run
 
             app.MapWhen(httpcontext => httpcontext.Request.Path != "/ws", application =>
-            {//Ö»ÓĞ³ÌĞòÆô¶¯Ê±²Å»áÖ´ĞĞ
+            {//åªæœ‰ç¨‹åºå¯åŠ¨æ—¶æ‰ä¼šæ‰§è¡Œ
 
             });
             app.Map("/path", _app =>
-            {//Í¨¹ıÖ¸¶¨Â·¾¶·Ö·¢¹ÜµÀ
+            {//é€šè¿‡æŒ‡å®šè·¯å¾„åˆ†å‘ç®¡é“
                 _app.Run(async context =>
                 {
-                    await context.Response.WriteAsync("µ±Ç°Â·ÓÉ²»´æÔÚ");
+                    await context.Response.WriteAsync("å½“å‰è·¯ç”±ä¸å­˜åœ¨");
                 });
             });
 
             app.Use(async (context, next) =>
             {
-                //Í¨¹ıUse  ¶¨ÒåÖĞ¼ä¼ş
-                //ÏÂÒ»¸ö¹ÜµÀÖ´ĞĞÇ°
-                await next();//±íÊ¾Ö´ĞĞÏÂÒ»¸ö¹ÜµÀ
-                //ÏÂÒ»¸ö¹ÜµÀÖ´ĞĞºó
+                //é€šè¿‡Use  å®šä¹‰ä¸­é—´ä»¶
+                //ä¸‹ä¸€ä¸ªç®¡é“æ‰§è¡Œå‰
+                await next();//è¡¨ç¤ºæ‰§è¡Œä¸‹ä¸€ä¸ªç®¡é“
+                //ä¸‹ä¸€ä¸ªç®¡é“æ‰§è¡Œå
             });
 
 
             app.Run(async context =>
-            {//¶¨ÒåÅ×Òì³£ÖĞ¼ä¼ş£¬²¢²»Ö´ĞĞÖ®ºóµÄ¹ÜµÀ
+            {//å®šä¹‰æŠ›å¼‚å¸¸ä¸­é—´ä»¶ï¼Œå¹¶ä¸æ‰§è¡Œä¹‹åçš„ç®¡é“
                 if (context.Request.Query.ContainsKey("throw"))
                 {
                     await context.Response.WriteAsync("are you ok?");
@@ -300,28 +307,28 @@ namespace WebCore
 
             #endregion
 
-            #region ÉèÖÃApplicationÉúÃüÖÜÆÚ¹³×Ó
+            #region è®¾ç½®Applicationç”Ÿå‘½å‘¨æœŸé’©å­
 
             var logger = loggerFactory.CreateLogger<Startup>();
             applicationLifetime.ApplicationStarted.Register(() =>
             {
-                Console.WriteLine("ÍøÕ¾Æô¶¯");
-                logger.LogInformation("ÍøÕ¾Æô¶¯");
+                Console.WriteLine("ç½‘ç«™å¯åŠ¨");
+                logger.LogInformation("ç½‘ç«™å¯åŠ¨");
             });
             applicationLifetime.ApplicationStopping.Register(() =>
             {
-                Console.WriteLine("ÍøÕ¾ÕıÔÚÍ£Ö¹");
-                logger.LogInformation("ÍøÕ¾ÕıÔÚÍ£Ö¹");
+                Console.WriteLine("ç½‘ç«™æ­£åœ¨åœæ­¢");
+                logger.LogInformation("ç½‘ç«™æ­£åœ¨åœæ­¢");
             });
             applicationLifetime.ApplicationStopped.Register(() =>
             {
-                Console.WriteLine("ÍøÕ¾ÒÑÍ£Ö¹");
-                logger.LogInformation("ÍøÕ¾ÒÑÍ£Ö¹");
+                Console.WriteLine("ç½‘ç«™å·²åœæ­¢");
+                logger.LogInformation("ç½‘ç«™å·²åœæ­¢");
             });
 
             #endregion
 
-            #region ÉèÖÃCors
+            #region è®¾ç½®Cors
 
             app.UseCors(options =>
             {
@@ -334,7 +341,7 @@ namespace WebCore
 
             #endregion
 
-            #region ÉèÖÃSignalR
+            #region è®¾ç½®SignalR
 
             app.UseSignalR(routes =>
             {
@@ -342,7 +349,6 @@ namespace WebCore
             });
 
             #endregion
-
         }
     }
 

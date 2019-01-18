@@ -13569,7 +13569,6 @@
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.1.1",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.1",
-      "Newtonsoft.Json >= 11.0.2",
       "Polly >= 6.1.0",
       "Swashbuckle.AspNetCore.Swagger >= 3.0.0",
       "Swashbuckle.AspNetCore.SwaggerGen >= 3.0.0",
@@ -13660,10 +13659,6 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.1.1, )"
-          },
-          "Newtonsoft.Json": {
-            "target": "Package",
-            "version": "[11.0.2, )"
           },
           "Polly": {
             "target": "Package",

@@ -2,9 +2,14 @@ C:\Users\Administrator\Desktop\Git开源\webcore\WebCore.Extension\bin\Debug\net
 C:\Users\Administrator\Desktop\Git开源\webcore\WebCore.Extension\bin\Debug\netcoreapp2.1\WebCore.Extension.deps.json
 C:\Users\Administrator\Desktop\Git开源\webcore\WebCore.Extension\bin\Debug\netcoreapp2.1\WebCore.Extension.dll
 C:\Users\Administrator\Desktop\Git开源\webcore\WebCore.Extension\bin\Debug\netcoreapp2.1\WebCore.Extension.pdb
-C:\Users\Administrator\Desktop\Git开源\webcore\WebCore.Extension\obj\Debug\netcoreapp2.1\WebCore.Extension.csprojAssemblyReference.cache
 C:\Users\Administrator\Desktop\Git开源\webcore\WebCore.Extension\obj\Debug\netcoreapp2.1\WebCore.Extension.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\Git开源\webcore\WebCore.Extension\obj\Debug\netcoreapp2.1\WebCore.Extension.AssemblyInfoInputs.cache
 C:\Users\Administrator\Desktop\Git开源\webcore\WebCore.Extension\obj\Debug\netcoreapp2.1\WebCore.Extension.AssemblyInfo.cs
 C:\Users\Administrator\Desktop\Git开源\webcore\WebCore.Extension\obj\Debug\netcoreapp2.1\WebCore.Extension.dll
 C:\Users\Administrator\Desktop\Git开源\webcore\WebCore.Extension\obj\Debug\netcoreapp2.1\WebCore.Extension.pdb
+C:\Users\Administrator\Desktop\Git开源\webcore\WebCore.Extension\obj\Debug\netcoreapp2.1\WebCore.Extension.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\Git开源\webcore\WebCore.Extension\bin\Debug\netcoreapp2.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Administrator\Desktop\Git开源\webcore\WebCore.Extension\bin\Debug\netcoreapp2.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Administrator\Desktop\Git开源\webcore\WebCore.Extension\bin\Debug\netcoreapp2.1\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Administrator\Desktop\Git开源\webcore\WebCore.Extension\bin\Debug\netcoreapp2.1\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Administrator\Desktop\Git开源\webcore\WebCore.Extension\obj\Debug\netcoreapp2.1\WebCore.Extension.csproj.CopyComplete
