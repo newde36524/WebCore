@@ -345,7 +345,7 @@ namespace WebCore
 
             app.UseSignalR(routes =>
             {
-                routes.MapHub<MyHub>("/MySignalRHub");
+                routes.MapHub<MyHub>("/hubs");
             });
 
             #endregion
