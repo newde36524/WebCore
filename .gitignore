@@ -1,0 +1,8 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/HttpTestConsole/obj
+/.vs/WebCore/v15/Server/sqlite3
+/WebApplication1/obj
+/WebCore.Extension/obj
